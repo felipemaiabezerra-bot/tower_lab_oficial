@@ -1,0 +1,55 @@
+{
+ "asOf": "2026-09-30",
+ "leads": 1312,
+ "opps": 334,
+ "docs": 44,
+ "costLead": 10,
+ "costOpp": 24,
+ "costDocs": 184,
+ "speedMedianH": 15.2,
+ "under30Pct": 12,
+ "neverReachedPct": 47,
+ "source": {
+  "pt": "Fonte: GoHighLevel, leads de ago–set/2026 (oportunidades e fase de documentos). Atualize quando fechar outubro.",
+  "es": "Fuente: GoHighLevel, leads de ago–sep/2026 (oportunidades y fase de documentos). Actualiza al cerrar octubre.",
+  "en": "Source: GoHighLevel, Aug–Sep 2026 leads (opportunities and documents stage). Update when October closes."
+ },
+ "campaigns": [
+  {
+   "name": "043",
+   "spend": 2470.69,
+   "leads": 174,
+   "docs": 6
+  },
+  {
+   "name": "038",
+   "spend": 2362.79,
+   "leads": 125,
+   "docs": 9
+  },
+  {
+   "name": "035",
+   "spend": 1734.56,
+   "leads": 106,
+   "docs": 5
+  },
+  {
+   "name": "SMS 040",
+   "spend": 1150.26,
+   "leads": 26,
+   "docs": 2
+  },
+  {
+   "name": "041",
+   "spend": 1124.3,
+   "leads": 52,
+   "docs": 3
+  },
+  {
+   "name": "042",
+   "spend": 386.6,
+   "leads": 16,
+   "docs": 0
+  }
+ ]
+}
