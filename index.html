@@ -678,6 +678,46 @@ body.tp-open{overflow:hidden}
   .fspeed{grid-template-columns:1fr}
   .brand span:last-child{display:none}
 }
+/* ===== v7: etiquetas, cansaço, gancho real ===== */
+.tagbar{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:12px}
+.tagbar .vt{margin-left:0;flex-wrap:wrap;border-radius:16px}
+.tagbar .cbtn{margin-left:auto}
+.tagread{margin:0 0 12px;font-size:.95rem}
+.tagread:not(.note){padding:10px 14px;border-radius:12px;background:rgba(var(--acc-rgb),.08);border:1px solid rgba(var(--acc-rgb),.2)}
+.tagt td b{font-weight:600}
+.tagt .chip{font-size:.66rem;padding:1px 7px;margin-left:4px;vertical-align:1px}
+.cplc{min-width:150px}
+.cplb{display:inline-block;width:64px;height:6px;border-radius:99px;background:rgba(255,255,255,.07);margin-right:10px;vertical-align:middle;overflow:hidden}
+.cplb i{display:block;height:100%;border-radius:99px;background:var(--acc)}
+tr.hi .cplb i{background:var(--green)}
+.tagedit{margin-top:16px;padding:14px;border-radius:14px;background:var(--surface-2);border:1px solid var(--line)}
+.tagedit select{font:500 .8rem var(--f-body);padding:6px 8px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--ink);max-width:190px}
+.tagedit td{vertical-align:middle}
+.fatsum{display:flex;align-items:center;gap:8px;margin:0 0 12px;padding:10px 14px;border-radius:12px;font-size:.92rem}
+.fatsum .ico{width:16px;height:16px;flex:none}
+.fatsum.bad{background:var(--red-soft);color:var(--red)} .fatsum.bad .ico{stroke:var(--red)}
+.fatsum.warn{background:var(--amber-soft);color:var(--amber)} .fatsum.warn .ico{stroke:var(--amber)}
+.fatsum.ok{background:var(--green-soft);color:var(--green)}
+.fatl{display:grid;gap:10px}
+.fat{display:grid;gap:10px;padding:14px;border-radius:14px;background:rgba(255,255,255,.03);border:1px solid var(--line-soft);border-left:3px solid var(--faint)}
+.fat.ok{border-left-color:var(--green)} .fat.warn{border-left-color:var(--amber)} .fat.tired{border-left-color:var(--red)} .fat.new{border-left-color:var(--acc)}
+.fh{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px}
+.fh b{font:500 1rem var(--f-display)}
+.fh small{color:var(--muted);font-size:.76rem}
+.fchip{font:600 .68rem var(--f-mono);text-transform:uppercase;letter-spacing:.06em;padding:3px 8px;border-radius:99px;background:rgba(255,255,255,.06);color:var(--muted)}
+.fchip.ok{background:var(--green-soft);color:var(--green)} .fchip.warn{background:var(--amber-soft);color:var(--amber)} .fchip.tired{background:var(--red-soft);color:var(--red)} .fchip.new{background:rgba(var(--acc-rgb),.12);color:var(--acc-2)}
+.fm{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px 12px}
+.fm > div{display:grid;gap:1px;min-width:0}
+.fm span{font:500 .66rem var(--f-mono);text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+.fm b{font:500 1.05rem var(--f-display)}
+.fm small{font-size:.7rem;color:var(--faint)}
+.spark{width:96px;height:30px;display:block;margin-top:2px}
+.spark rect{fill:rgba(255,255,255,.18)} .spark rect.last{fill:var(--acc)}
+.fsig{margin:0;font-size:.82rem;color:var(--amber)}
+.fat.tired .fsig{color:var(--red)}
+.frec{margin:0;font-size:.88rem;color:var(--ink)}
+.v3how{margin:12px 0 0;padding-left:20px;display:grid;gap:4px;font-size:.84rem;color:var(--muted)}
+@media (max-width:860px){ .fm{grid-template-columns:repeat(2,minmax(0,1fr))} .fsp{grid-column:1/-1} .tagbar .cbtn{margin-left:0} }
 </style>
 </head>
 <body>
@@ -1708,6 +1748,95 @@ const X = {
   qual:"Saves + shares ÷ reach", lim:"The Business Suite export mixes organic and paid and doesn't report unfollows, so only new followers show.",
   accent:"Switch accent color", short:{panorama:"Overview",ideias:"Ideas",roteiros:"Scripts",ganchos:"Hooks",referencias:"Creators",metodo:"Method"}}
 };
+/* ---- v7: etiquetas, cansaço, gancho real ---- */
+Object.assign(X.pt, {
+  th:["Anúncio","Gasto","Leads","Custo/lead","CTR","Gancho","Miolo","Retenção","Até o fim",""],
+  hook_note:"Gancho = visualizações de 3 s ÷ impressões quando há importação do Gerenciador (meta ≥ 25%). Sem importação aparece o aproximado com * (25% do vídeo ÷ impressões), comparado com a mediana da conta. Miolo = ThruPlay ÷ visualizações de 3 s (meta ≥ 35%).",
+  tag_t:"O que funciona, por etiqueta", tag_s:"90 dias · compare grupos de anúncios",
+  tag_dims:{quem:"Quem aparece", pilar:"Pilar", fmt:"Formato", gancho:"Tipo de gancho", destino:"Destino", camp:"Campanha"},
+  tag_th:["Etiqueta","Custo/lead","Leads","Gasto","Anúncios","Gancho","Retenção","Docs (est.)","Custo/doc"],
+  tag_best:"menor custo", tag_small:"amostra pequena", tag_none:"Sem etiqueta", tag_edit:"Editar etiquetas", tag_auto:"automático",
+  tag_note:"Etiquetas vêm do nome do anúncio, dos vínculos com ideias e roteiros ou da edição manual; a edição manual sempre vale mais. Custo por lead só entra na comparação com 10 leads ou mais. Docs vêm dos vínculos e são divididos entre os anúncios pelo número de leads.",
+  tag_read:(dim, best, cpl, n, pct, worst) => `Por ${dim.toLowerCase()}: “${best}” tem o menor custo por lead (${cpl}, ${n} leads), ${pct} abaixo de “${worst}”.`,
+  tag_need:"Ainda não há duas etiquetas com 10 leads ou mais nesta dimensão. Use “Editar etiquetas” para marcar os anúncios.",
+  quemv:{juanmafe:"Juan + Mafe", juan:"Juan", mafe:"Mafe", outro:"Outra pessoa"},
+  destv:{form:"Formulário instantâneo", lp:"Página (LP)", trafego:"Tráfego"},
+  tag_ed_t:"Etiquetas dos anúncios", tag_ed_s:"“automático” usa o nome do anúncio ou a ideia/roteiro vinculado. Mude só o que estiver errado.",
+  tag_saved:"Etiquetas salvas.", tag_cols:["Anúncio","Quem aparece","Pilar","Formato","Tipo de gancho"],
+  fat_t:"Cansaço dos criativos no ar", fat_s:"últimas 4 semanas, semana a semana",
+  fat_st:{ok:"Saudável", warn:"Atenção", tired:"Cansado", new:"Em aprendizado"},
+  fat_rec:{ok:"Pode manter.", warn:"Acompanhe na próxima semana e deixe uma variação pronta.", tired:"Troque o criativo ou suba uma variação nova do gancho esta semana.", new:"Ainda cedo: julgue com 3 leads e 1.000 impressões."},
+  fat_sig:{freq:v => `frequência de ${v} na semana`, cum:v => `frequência de ${v} em 90 dias`, ctr:p => `CTR ${p} abaixo das semanas anteriores`, cpl:p => `custo por lead ${p} acima das semanas anteriores`, hook:p => `gancho ${p} abaixo das semanas anteriores`},
+  fat_none:"Nenhum sinal de cansaço.", fat_nodata:"Os dados semana a semana chegam com a próxima atualização de segunda.",
+  fat_rule:"Sinais: frequência semanal ≥ 2, frequência de 90 dias ≥ 2,5, CTR ou gancho 20% abaixo da média das semanas anteriores, custo por lead 30% acima (com 3 leads ou mais na semana). 1 sinal = atenção; 2 ou mais = cansado.",
+  fat_m:["Frequência","CTR","Custo/lead","Gancho*"], fat_last:"última semana", fat_prev:"semanas anteriores", fat_trend:"CTR por semana", fat_weeks:n => `${n} ${n === 1 ? "semana" : "semanas"} no ar`,
+  fat_sum:(t, w) => t ? `${t} ${t === 1 ? "criativo cansado" : "criativos cansados"}${w ? ` e ${w} em atenção` : ""}` : w ? `${w} ${w === 1 ? "criativo" : "criativos"} em atenção` : "",
+  v3_t:"Gancho real (3 segundos)", v3_s:"exportação do Gerenciador de Anúncios", v3_imp:"Importar CSV do Gerenciador",
+  v3_none:"Ainda sem importação: a tabela usa o gancho aproximado (25% do vídeo).",
+  v3_ok:(n, m, per) => `${n} de ${m} anúncios com gancho real${per ? " · " + per : ""}`,
+  v3_how:["No Gerenciador de Anúncios, abra a aba Anúncios e escolha os últimos 90 dias.","Em Colunas › Personalizar colunas, marque: ID do anúncio, Nome da campanha, Impressões, Reproduções de vídeo de 3 segundos e ThruPlays.","Clique em Exportar › Exportar dados da tabela › .csv e importe o arquivo aqui."],
+  v3_err:"Não achei a coluna de reproduções de vídeo de 3 segundos neste arquivo.", v3_done:n => `${n} anúncios com o gancho real atualizado.`, v3_busy:"Lendo o arquivo…", v3_save_err:"Não foi possível salvar a importação.",
+  v3_best:(n, v) => `Melhor gancho: ${n} (${v}).`, v3_meta:"meta ≥ 25%"
+});
+Object.assign(X.es, {
+  th:["Anuncio","Gasto","Leads","Costo/lead","CTR","Gancho","Medio","Retención","Hasta el final",""],
+  hook_note:"Gancho = vistas de 3 s ÷ impresiones cuando hay importación del Administrador (meta ≥ 25%). Sin importación aparece el aproximado con * (25% del video ÷ impresiones), comparado con la mediana de la cuenta. Medio = ThruPlay ÷ vistas de 3 s (meta ≥ 35%).",
+  tag_t:"Qué funciona, por etiqueta", tag_s:"90 días · compara grupos de anuncios",
+  tag_dims:{quem:"Quién aparece", pilar:"Pilar", fmt:"Formato", gancho:"Tipo de gancho", destino:"Destino", camp:"Campaña"},
+  tag_th:["Etiqueta","Costo/lead","Leads","Gasto","Anuncios","Gancho","Retención","Docs (est.)","Costo/doc"],
+  tag_best:"menor costo", tag_small:"muestra pequeña", tag_none:"Sin etiqueta", tag_edit:"Editar etiquetas", tag_auto:"automático",
+  tag_note:"Las etiquetas salen del nombre del anuncio, de los vínculos con ideas y guiones y de la edición manual (la manual gana). El costo por lead solo se compara con 10 leads o más. Los docs vienen de los vínculos y se reparten entre los anuncios según sus leads.",
+  tag_read:(dim, best, cpl, n, pct, worst) => `Por ${dim.toLowerCase()}: “${best}” tiene el menor costo por lead (${cpl}, ${n} leads), ${pct} por debajo de “${worst}”.`,
+  tag_need:"Todavía no hay dos etiquetas con 10 leads o más en esta dimensión. Usa “Editar etiquetas” para marcar los anuncios.",
+  quemv:{juanmafe:"Juan + Mafe", juan:"Juan", mafe:"Mafe", outro:"Otra persona"},
+  destv:{form:"Formulario instantáneo", lp:"Página (LP)", trafego:"Tráfico"},
+  tag_ed_t:"Etiquetas de los anuncios", tag_ed_s:"“automático” usa el nombre del anuncio o la idea/guion vinculado. Cambia solo lo que esté mal.",
+  tag_saved:"Etiquetas guardadas.", tag_cols:["Anuncio","Quién aparece","Pilar","Formato","Tipo de gancho"],
+  fat_t:"Desgaste de los creativos activos", fat_s:"últimas 4 semanas, semana a semana",
+  fat_st:{ok:"Sano", warn:"Atención", tired:"Desgastado", new:"Aprendiendo"},
+  fat_rec:{ok:"Puede seguir.", warn:"Revísalo la próxima semana y ten lista una variación.", tired:"Cambia el creativo o sube una variación nueva del gancho esta semana.", new:"Aún es pronto: júzgalo con 3 leads y 1.000 impresiones."},
+  fat_sig:{freq:v => `frecuencia de ${v} en la semana`, cum:v => `frecuencia de ${v} en 90 días`, ctr:p => `CTR ${p} por debajo de las semanas anteriores`, cpl:p => `costo por lead ${p} por encima de las semanas anteriores`, hook:p => `gancho ${p} por debajo de las semanas anteriores`},
+  fat_none:"Sin señales de desgaste.", fat_nodata:"Los datos semana a semana llegan con la próxima actualización del lunes.",
+  fat_rule:"Señales: frecuencia semanal ≥ 2, frecuencia de 90 días ≥ 2,5, CTR o gancho 20% por debajo del promedio de las semanas anteriores, costo por lead 30% por encima (con 3 leads o más en la semana). 1 señal = atención; 2 o más = desgastado.",
+  fat_m:["Frecuencia","CTR","Costo/lead","Gancho*"], fat_last:"última semana", fat_prev:"semanas anteriores", fat_trend:"CTR por semana", fat_weeks:n => `${n} ${n === 1 ? "semana" : "semanas"} activo`,
+  fat_sum:(t, w) => t ? `${t} ${t === 1 ? "creativo desgastado" : "creativos desgastados"}${w ? ` y ${w} en atención` : ""}` : w ? `${w} ${w === 1 ? "creativo" : "creativos"} en atención` : "",
+  v3_t:"Gancho real (3 segundos)", v3_s:"exportación del Administrador de anuncios", v3_imp:"Importar CSV del Administrador",
+  v3_none:"Todavía sin importación: la tabla usa el gancho aproximado (25% del video).",
+  v3_ok:(n, m, per) => `${n} de ${m} anuncios con gancho real${per ? " · " + per : ""}`,
+  v3_how:["En el Administrador de anuncios, abre la pestaña Anuncios y elige los últimos 90 días.","En Columnas › Personalizar columnas, marca: identificador del anuncio, nombre de la campaña, impresiones, reproducciones de video de 3 segundos y ThruPlays.","Haz clic en Exportar › Exportar datos de la tabla › .csv e importa el archivo aquí."],
+  v3_err:"No encontré la columna de reproducciones de video de 3 segundos en este archivo.", v3_done:n => `${n} anuncios con el gancho real actualizado.`, v3_busy:"Leyendo el archivo…", v3_save_err:"No se pudo guardar la importación.",
+  v3_best:(n, v) => `Mejor gancho: ${n} (${v}).`, v3_meta:"meta ≥ 25%"
+});
+Object.assign(X.en, {
+  th:["Ad","Spend","Leads","Cost/lead","CTR","Hook","Middle","Retention","To the end",""],
+  hook_note:"Hook = 3-second views ÷ impressions when an Ads Manager export is imported (goal ≥ 25%). Without it you see the * proxy (25% of the video ÷ impressions), compared with the account median. Middle = ThruPlays ÷ 3-second views (goal ≥ 35%).",
+  tag_t:"What works, by tag", tag_s:"90 days · compare groups of ads",
+  tag_dims:{quem:"Who's on camera", pilar:"Pillar", fmt:"Format", gancho:"Hook type", destino:"Destination", camp:"Campaign"},
+  tag_th:["Tag","Cost/lead","Leads","Spend","Ads","Hook","Retention","Docs (est.)","Cost/doc"],
+  tag_best:"lowest cost", tag_small:"small sample", tag_none:"Untagged", tag_edit:"Edit tags", tag_auto:"automatic",
+  tag_note:"Tags come from the ad name, from links to ideas and scripts, and from manual edits (manual wins). Cost per lead is only compared with 10 leads or more. Docs come from the links and are split across ads by lead count.",
+  tag_read:(dim, best, cpl, n, pct, worst) => `By ${dim.toLowerCase()}: “${best}” has the lowest cost per lead (${cpl}, ${n} leads), ${pct} below “${worst}”.`,
+  tag_need:"There aren't two tags with 10+ leads in this dimension yet. Use “Edit tags” to label the ads.",
+  quemv:{juanmafe:"Juan + Mafe", juan:"Juan", mafe:"Mafe", outro:"Someone else"},
+  destv:{form:"Instant form", lp:"Landing page", trafego:"Traffic"},
+  tag_ed_t:"Ad tags", tag_ed_s:"“automatic” uses the ad name or the linked idea/script. Change only what's wrong.",
+  tag_saved:"Tags saved.", tag_cols:["Ad","Who's on camera","Pillar","Format","Hook type"],
+  fat_t:"Creative fatigue on live ads", fat_s:"last 4 weeks, week by week",
+  fat_st:{ok:"Healthy", warn:"Watch", tired:"Fatigued", new:"Learning"},
+  fat_rec:{ok:"Keep it running.", warn:"Check again next week and have a variation ready.", tired:"Swap the creative or launch a new hook variation this week.", new:"Too early: judge it at 3 leads and 1,000 impressions."},
+  fat_sig:{freq:v => `weekly frequency ${v}`, cum:v => `90-day frequency ${v}`, ctr:p => `CTR ${p} below prior weeks`, cpl:p => `cost per lead ${p} above prior weeks`, hook:p => `hook ${p} below prior weeks`},
+  fat_none:"No fatigue signals.", fat_nodata:"Week-by-week data arrives with next Monday's update.",
+  fat_rule:"Signals: weekly frequency ≥ 2, 90-day frequency ≥ 2.5, CTR or hook 20% below the prior-week average, cost per lead 30% above it (with 3+ leads that week). 1 signal = watch; 2 or more = fatigued.",
+  fat_m:["Frequency","CTR","Cost/lead","Hook*"], fat_last:"last week", fat_prev:"prior weeks", fat_trend:"CTR by week", fat_weeks:n => `${n} ${n === 1 ? "week" : "weeks"} live`,
+  fat_sum:(t, w) => t ? `${t} fatigued ${t === 1 ? "creative" : "creatives"}${w ? ` and ${w} to watch` : ""}` : w ? `${w} ${w === 1 ? "creative" : "creatives"} to watch` : "",
+  v3_t:"Real hook (3 seconds)", v3_s:"Ads Manager export", v3_imp:"Import Ads Manager CSV",
+  v3_none:"No import yet: the table uses the proxy hook (25% of the video).",
+  v3_ok:(n, m, per) => `${n} of ${m} ads with a real hook${per ? " · " + per : ""}`,
+  v3_how:["In Ads Manager, open the Ads tab and pick the last 90 days.","Under Columns › Customize columns, add: Ad ID, Campaign name, Impressions, 3-second video plays and ThruPlays.","Click Export › Export table data › .csv and import the file here."],
+  v3_err:"I couldn't find a 3-second video plays column in this file.", v3_done:n => `${n} ads updated with the real hook.`, v3_busy:"Reading the file…", v3_save_err:"Couldn't save the import.",
+  v3_best:(n, v) => `Best hook: ${n} (${v}).`, v3_meta:"goal ≥ 25%"
+});
+
 const xt = k => X[lang][k];
 
 /* ============ app ============ */
@@ -1850,22 +1979,24 @@ function renderAdsPanorama(){
     <div class="axis"><span></span><span class="ticks">${[0, .25, .5, .75, 1].map(f => `<span>${num(maxR * f, qd > 1 ? 1 : 0)}%</span>`).join("")}</span><span></span></div></div>
     <div class="legend"><span><i style="background:var(--acc)"></i>${esc(t("c_l1"))}</span><span><i style="background:#4A4A51"></i>${esc(t("c_l2"))}</span></div></div>` : "";
   // tabela
-  const rows = ads.slice(0, 16).map(a => ({a, cpl: a.leads ? a.spend / a.leads : null, hook: a.p25 / a.impr * 100, ret: a.thru / a.impr * 100, end: a.p100 / a.impr * 100}));
+  const vm3 = v3Map();
+  const rows = ads.slice(0, 16).map(a => { const r3 = vm3[a.id]; return {a, cpl: a.leads ? a.spend / a.leads : null, hook: a.p25 / a.impr * 100, ret: a.thru / a.impr * 100, end: a.p100 / a.impr * 100, h3: r3 && r3.impr ? r3.v3 / r3.impr * 100 : null, mid: r3 && r3.v3 ? r3.thru / r3.v3 * 100 : null}; });
   const md = {hook: median(rows.map(r => r.hook)), ret: median(rows.map(r => r.ret)), end: median(rows.map(r => r.end))};
   const cmp = (v, m) => v == null || m == null ? "" : v >= m * 1.1 ? "up" : v <= m * .9 ? "dn" : "";
   const tblHTML = has ? `<div class="card"><div class="head"><h3 style="margin:0">${esc(xt("tbl_t"))}</h3><span class="note">${esc(xt("tbl_s"))}</span></div>
     <div class="scroll"><table class="adt"><thead><tr>${xt("th").map((h, i) => `<th${i ? ' class="num"' : ""}>${esc(h)}</th>`).join("")}</tr></thead><tbody>
-    ${rows.map(({a, cpl, hook, ret, end}) => `<tr><td><span class="sd ${a.status === "ACTIVE" ? "on" : ""}"></span>${esc(a.name)}<small>${esc(a.campaign)}</small></td><td class="num">${num(a.spend, 0)}</td><td class="num">${num(a.leads)}</td><td class="num ${cpl == null ? "" : cpl <= 12 ? "up" : cpl >= 18 ? "dn" : ""}">${cpl == null ? "—" : num(cpl, 2)}</td><td class="num">${num(a.ctr, 2)}%</td><td class="num ${cmp(hook, md.hook)}">${num(hook, 1)}%</td><td class="num ${cmp(ret, md.ret)}">${num(ret, 1)}%</td><td class="num ${cmp(end, md.end)}">${num(end, 1)}%</td><td><a class="olink" href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=${esc(ADSNAP.account || "")}&selected_ad_ids=${esc(a.id)}" target="_blank" rel="noopener" title="${esc(xt("open"))}" aria-label="${esc(xt("open"))}">${svg("ext")}</a></td></tr>`).join("")}
+    ${rows.map(({a, cpl, hook, ret, end, h3, mid}) => `<tr><td><span class="sd ${a.status === "ACTIVE" ? "on" : ""}"></span>${esc(a.name)}<small>${esc(a.campaign)}</small></td><td class="num">${num(a.spend, 0)}</td><td class="num">${num(a.leads)}</td><td class="num ${cpl == null ? "" : cpl <= 12 ? "up" : cpl >= 18 ? "dn" : ""}">${cpl == null ? "—" : num(cpl, 2)}</td><td class="num">${num(a.ctr, 2)}%</td>${h3 != null ? `<td class="num ${h3 >= 25 ? "up" : h3 < 15 ? "dn" : ""}">${num(h3, 1)}%</td>` : `<td class="num ${cmp(hook, md.hook)}">${num(hook, 1)}%*</td>`}<td class="num ${mid == null ? "" : mid >= 35 ? "up" : mid < 20 ? "dn" : ""}">${mid == null ? "—" : num(mid, 1) + "%"}</td><td class="num ${cmp(ret, md.ret)}">${num(ret, 1)}%</td><td class="num ${cmp(end, md.end)}">${num(end, 1)}%</td><td><a class="olink" href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=${esc(ADSNAP.account || "")}&selected_ad_ids=${esc(a.id)}" target="_blank" rel="noopener" title="${esc(xt("open"))}" aria-label="${esc(xt("open"))}">${svg("ext")}</a></td></tr>`).join("")}
     </tbody></table></div><p class="note" style="margin-top:10px">${esc(xt("hook_note"))}</p></div>` : "";
   box.innerHTML = fresh +
   (has ? `<div class="kpis">${kp.map(([a, v, d, c]) => `<div class="kpi${c === "accent" ? " accent" : ""}"><span class="eyebrow">${esc(a)}</span><span class="v${c === "bad" ? " vbad" : c === "ok" ? " vok" : ""}">${esc(v)}</span><span class="d">${esc(d)}</span></div>`).join("")}</div>` : "") +
-  goalHTML +
+  goalHTML + (has ? renderFatigueCard() : "") +
   `<div class="verdict"><div class="vi">${svg("bulb")}</div><div><span class="eyebrow">${esc(xt("reading"))}</span><h3>${esc(t("v_t"))}</h3><p>${esc(t("v_p"))}</p><div class="do">${t("v_do").map(x => `<span>${esc(x)}</span>`).join("")}</div><p class="note rule-n">${esc(t("v_rule"))}</p></div></div>` +
+  (has ? renderTagCard() : "") +
   funHTML +
   `<div class="grid2">
     <div class="card find"><h3>${esc(t("f1"))}</h3><ul>${f1.map((x, i) => `<li><span class="k">${i + 1}</span><p><b>${esc(x[0])}</b> ${esc(x[1])}</p></li>`).join("")}</ul></div>
     <div class="card find"><h3>${esc(t("f2"))}</h3><ul>${t("f2i").map((x, i) => `<li><span class="k">${i + 1}</span><p><b>${esc(x[0])}</b> ${esc(x[1])}</p></li>`).join("")}</ul></div>
-  </div>` + retHTML + tblHTML +
+  </div>` + retHTML + (has ? renderV3Card() : "") + tblHTML +
   `<div class="grid2">
     <div class="card"><div class="head"><h3 style="margin:0">${esc(t("cc_t"))}</h3><span class="note">${esc(t("cc_s"))}</span></div>
       <div class="qlist">${CUR_COPY.map((c, i) => `<div class="ql"><span class="tag">${esc(t("cc_lab")[i])}</span><span class="q">${esc(c[0])}${lang !== "es" ? `<span class="tr" style="display:block;margin-top:3px">${esc(c[1][lang])}</span>` : ""}</span>${cbtn(c[0])}</div>`).join("")}
@@ -2046,9 +2177,247 @@ async function importFiles(fileList){
   catch(e) { igMsg = gt("imp_err"); }
   renderIG();
 }
+/* ============ v7: etiquetas, cansaço e gancho real ============ */
+const TAGDIM = ["quem","pilar","fmt","gancho","destino","camp"];
+const TAGEDIT = ["quem","pilar","fmt","gancho"];
+let tagDim = store.get("lab-tagdim", "quem"); if (!TAGDIM.includes(tagDim)) tagDim = "quem";
+let tagEdit = false, V3 = null, v3Msg = "";
+const pctTxt = v => num(Math.abs(v) * 100, 0) + "%";
+const campShort = c => String(c || "").replace(/^teste\s*[—-]\s*/i, "").replace(/esp campaign\s*/i, "").replace(/\s+/g, " ").trim().slice(0, 40) || "—";
+function autoTags(a){
+  const n = a.name || "", c = a.campaign || "", j = /juan/i.test(n), m = /mafe/i.test(n);
+  return {
+    quem: j && m ? "juanmafe" : j ? "juan" : m ? "mafe" : "outro",
+    pilar: /rent/i.test(n) ? "renta" : "",
+    fmt: j && m ? "dialogo" : (j || m) ? "talking" : "",
+    gancho: "",
+    destino: /traffic|tr[aá]fego/i.test(n + " " + c) ? "trafego" : /\bLP\b/.test(n + " " + c) ? "lp" : "form",
+    camp: campShort(c)
+  };
+}
+function linkedTags(id){
+  const links = (BOARD && BOARD.links) || {};
+  for (const k of Object.keys(links)) {
+    if (!((links[k] || {}).ads || []).includes(id)) continue;
+    const o = IDEIAS.find(x => x.id === k) || ROTEIROS.find(x => x.id === k);
+    if (o) return {pilar: o.p, fmt: o.f};
+  }
+  return {};
+}
+function tagsOf(a){
+  const au = autoTags(a), li = linkedTags(a.id), ma = ((BOARD && BOARD.tags) || {})[a.id] || {}, v = {}, src = {};
+  TAGDIM.forEach(k => { if (ma[k]) { v[k] = ma[k]; src[k] = "m"; } else if (li[k]) { v[k] = li[k]; src[k] = "l"; } else { v[k] = au[k] || ""; src[k] = "a"; } });
+  return {v, src};
+}
+function tagLabel(dim, v){
+  if (!v) return xt("tag_none");
+  if (dim === "quem") return xt("quemv")[v] || v;
+  if (dim === "pilar") return PILAR[v] ? L(PILAR[v]) : v;
+  if (dim === "fmt") return FMT[v] ? L(FMT[v]) : v;
+  if (dim === "gancho") return FORM[v] ? L(FORM[v]) : v;
+  if (dim === "destino") return xt("destv")[v] || v;
+  return v;
+}
+function tagOptions(dim){
+  if (dim === "quem") return Object.keys(xt("quemv"));
+  if (dim === "pilar") return Object.keys(PILAR);
+  if (dim === "fmt") return Object.keys(FMT);
+  if (dim === "gancho") return Object.keys(FORM);
+  return [];
+}
+/* docs dos vínculos, divididos entre os anúncios pelos leads */
+function docsByAd(){
+  const out = {}, links = (BOARD && BOARD.links) || {}, ads = ADL();
+  Object.values(links).forEach(l => {
+    if (l == null || l.docs == null || l.docs === "") return;
+    const list = ads.filter(a => (l.ads || []).includes(a.id)); if (!list.length) return;
+    const tl = list.reduce((s, a) => s + (a.leads || 0), 0);
+    list.forEach(a => { out[a.id] = (out[a.id] || 0) + (+l.docs) * (tl ? (a.leads || 0) / tl : 1 / list.length); });
+  });
+  return out;
+}
+/* gancho real (exportação do Gerenciador) */
+function v3Map(){
+  const m = {}; if (!V3 || !Array.isArray(V3.rows)) return m;
+  const ads = ADL();
+  V3.rows.forEach(r => {
+    let a = r.id ? ads.find(x => x.id === String(r.id)) : null;
+    if (!a && r.name) {
+      const c = ads.filter(x => norm(x.name) === norm(r.name) && (!r.campaign || norm(x.campaign) === norm(r.campaign)) && (!r.adset || norm(x.adset) === norm(r.adset)));
+      if (c.length === 1) a = c[0];
+    }
+    if (!a) return;
+    const o = m[a.id] || (m[a.id] = {v3: 0, impr: 0, thru: 0});
+    o.v3 += +r.v3 || 0; o.impr += +r.impr || 0; o.thru += +r.thru || 0;
+  });
+  return m;
+}
+function groupStats(list, vm, dm){
+  const g = adAgg(list);
+  const cov = list.filter(a => vm[a.id] && vm[a.id].impr), ci = cov.reduce((s, a) => s + vm[a.id].impr, 0);
+  if (cov.length && ci >= .8 * list.reduce((s, a) => s + (vm[a.id] ? vm[a.id].impr : a.impr || 0), 0)) { g.hookReal = cov.reduce((s, a) => s + vm[a.id].v3, 0) / ci * 100; }
+  const d = list.reduce((s, a) => s + (dm[a.id] || 0), 0); g.docs = list.some(a => dm[a.id] != null) ? d : null; g.cpd = g.docs ? g.spend / g.docs : null;
+  g.n = list.length; return g;
+}
+function renderTagCard(){
+  const ads = ADL().filter(a => a.spend > 0); if (!ads.length) return "";
+  const vm = v3Map(), dm = docsByAd(), groups = {};
+  ads.forEach(a => { const k = tagsOf(a).v[tagDim] || ""; (groups[k] = groups[k] || []).push(a); });
+  const rows = Object.keys(groups).map(k => ({k, s: groupStats(groups[k], vm, dm)})).sort((x, y) => (x.s.leads >= 10 ? 0 : 1) - (y.s.leads >= 10 ? 0 : 1) || (x.s.cpl ?? 1e9) - (y.s.cpl ?? 1e9));
+  const ok = rows.filter(r => r.k && r.s.leads >= 10 && r.s.cpl), best = ok[0], worst = ok[ok.length - 1];
+  const maxC = Math.max(1, ...rows.map(r => r.s.cpl || 0));
+  const canEdit = igOwner && dbBoard();
+  const read = ok.length >= 2 ? xt("tag_read")(xt("tag_dims")[tagDim], tagLabel(tagDim, best.k), usd(best.s.cpl), num(best.s.leads), pctTxt(1 - best.s.cpl / worst.s.cpl), tagLabel(tagDim, worst.k)) : xt("tag_need");
+  return `<div class="card" id="tagcard"><div class="head"><h3 style="margin:0">${esc(xt("tag_t"))}</h3><span class="note">${esc(xt("tag_s"))}</span></div>
+    <div class="tagbar"><div class="vt tagdims" role="group" aria-label="${esc(xt("tag_t"))}">${TAGDIM.map(d => `<button type="button" data-tagdim="${d}" aria-pressed="${d === tagDim}">${esc(xt("tag_dims")[d])}</button>`).join("")}</div>
+    ${canEdit ? `<button type="button" class="cbtn" data-tagedit>${esc(xt("tag_edit"))}</button>` : ""}</div>
+    <p class="tagread${ok.length >= 2 ? "" : " note"}">${esc(read)}</p>
+    <div class="scroll"><table class="tagt"><thead><tr>${xt("tag_th").map((h, i) => `<th${i ? ' class="num"' : ""}>${esc(h)}</th>`).join("")}</tr></thead><tbody>
+    ${rows.map(({k, s}) => { const isBest = best && k === best.k && ok.length >= 2, small = s.leads < 10;
+      const hk = s.hookReal != null ? num(s.hookReal, 1) + "%" : s.hook == null ? "—" : num(s.hook, 1) + "%*";
+      return `<tr${isBest ? ' class="hi"' : ""}><td><b>${esc(tagLabel(tagDim, k))}</b>${isBest ? ` <span class="chip ok">${esc(xt("tag_best"))}</span>` : ""}${small ? ` <span class="chip">${esc(xt("tag_small"))}</span>` : ""}</td>
+        <td class="num cplc"><span class="cplb"><i style="width:${s.cpl ? (s.cpl / maxC * 100).toFixed(0) : 0}%"></i></span>${s.cpl ? usd(s.cpl) : "—"}</td>
+        <td class="num">${num(s.leads)}</td><td class="num">${usd(s.spend, 0)}</td><td class="num">${num(s.n)}</td>
+        <td class="num">${hk}</td><td class="num">${s.ret == null ? "—" : num(s.ret, 1) + "%"}</td><td class="num">${s.docs == null ? "—" : num(s.docs, s.docs % 1 ? 1 : 0)}</td><td class="num">${s.cpd ? usd(s.cpd, 0) : "—"}</td></tr>`; }).join("")}
+    </tbody></table></div>
+    ${tagEdit && canEdit ? renderTagEditor(ads) : ""}
+    <p class="note" style="margin-top:10px">${esc(xt("tag_note"))}</p></div>`;
+}
+function renderTagEditor(ads){
+  const man = (BOARD && BOARD.tags) || {};
+  return `<form class="tagedit" id="tagedit"><div class="head" style="margin-bottom:6px"><h3 style="margin:0">${esc(xt("tag_ed_t"))}</h3></div><p class="note" style="margin:0 0 10px">${esc(xt("tag_ed_s"))}</p>
+    <div class="scroll"><table><thead><tr>${xt("tag_cols").map(h => `<th>${esc(h)}</th>`).join("")}</tr></thead><tbody>
+    ${ads.slice().sort((a, b) => (b.status === "ACTIVE") - (a.status === "ACTIVE") || b.spend - a.spend).map(a => { const t = tagsOf(a), au = Object.assign(autoTags(a), linkedTags(a.id)), m = man[a.id] || {};
+      return `<tr><td><span class="sd ${a.status === "ACTIVE" ? "on" : ""}"></span>${esc(a.name)}<small style="display:block;color:var(--faint)">${esc(campShort(a.campaign))} · ${usd(a.spend, 0)}</small></td>
+      ${TAGEDIT.map(d => `<td><select name="${d}" data-ad="${esc(a.id)}" aria-label="${esc(xt("tag_dims")[d])}"><option value="">${esc(xt("tag_auto"))}${au[d] ? " · " + esc(tagLabel(d, au[d])) : ""}</option>${tagOptions(d).map(o => `<option value="${o}"${m[d] === o ? " selected" : ""}>${esc(tagLabel(d, o))}</option>`).join("")}</select></td>`).join("")}</tr>`; }).join("")}
+    </tbody></table></div>
+    <div class="lact" style="margin-top:12px"><button class="btn primary" type="submit">${esc(xt("save"))}</button><button class="btn" type="button" data-tagcancel>${esc(xt("cancel"))}</button></div></form>`;
+}
+document.addEventListener("click", e => {
+  const d = e.target.closest("[data-tagdim]");
+  if (d) { tagDim = d.dataset.tagdim; store.set("lab-tagdim", tagDim); refreshTagCard(); return; }
+  if (e.target.closest("[data-tagedit]")) { tagEdit = !tagEdit; refreshTagCard(); return; }
+  if (e.target.closest("[data-tagcancel]")) { tagEdit = false; refreshTagCard(); }
+});
+document.addEventListener("submit", e => {
+  const f = e.target.closest("#tagedit"); if (!f) return; e.preventDefault();
+  const tags = {};
+  f.querySelectorAll("select[data-ad]").forEach(s => { if (!s.value) return; (tags[s.dataset.ad] = tags[s.dataset.ad] || {})[s.name] = s.value; });
+  tagEdit = false; writeBoard({tags}); flash(xt("tag_saved")); refreshTagCard();
+});
+function refreshTagCard(){ const c = $("#tagcard"); if (c) c.outerHTML = renderTagCard(); }
+
+/* cansaço dos criativos */
+function fatigueRows(){
+  const W = (ADSNAP && ADSNAP.weekly) || []; if (!W.length) return null;
+  const wsum = (rs, k) => rs.reduce((s, r) => s + (+r[k] || 0), 0);
+  const wavg = (rs, f) => { const ti = wsum(rs, "impr"); return ti ? rs.reduce((s, r) => s + f(r) * r.impr, 0) / ti : null; };
+  return ADL().filter(a => a.status === "ACTIVE").map(a => {
+    const rows = W.filter(r => r.id === a.id && r.impr > 0).sort((x, y) => String(x.start).localeCompare(String(y.start)));
+    const last = rows[rows.length - 1], prev = rows.slice(0, -1), sig = [];
+    if (!last) return {a, rows, st: "new", sig};
+    const hk = r => r.impr ? r.p25 / r.impr * 100 : 0;
+    if (last.freq >= 2) sig.push(xt("fat_sig").freq(num(last.freq, 1)));
+    if (a.freq >= 2.5) sig.push(xt("fat_sig").cum(num(a.freq, 1)));
+    const base = prev.length && wsum(prev, "impr") >= 1000;
+    const pc = base ? wavg(prev, r => +r.ctr || 0) : null, ph = base ? wavg(prev, hk) : null;
+    const pl = base && wsum(prev, "leads") ? wsum(prev, "spend") / wsum(prev, "leads") : null;
+    const lc = +last.ctr || 0, lh = hk(last), ll = last.leads ? last.spend / last.leads : null;
+    if (pc && lc <= pc * .8) sig.push(xt("fat_sig").ctr(pctTxt(1 - lc / pc)));
+    if (ph && lh <= ph * .8) sig.push(xt("fat_sig").hook(pctTxt(1 - lh / ph)));
+    if (pl && ll && last.leads >= 3 && ll >= pl * 1.3) sig.push(xt("fat_sig").cpl(pctTxt(ll / pl - 1)));
+    const young = rows.length < 2 || wsum(rows, "impr") < 1000;
+    const st = sig.length >= 2 ? "tired" : sig.length === 1 ? (young ? "new" : "warn") : young ? "new" : "ok";
+    return {a, rows, st, sig, last, m: [[last.freq, null], [lc, pc], [ll, pl], [lh, ph]]};
+  }).sort((x, y) => ["tired","warn","new","ok"].indexOf(x.st) - ["tired","warn","new","ok"].indexOf(y.st));
+}
+function sparkCTR(rows){
+  const W = 96, H = 30, n = rows.length; if (!n) return "";
+  const mx = Math.max(...rows.map(r => +r.ctr || 0), .1), bw = W / Math.max(n, 4);
+  return `<svg class="spark" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(xt("fat_trend"))}: ${rows.map(r => num(+r.ctr || 0, 2) + "%").join(", ")}">${rows.map((r, i) => { const h = Math.max(2, (+r.ctr || 0) / mx * (H - 2)); return `<rect x="${(i * bw + bw * .18).toFixed(1)}" y="${(H - h).toFixed(1)}" width="${(bw * .64).toFixed(1)}" height="${h.toFixed(1)}" rx="1.5"${i === n - 1 ? ' class="last"' : ""}/>`; }).join("")}</svg>`;
+}
+function renderFatigueCard(){
+  const F = fatigueRows();
+  if (F === null) return ADL().some(a => a.status === "ACTIVE") ? `<div class="card"><div class="head"><h3 style="margin:0">${esc(xt("fat_t"))}</h3></div><p class="note">${esc(xt("fat_nodata"))}</p></div>` : "";
+  if (!F.length) return "";
+  const t = F.filter(r => r.st === "tired").length, w = F.filter(r => r.st === "warn").length;
+  const fmtM = (i, v) => v == null ? "—" : i === 0 ? num(v, 1) : i === 2 ? usd(v) : num(v, i === 1 ? 2 : 1) + "%";
+  return `<div class="card fatc"><div class="head"><h3 style="margin:0">${esc(xt("fat_t"))}</h3><span class="note">${esc(xt("fat_s"))}</span></div>
+    ${t || w ? `<p class="fatsum ${t ? "bad" : "warn"}">${svg("warn")}<span>${esc(xt("fat_sum")(t, w))}</span></p>` : `<p class="fatsum ok">${esc(xt("fat_none"))}</p>`}
+    <div class="fatl">${F.map(r => `<div class="fat ${r.st}">
+      <div class="fh"><span class="fchip ${r.st}">${esc(xt("fat_st")[r.st])}</span><b>${esc(r.a.name)}</b><small>${esc(campShort(r.a.campaign))} · ${esc(xt("fat_weeks")(r.rows.length))}</small></div>
+      ${r.m ? `<div class="fm">${xt("fat_m").map((h, i) => { const [v, p] = r.m[i]; return `<div><span>${esc(h)}</span><b>${esc(fmtM(i, v))}</b>${i && p != null ? `<small>${esc(xt("fat_prev"))}: ${esc(fmtM(i, p))}</small>` : `<small>${esc(xt("fat_last"))}</small>`}</div>`; }).join("")}
+        <div class="fsp"><span>${esc(xt("fat_trend"))}</span>${sparkCTR(r.rows)}</div></div>` : ""}
+      ${r.sig.length ? `<p class="fsig">${r.sig.map(esc).join(" · ")}</p>` : ""}
+      <p class="frec">${esc(xt("fat_rec")[r.st])}</p></div>`).join("")}</div>
+    <p class="note" style="margin-top:10px">${esc(xt("fat_rule"))}</p></div>`;
+}
+
+/* importação do Gerenciador (gancho real de 3 s) */
+function sniffDelim(text){ const l = text.split(/\r?\n/).find(x => x.trim()) || ""; const c = {",": 0, ";": 0, "\t": 0}; let q = false; for (const ch of l) { if (ch === '"') q = !q; else if (!q && ch in c) c[ch]++; } return Object.keys(c).sort((a, b) => c[b] - c[a])[0]; }
+function parseDelim(text, d){
+  const rows = []; let row = [], f = "", q = false;
+  for (let i = 0; i < text.length; i++) { const c = text[i];
+    if (q) { if (c === '"') { if (text[i + 1] === '"') { f += '"'; i++; } else q = false; } else f += c; }
+    else if (c === '"') q = true; else if (c === d) { row.push(f); f = ""; }
+    else if (c === "\n" || c === "\r") { if (c === "\r" && text[i + 1] === "\n") i++; row.push(f); rows.push(row); row = []; f = ""; } else f += c; }
+  if (f !== "" || row.length) { row.push(f); rows.push(row); }
+  return rows.filter(r => r.some(x => String(x).trim() !== ""));
+}
+function smartNum(v){
+  let s = String(v ?? "").trim().replace(/[^\d.,-]/g, ""); if (!s) return 0;
+  if (s.includes(",") && s.includes(".")) s = s.lastIndexOf(",") > s.lastIndexOf(".") ? s.replace(/\./g, "").replace(",", ".") : s.replace(/,/g, "");
+  else if (/^-?\d{1,3}(,\d{3})+$/.test(s)) s = s.replace(/,/g, "");
+  else if (/^-?\d{1,3}(\.\d{3})+$/.test(s)) s = s.replace(/\./g, "");
+  else s = s.replace(",", ".");
+  const n = parseFloat(s); return isFinite(n) ? n : 0;
+}
+function v3Columns(head){
+  const h = head.map(norm), find = f => h.findIndex(f), notCost = x => !/(cost|custo|costo|cpm|cpc|por |per )/.test(x);
+  return {
+    id: find(x => /(^| )id( |$)|identifica/.test(x) && /(anuncio|^ad |ad id)/.test(x) && !/(campa|conjunto|ad set|adset|conta|account|cuenta)/.test(x)),
+    name: find(x => /^(ad name|nome do anuncio|nombre del anuncio)$/.test(x)),
+    campaign: find(x => /^(campaign name|nome da campanha|nombre de la campana)$/.test(x)),
+    adset: find(x => /^(ad set name|nome do conjunto de anuncios|nombre del conjunto de anuncios)$/.test(x)),
+    impr: find(x => /^(impressions|impressoes|impresiones)$/.test(x)),
+    v3: find(x => notCost(x) && /3/.test(x) && /(second|segundo)/.test(x) && /(play|reproduc|visualiza|view)/.test(x)),
+    thru: find(x => notCost(x) && /thruplay/.test(x)),
+    start: find(x => /(reporting starts|inicio dos relatorios|inicio del informe|inicio de los informes)/.test(x)),
+    end: find(x => /(reporting ends|termino dos relatorios|fin del informe|fin de los informes)/.test(x))
+  };
+}
+async function importV3(file){
+  if (!igDB || !igOwner) return;
+  v3Msg = xt("v3_busy"); refreshV3Card();
+  try {
+    const text = decodeBuf(await file.arrayBuffer()), rows = parseDelim(text, sniffDelim(text));
+    const hi = rows.findIndex(r => v3Columns(r).v3 >= 0); if (hi < 0) { v3Msg = xt("v3_err"); refreshV3Card(); return; }
+    const C = v3Columns(rows[hi]), cell = (r, k) => C[k] >= 0 ? String(r[C[k]] ?? "").trim() : "";
+    const out = rows.slice(hi + 1).map(r => ({id: cell(r, "id").replace(/\.0+$/, ""), name: cell(r, "name"), campaign: cell(r, "campaign"), adset: cell(r, "adset"), impr: smartNum(cell(r, "impr")), v3: smartNum(cell(r, "v3")), thru: smartNum(cell(r, "thru"))}))
+      .filter(r => (r.id || r.name) && (r.v3 || r.impr));
+    const starts = rows.slice(hi + 1).map(r => cell(r, "start")).filter(Boolean).sort(), ends = rows.slice(hi + 1).map(r => cell(r, "end")).filter(Boolean).sort();
+    const doc = {importedAt: new Date().toISOString(), file: file.name, start: starts[0] || "", end: ends[ends.length - 1] || "", rows: out};
+    await igDB.doc("ads/video3s").set(doc); V3 = doc;
+    v3Msg = xt("v3_done")(Object.keys(v3Map()).length);
+  } catch(e) { v3Msg = xt("v3_save_err"); }
+  if (panoMode === "ads") renderAdsPanorama();
+}
+function renderV3Card(){
+  const ads = ADL().filter(a => a.spend > 0), vm = v3Map(), n = ads.filter(a => vm[a.id]).length;
+  const per = V3 && (V3.start || V3.end) ? [V3.start, V3.end].filter(Boolean).join(" – ") : "";
+  const bestA = ads.filter(a => vm[a.id] && vm[a.id].impr >= 1000).sort((x, y) => vm[y.id].v3 / vm[y.id].impr - vm[x.id].v3 / vm[x.id].impr)[0];
+  const canImp = igOwner && igDB;
+  return `<div class="card v3c" id="v3card"><div class="head"><h3 style="margin:0">${esc(xt("v3_t"))}</h3><span class="note">${esc(xt("v3_s"))} · ${esc(xt("v3_meta"))}</span></div>
+    <p style="margin:0 0 10px">${esc(n ? xt("v3_ok")(n, ads.length, per) : xt("v3_none"))}${bestA ? " " + esc(xt("v3_best")(bestA.name, num(vm[bestA.id].v3 / vm[bestA.id].impr * 100, 1) + "%")) : ""}</p>
+    ${canImp ? `<div class="igimp"><label class="btn primary" for="v3-file">${svg("upload")}${esc(xt("v3_imp"))}</label><input type="file" id="v3-file" accept=".csv,text/csv" hidden>${v3Msg ? `<span class="note">${esc(v3Msg)}</span>` : ""}</div>
+    <ol class="v3how">${xt("v3_how").map(s => `<li>${esc(s)}</li>`).join("")}</ol>` : ""}</div>`;
+}
+function refreshV3Card(){ const c = $("#v3card"); if (c) { c.outerHTML = renderV3Card(); } }
+document.addEventListener("change", e => { if (e.target && e.target.id === "v3-file") { const f = e.target.files[0]; e.target.value = ""; if (f) importV3(f); } });
+
 /* ============ dados compartilhados (db) ============ */
 /* cópia embutida (28/10/2026): a página nunca abre vazia; o db, quando existe, substitui */
-const ADSNAP0 = {"pulledAt": "2026-10-28T16:00:00Z", "range": "last_90d", "account": "1323854968064258", "ads": [{"id": "120252251757320548", "name": "Mafe/Juan Rent - Criativo 3", "status": "ACTIVE", "campaign": "ESP CAMPAIGN 044 — Sem SMS", "adset": "TARGET - MOBILE / WIFI", "spend": 54.89, "leads": 3, "impr": 1754, "ctr": 2.45, "freq": 1.237, "clicks": 25, "plays": 1658, "p25": 309, "thru": 185, "p100": 65}, {"id": "120251899298370548", "name": "Mafe/Juan Rent - Criativo 1", "status": "ACTIVE", "campaign": "ESP CAMPAIGN 044 — Sem SMS", "adset": "TARGET - MOBILE / WIFI", "spend": 1138.9, "leads": 87, "impr": 26843, "ctr": 3.04, "freq": 1.83, "clicks": 437, "plays": 24339, "p25": 4501, "thru": 2602, "p100": 1377}, {"id": "120251899298340548", "name": "Mafe/Juan Rent - Criativo 2", "status": "ACTIVE", "campaign": "ESP CAMPAIGN 044 — Sem SMS", "adset": "TARGET - MOBILE / WIFI", "spend": 2278.13, "leads": 183, "impr": 82024, "ctr": 3.0, "freq": 2.087, "clicks": 1325, "plays": 78034, "p25": 10718, "thru": 8664, "p100": 2758}, {"id": "120251792161860548", "name": "Mafe/Juan Rent - Criativo 2", "status": "PAUSED", "campaign": "ESP CAMPAIGN 043", "adset": "TARGET - MOBILE / WIFI", "spend": 95.17, "leads": 3, "impr": 3231, "ctr": 2.45, "freq": 1.255, "clicks": 49, "plays": 3055, "p25": 405, "thru": 222, "p100": 121}, {"id": "120251626137570548", "name": "Mafe/Juan Rent - Criativo 1", "status": "CAMPAIGN_PAUSED", "campaign": "ESP CAMPAIGN 043", "adset": "TARGET - MOBILE / WIFI", "spend": 2259.39, "leads": 169, "impr": 79190, "ctr": 2.6, "freq": 2.373, "clicks": 1235, "plays": 75898, "p25": 10117, "thru": 6694, "p100": 2588}, {"id": "120251626137520548", "name": "Mafe Rent", "status": "PAUSED", "campaign": "ESP CAMPAIGN 043", "adset": "TARGET - MOBILE / WIFI", "spend": 108.95, "leads": 7, "impr": 2762, "ctr": 2.57, "freq": 1.275, "clicks": 45, "plays": 2631, "p25": 256, "thru": 220, "p100": 69}, {"id": "120251626137510548", "name": "Mafe Rent", "status": "PAUSED", "campaign": "ESP CAMPAIGN 043", "adset": "Test - ALL LANGUAGES - MOBILE / WIFI", "spend": 50.42, "leads": 2, "impr": 1834, "ctr": 2.34, "freq": 1.22, "clicks": 25, "plays": 1752, "p25": 233, "thru": 119, "p100": 63}, {"id": "120251500831730548", "name": "JUAN/MAFE RENT — Cópia", "status": "PAUSED", "campaign": "ESP CAMPAIGN 042 - All states - Exclusao", "adset": "Test - ALL LANGUAGES - MOBILE / WIFI", "spend": 16.58, "leads": 1, "impr": 493, "ctr": 3.25, "freq": 1.139, "clicks": 4, "plays": 416, "p25": 70, "thru": 43, "p100": 14}, {"id": "120251500831510548", "name": "MAFE RENT", "status": "PAUSED", "campaign": "ESP CAMPAIGN 042 - All states - Exclusao", "adset": "TARGET - MOBILE / WIFI", "spend": 47.03, "leads": 2, "impr": 1195, "ctr": 2.68, "freq": 1.216, "clicks": 18, "plays": 1052, "p25": 104, "thru": 74, "p100": 23}, {"id": "120251500831500548", "name": "JUAN RENT", "status": "CAMPAIGN_PAUSED", "campaign": "ESP CAMPAIGN 042 - All states - Exclusao", "adset": "TARGET - MOBILE / WIFI", "spend": 322.99, "leads": 13, "impr": 6485, "ctr": 3.35, "freq": 1.432, "clicks": 126, "plays": 6165, "p25": 1014, "thru": 553, "p100": 195}, {"id": "120251484392340548", "name": "JUAN RENT", "status": "PAUSED", "campaign": "ESP CAMPAIGN 041 - Exclusao", "adset": "TARGET - MOBILE / WIFI", "spend": 29.59, "leads": 0, "impr": 935, "ctr": 2.57, "freq": 1.197, "clicks": 16, "plays": 876, "p25": 151, "thru": 99, "p100": 31}, {"id": "120251484291210548", "name": "JUAN/MAFE RENT", "status": "PAUSED", "campaign": "ESP CAMPAIGN 041 - Exclusao", "adset": "Test - ALL LANGUAGES - MOBILE / WIFI", "spend": 365.7, "leads": 15, "impr": 16337, "ctr": 2.39, "freq": 1.387, "clicks": 239, "plays": 14280, "p25": 1684, "thru": 1146, "p100": 387}, {"id": "120251484291190548", "name": "MAFE RENT", "status": "CAMPAIGN_PAUSED", "campaign": "ESP CAMPAIGN 041 - Exclusao", "adset": "TARGET - MOBILE / WIFI", "spend": 729.01, "leads": 39, "impr": 34188, "ctr": 2.37, "freq": 1.621, "clicks": 438, "plays": 32165, "p25": 2416, "thru": 1913, "p100": 666}, {"id": "120251398134670548", "name": "Rent - LP + FORMS", "status": "CAMPAIGN_PAUSED", "campaign": "ESP CAMPAIGN 01 LP", "adset": "TARGET - MOBILE / WIFI", "spend": 246.87, "leads": 6, "impr": 8110, "ctr": 3.3, "freq": 1.386, "clicks": 162, "plays": 5473, "p25": 1103, "thru": 741, "p100": 305}, {"id": "120251398134660548", "name": "Rent - LP", "status": "CAMPAIGN_PAUSED", "campaign": "ESP CAMPAIGN 01 LP", "adset": "TARGET - MOBILE / WIFI", "spend": 78.04, "leads": 2, "impr": 2638, "ctr": 3.98, "freq": 1.186, "clicks": 67, "plays": 1801, "p25": 399, "thru": 256, "p100": 113}, {"id": "120251370232860548", "name": "Tráfego - imagens e vídeo", "status": "PAUSED", "campaign": "ESP CAMPAIGN TRAFFIC 01", "adset": "Traffic L.P", "spend": 14.72, "leads": 0, "impr": 3617, "ctr": 2.41, "freq": 1.109, "clicks": 77, "plays": 447, "p25": 146, "thru": 108, "p100": 46}, {"id": "120251370007790548", "name": "Tráfego - vídeos", "status": "CAMPAIGN_PAUSED", "campaign": "ESP CAMPAIGN TRAFFIC 01", "adset": "Traffic L.P", "spend": 80.23, "leads": 0, "impr": 9149, "ctr": 7.21, "freq": 1.362, "clicks": 473, "plays": 6465, "p25": 2002, "thru": 1291, "p100": 540}, {"id": "120251299974510548", "name": "JUAN RENT", "status": "CAMPAIGN_PAUSED", "campaign": "Teste — ESP CAMPAIGN 038", "adset": "Test - ALL LANGUAGES - MOBILE / WIFI", "spend": 53.92, "leads": 5, "impr": 1458, "ctr": 2.81, "freq": 1.551, "clicks": 23, "plays": 1239, "p25": 125, "thru": 81, "p100": 39}, {"id": "120251299680460548", "name": "Mafe Rent — Cópia", "status": "CAMPAIGN_PAUSED", "campaign": "Teste — ESP CAMPAIGN SMS 040", "adset": "TARGET - MOBILE / WIFI", "spend": 262.64, "leads": 19, "impr": 7905, "ctr": 2.53, "freq": 1.527, "clicks": 107, "plays": 5154, "p25": 819, "thru": 507, "p100": 167}, {"id": "120251299680390548", "name": "Mafe Rent", "status": "CAMPAIGN_PAUSED", "campaign": "Teste — ESP CAMPAIGN SMS 040", "adset": "TARGET - MOBILE / WIFI", "spend": 7.52, "leads": 1, "impr": 190, "ctr": 2.11, "freq": 1.275, "clicks": 3, "plays": 121, "p25": 16, "thru": 12, "p100": 4}, {"id": "120251299680380548", "name": "Mafe Rent", "status": "CAMPAIGN_PAUSED", "campaign": "Teste — ESP CAMPAIGN SMS 040", "adset": "Test - ALL LANGUAGES - MOBILE / WIFI", "spend": 880.1, "leads": 73, "impr": 27136, "ctr": 3.49, "freq": 1.604, "clicks": 569, "plays": 19785, "p25": 3827, "thru": 2358, "p100": 884}, {"id": "120251248895450548", "name": "Mafe Rent", "status": "CAMPAIGN_PAUSED", "campaign": "ESP CAMPAIGN 039", "adset": "TARGET - MOBILE / WIFI", "spend": 2.23, "leads": 0, "impr": 85, "ctr": 3.53, "freq": 1.09, "clicks": 1, "plays": 77, "p25": 6, "thru": 4, "p100": 1}, {"id": "120251248895440548", "name": "Mafe Rent", "status": "ADSET_PAUSED", "campaign": "ESP CAMPAIGN 039", "adset": "Test - ALL LANGUAGES - MOBILE / WIFI", "spend": 149.64, "leads": 4, "impr": 5282, "ctr": 2.06, "freq": 1.595, "clicks": 63, "plays": 4663, "p25": 475, "thru": 302, "p100": 134}, {"id": "120250766474860548", "name": "JUAN RENT", "status": "CAMPAIGN_PAUSED", "campaign": "Teste — ESP CAMPAIGN 038", "adset": "Test - ALL LANGUAGES - MOBILE / WIFI", "spend": 2474.78, "leads": 207, "impr": 115116, "ctr": 3.39, "freq": 2.299, "clicks": 2214, "plays": 106610, "p25": 19319, "thru": 12096, "p100": 4043}]};
+const ADSNAP0 = {"pulledAt":"2026-10-28T17:00:13Z","range":"last_90d","account":"1323854968064258","ads":[{"id":"120250766474860548","name":"JUAN RENT","status":"CAMPAIGN_PAUSED","campaign":"Teste — ESP CAMPAIGN 038","adset":"Test - ALL LANGUAGES - MOBILE / WIFI","spend":2474.78,"leads":207,"impr":115116,"ctr":3.39,"freq":2.299147,"clicks":2214,"plays":106610,"p25":19319,"thru":12096,"p100":4043},{"id":"120251899298340548","name":"Mafe/Juan Rent - Criativo 2","status":"ACTIVE","campaign":"ESP CAMPAIGN 044 — Sem SMS","adset":"TARGET - MOBILE / WIFI","spend":2278.13,"leads":183,"impr":82024,"ctr":3.0,"freq":2.086859,"clicks":1325,"plays":78035,"p25":10718,"thru":8664,"p100":2758},{"id":"120251626137570548","name":"Mafe/Juan Rent - Criativo 1","status":"CAMPAIGN_PAUSED","campaign":"ESP CAMPAIGN 043","adset":"TARGET - MOBILE / WIFI","spend":2259.39,"leads":169,"impr":79190,"ctr":2.6,"freq":2.372592,"clicks":1235,"plays":75898,"p25":10117,"thru":6694,"p100":2588},{"id":"120246254378990548","name":"Mafe Rent","status":"CAMPAIGN_PAUSED","campaign":"Teste — ESP CAMPAIGN 035","adset":"Test - ALL LANGUAGES - MOBILE / WIFI","spend":2058.89,"leads":177,"impr":87084,"ctr":2.31,"freq":1.876366,"clicks":1104,"plays":80856,"p25":9427,"thru":5193,"p100":2641},{"id":"120251899298370548","name":"Mafe/Juan Rent - Criativo 1","status":"ACTIVE","campaign":"ESP CAMPAIGN 044 — Sem SMS","adset":"TARGET - MOBILE / WIFI","spend":1138.9,"leads":87,"impr":26843,"ctr":3.04,"freq":1.829913,"clicks":437,"plays":24339,"p25":4501,"thru":2602,"p100":1377},{"id":"120251299680380548","name":"Mafe Rent","status":"CAMPAIGN_PAUSED","campaign":"Teste — ESP CAMPAIGN  SMS 040","adset":"Test - ALL LANGUAGES - MOBILE / WIFI","spend":880.1,"leads":73,"impr":27136,"ctr":3.49,"freq":1.603688,"clicks":569,"plays":19785,"p25":3827,"thru":2358,"p100":884},{"id":"120251484291190548","name":"MAFE RENT","status":"CAMPAIGN_PAUSED","campaign":"ESP CAMPAIGN 041 - Exclusao","adset":"TARGET - MOBILE / WIFI","spend":729.01,"leads":39,"impr":34188,"ctr":2.37,"freq":1.620668,"clicks":438,"plays":32165,"p25":2416,"thru":1913,"p100":666},{"id":"120251484291210548","name":"JUAN/MAFE RENT","status":"PAUSED","campaign":"ESP CAMPAIGN 041 - Exclusao","adset":"Test - ALL LANGUAGES - MOBILE / WIFI","spend":365.7,"leads":15,"impr":16337,"ctr":2.39,"freq":1.387195,"clicks":239,"plays":14280,"p25":1684,"thru":1146,"p100":387},{"id":"120251500831500548","name":"JUAN RENT","status":"CAMPAIGN_PAUSED","campaign":"ESP CAMPAIGN 042 - All states - Exclusao","adset":"TARGET - MOBILE / WIFI","spend":322.99,"leads":13,"impr":6485,"ctr":3.35,"freq":1.4322,"clicks":126,"plays":6165,"p25":1014,"thru":553,"p100":195},{"id":"120251299680460548","name":"Mafe Rent — Cópia","status":"CAMPAIGN_PAUSED","campaign":"Teste — ESP CAMPAIGN  SMS 040","adset":"TARGET - MOBILE / WIFI","spend":262.64,"leads":19,"impr":7905,"ctr":2.53,"freq":1.526651,"clicks":107,"plays":5154,"p25":819,"thru":507,"p100":167},{"id":"120251398134670548","name":"Rent - LP + FORMS","status":"CAMPAIGN_PAUSED","campaign":"ESP CAMPAIGN 01 LP","adset":"TARGET - MOBILE / WIFI","spend":246.87,"leads":6,"impr":8110,"ctr":3.3,"freq":1.385614,"clicks":162,"plays":5473,"p25":1103,"thru":741,"p100":305},{"id":"120251248895440548","name":"Mafe Rent","status":"ADSET_PAUSED","campaign":"ESP CAMPAIGN 039","adset":"Test - ALL LANGUAGES - MOBILE / WIFI","spend":149.64,"leads":4,"impr":5282,"ctr":2.06,"freq":1.595288,"clicks":63,"plays":4663,"p25":475,"thru":302,"p100":134},{"id":"120251626137520548","name":"Mafe Rent","status":"PAUSED","campaign":"ESP CAMPAIGN 043","adset":"TARGET - MOBILE / WIFI","spend":108.95,"leads":7,"impr":2762,"ctr":2.57,"freq":1.275162,"clicks":45,"plays":2631,"p25":256,"thru":220,"p100":69},{"id":"120251792161860548","name":"Mafe/Juan Rent - Criativo 2","status":"PAUSED","campaign":"ESP CAMPAIGN 043","adset":"TARGET - MOBILE / WIFI","spend":95.17,"leads":3,"impr":3231,"ctr":2.45,"freq":1.255245,"clicks":49,"plays":3055,"p25":405,"thru":222,"p100":121},{"id":"120251370007790548","name":"Novo anúncio de Tráfego - videos","status":"CAMPAIGN_PAUSED","campaign":"ESP CAMPAIGN TRAFFIC 01","adset":"Traffic L.P","spend":80.23,"leads":0,"impr":9149,"ctr":7.21,"freq":1.362269,"clicks":473,"plays":6465,"p25":2002,"thru":1291,"p100":540},{"id":"120251398134660548","name":"Rent - LP","status":"CAMPAIGN_PAUSED","campaign":"ESP CAMPAIGN 01 LP","adset":"TARGET - MOBILE / WIFI","spend":78.04,"leads":2,"impr":2638,"ctr":3.98,"freq":1.186151,"clicks":67,"plays":1801,"p25":399,"thru":256,"p100":113},{"id":"120252251757320548","name":"Mafe/Juan Rent - Criativo 3","status":"ACTIVE","campaign":"ESP CAMPAIGN 044 — Sem SMS","adset":"TARGET - MOBILE / WIFI","spend":54.89,"leads":3,"impr":1754,"ctr":2.45,"freq":1.236953,"clicks":25,"plays":1658,"p25":309,"thru":185,"p100":65},{"id":"120251299974510548","name":"JUAN RENT","status":"CAMPAIGN_PAUSED","campaign":"Teste — ESP CAMPAIGN 038","adset":"Test - ALL LANGUAGES - MOBILE / WIFI","spend":53.92,"leads":5,"impr":1458,"ctr":2.81,"freq":1.551064,"clicks":23,"plays":1239,"p25":125,"thru":81,"p100":39},{"id":"120251626137510548","name":"Mafe Rent","status":"PAUSED","campaign":"ESP CAMPAIGN 043","adset":"Test - ALL LANGUAGES - MOBILE / WIFI","spend":50.42,"leads":2,"impr":1834,"ctr":2.34,"freq":1.220226,"clicks":25,"plays":1752,"p25":233,"thru":119,"p100":63},{"id":"120251500831510548","name":"MAFE RENT","status":"PAUSED","campaign":"ESP CAMPAIGN 042 - All states - Exclusao","adset":"TARGET - MOBILE / WIFI","spend":47.03,"leads":2,"impr":1195,"ctr":2.68,"freq":1.215666,"clicks":18,"plays":1052,"p25":104,"thru":74,"p100":23},{"id":"120251484392340548","name":"JUAN RENT","status":"PAUSED","campaign":"ESP CAMPAIGN 041 - Exclusao","adset":"TARGET - MOBILE / WIFI","spend":29.59,"leads":0,"impr":935,"ctr":2.57,"freq":1.197183,"clicks":16,"plays":876,"p25":151,"thru":99,"p100":31},{"id":"120251500831730548","name":"JUAN/MAFE RENT — Cópia","status":"PAUSED","campaign":"ESP CAMPAIGN 042 - All states - Exclusao","adset":"Test - ALL LANGUAGES - MOBILE / WIFI","spend":16.58,"leads":1,"impr":493,"ctr":3.25,"freq":1.138568,"clicks":4,"plays":416,"p25":70,"thru":43,"p100":14},{"id":"120251370232860548","name":"Novo anúncio de Tráfego - imagens e video","status":"PAUSED","campaign":"ESP CAMPAIGN TRAFFIC 01","adset":"Traffic L.P","spend":14.72,"leads":0,"impr":3617,"ctr":2.41,"freq":1.109169,"clicks":77,"plays":447,"p25":146,"thru":108,"p100":46},{"id":"120251299680390548","name":"Mafe Rent","status":"CAMPAIGN_PAUSED","campaign":"Teste — ESP CAMPAIGN  SMS 040","adset":"TARGET - MOBILE / WIFI","spend":7.52,"leads":1,"impr":190,"ctr":2.11,"freq":1.275168,"clicks":3,"plays":121,"p25":16,"thru":12,"p100":4},{"id":"120251248895450548","name":"Mafe Rent","status":"CAMPAIGN_PAUSED","campaign":"ESP CAMPAIGN 039","adset":"TARGET - MOBILE / WIFI","spend":2.23,"leads":0,"impr":85,"ctr":3.53,"freq":1.089744,"clicks":1,"plays":77,"p25":6,"thru":4,"p100":1}],"weekly":[{"id":"120251626137570548","start":"2026-09-30","spend":140.45,"leads":5,"impr":3516,"reach":2981,"freq":1.17947,"ctr":2.96,"clicks":71,"p25":569,"thru":328},{"id":"120251792161860548","start":"2026-09-30","spend":25.62,"leads":2,"impr":701,"reach":625,"freq":1.1216,"ctr":2.57,"clicks":12,"p25":97,"thru":59},{"id":"120251899298340548","start":"2026-09-30","spend":428.48,"leads":32,"impr":17303,"reach":11931,"freq":1.450256,"ctr":2.68,"clicks":266,"p25":1725,"thru":1406},{"id":"120251899298370548","start":"2026-09-30","spend":254.87,"leads":18,"impr":7985,"reach":5246,"freq":1.522112,"ctr":2.17,"clicks":103,"p25":983,"thru":662},{"id":"120251899298340548","start":"2026-10-07","spend":684.19,"leads":69,"impr":25120,"reach":16219,"freq":1.548801,"ctr":3.02,"clicks":390,"p25":3083,"thru":2464},{"id":"120251899298370548","start":"2026-10-07","spend":294.85,"leads":30,"impr":6648,"reach":4282,"freq":1.552546,"ctr":3.17,"clicks":115,"p25":1188,"thru":625},{"id":"120251899298340548","start":"2026-10-14","spend":623.98,"leads":46,"impr":22058,"reach":14951,"freq":1.475353,"ctr":3.11,"clicks":366,"p25":3238,"thru":2652},{"id":"120251899298370548","start":"2026-10-14","spend":280.97,"leads":25,"impr":5873,"reach":3764,"freq":1.560308,"ctr":3.9,"clicks":110,"p25":1220,"thru":680},{"id":"120251899298340548","start":"2026-10-21","spend":541.48,"leads":36,"impr":17543,"reach":12433,"freq":1.411003,"ctr":3.16,"clicks":303,"p25":2672,"thru":2142},{"id":"120251899298370548","start":"2026-10-21","spend":308.21,"leads":14,"impr":6337,"reach":4720,"freq":1.342585,"ctr":3.2,"clicks":109,"p25":1110,"thru":635},{"id":"120252251757320548","start":"2026-10-21","spend":54.89,"leads":3,"impr":1754,"reach":1418,"freq":1.236953,"ctr":2.45,"clicks":25,"p25":309,"thru":185}],"weeklyRange":"last_28d"};
 const IG0 = {"account":"towerhomeloans_esp","daily":{"clicks":{"2026-07-30":20,"2026-07-31":10,"2026-08-01":19,"2026-08-02":20,"2026-08-03":7,"2026-08-04":8,"2026-08-05":19,"2026-08-06":9,"2026-08-07":17,"2026-08-08":7,"2026-08-09":10,"2026-08-10":6,"2026-08-11":11,"2026-08-12":0,"2026-08-13":9,"2026-08-14":1,"2026-08-15":2,"2026-08-16":2,"2026-08-17":1,"2026-08-18":7,"2026-08-19":15,"2026-08-20":8,"2026-08-21":2,"2026-08-22":7,"2026-08-23":6,"2026-08-24":13,"2026-08-25":9,"2026-08-26":15,"2026-08-27":8,"2026-08-28":8,"2026-08-29":8,"2026-08-30":5,"2026-08-31":5,"2026-09-01":5,"2026-09-02":16,"2026-09-03":7,"2026-09-04":5,"2026-09-05":7,"2026-09-06":2,"2026-09-07":1,"2026-09-08":6,"2026-09-09":6,"2026-09-10":9,"2026-09-11":10,"2026-09-12":8,"2026-09-13":13,"2026-09-14":11,"2026-09-15":8,"2026-09-16":11,"2026-09-17":8,"2026-09-18":2,"2026-09-19":8,"2026-09-20":12,"2026-09-21":5,"2026-09-22":6,"2026-09-23":5,"2026-09-24":6,"2026-09-25":5,"2026-09-26":6,"2026-09-27":4,"2026-09-28":0,"2026-09-29":6,"2026-09-30":5,"2026-10-01":0,"2026-10-02":0,"2026-10-03":0,"2026-10-04":0,"2026-10-05":0,"2026-10-06":0,"2026-10-07":0,"2026-10-08":0,"2026-10-09":0,"2026-10-10":0,"2026-10-11":0,"2026-10-12":0,"2026-10-13":0,"2026-10-14":0,"2026-10-15":0,"2026-10-16":0,"2026-10-17":0,"2026-10-18":0,"2026-10-19":0,"2026-10-20":0,"2026-10-21":0,"2026-10-22":0,"2026-10-23":0,"2026-10-24":0,"2026-10-25":0,"2026-10-26":0,"2026-10-27":0},"followers":{"2026-07-30":3,"2026-07-31":1,"2026-08-01":2,"2026-08-02":7,"2026-08-03":1,"2026-08-04":4,"2026-08-05":2,"2026-08-06":4,"2026-08-07":1,"2026-08-09":2,"2026-08-11":5,"2026-08-14":1,"2026-08-15":1,"2026-08-17":1,"2026-08-18":2,"2026-08-19":2,"2026-08-20":4,"2026-08-21":3,"2026-08-22":4,"2026-08-23":1,"2026-08-24":2,"2026-08-25":2,"2026-08-26":1,"2026-08-28":1,"2026-09-01":4,"2026-09-02":4,"2026-09-03":6,"2026-09-04":2,"2026-09-05":5,"2026-09-07":4,"2026-09-09":4,"2026-09-10":3,"2026-09-11":2,"2026-09-12":5,"2026-09-13":4,"2026-09-14":2,"2026-09-15":3,"2026-09-16":2,"2026-09-17":4,"2026-09-18":1,"2026-09-20":1,"2026-09-21":1,"2026-09-22":6,"2026-09-26":4,"2026-09-27":2,"2026-09-29":2,"2026-10-02":2,"2026-10-05":1,"2026-10-06":1,"2026-10-10":1,"2026-10-11":1,"2026-10-12":1,"2026-10-13":1,"2026-10-14":1,"2026-10-16":1,"2026-10-17":1,"2026-10-18":1,"2026-10-19":3,"2026-10-21":1,"2026-10-25":1,"2026-10-26":1},"interactions":{"2026-07-30":29,"2026-07-31":26,"2026-08-01":21,"2026-08-02":30,"2026-08-03":12,"2026-08-04":26,"2026-08-05":24,"2026-08-06":21,"2026-08-07":19,"2026-08-08":11,"2026-08-09":20,"2026-08-10":9,"2026-08-11":21,"2026-08-12":5,"2026-08-13":11,"2026-08-14":3,"2026-08-15":3,"2026-08-16":9,"2026-08-17":6,"2026-08-18":26,"2026-08-19":27,"2026-08-20":5,"2026-08-21":27,"2026-08-22":11,"2026-08-23":11,"2026-08-24":7,"2026-08-25":11,"2026-08-26":5,"2026-08-27":7,"2026-08-28":6,"2026-08-29":3,"2026-08-30":11,"2026-08-31":9,"2026-09-01":13,"2026-09-02":26,"2026-09-03":11,"2026-09-04":19,"2026-09-05":20,"2026-09-06":5,"2026-09-07":8,"2026-09-08":8,"2026-09-09":9,"2026-09-10":9,"2026-09-11":6,"2026-09-12":10,"2026-09-13":8,"2026-09-14":11,"2026-09-15":16,"2026-09-16":15,"2026-09-17":17,"2026-09-18":33,"2026-09-19":5,"2026-09-20":4,"2026-09-21":5,"2026-09-22":11,"2026-09-23":6,"2026-09-24":2,"2026-09-25":6,"2026-09-26":6,"2026-09-27":7,"2026-09-28":0,"2026-09-29":3,"2026-09-30":12,"2026-10-01":0,"2026-10-02":4,"2026-10-03":1,"2026-10-04":0,"2026-10-05":1,"2026-10-06":0,"2026-10-07":2,"2026-10-08":2,"2026-10-09":1,"2026-10-10":0,"2026-10-11":2,"2026-10-12":0,"2026-10-13":0,"2026-10-14":0,"2026-10-15":0,"2026-10-16":0,"2026-10-17":2,"2026-10-18":0,"2026-10-19":0,"2026-10-20":3,"2026-10-21":2,"2026-10-22":0,"2026-10-23":3,"2026-10-24":1,"2026-10-25":0,"2026-10-26":0,"2026-10-27":3},"reach":{"2026-07-30":840,"2026-07-31":1108,"2026-08-01":1446,"2026-08-02":1229,"2026-08-03":909,"2026-08-04":1003,"2026-08-05":1161,"2026-08-06":1238,"2026-08-07":1253,"2026-08-08":875,"2026-08-09":1033,"2026-08-10":813,"2026-08-11":1071,"2026-08-12":372,"2026-08-13":320,"2026-08-14":201,"2026-08-15":220,"2026-08-16":369,"2026-08-17":309,"2026-08-18":453,"2026-08-19":654,"2026-08-20":361,"2026-08-21":533,"2026-08-22":575,"2026-08-23":563,"2026-08-24":423,"2026-08-25":630,"2026-08-26":495,"2026-08-27":704,"2026-08-28":521,"2026-08-29":481,"2026-08-30":513,"2026-08-31":327,"2026-09-01":953,"2026-09-02":1813,"2026-09-03":1203,"2026-09-04":766,"2026-09-05":521,"2026-09-06":401,"2026-09-07":407,"2026-09-08":557,"2026-09-09":588,"2026-09-10":631,"2026-09-11":639,"2026-09-12":704,"2026-09-13":534,"2026-09-14":398,"2026-09-15":513,"2026-09-16":525,"2026-09-17":529,"2026-09-18":683,"2026-09-19":413,"2026-09-20":674,"2026-09-21":288,"2026-09-22":551,"2026-09-23":569,"2026-09-24":483,"2026-09-25":601,"2026-09-26":507,"2026-09-27":478,"2026-09-28":3,"2026-09-29":306,"2026-09-30":407,"2026-10-01":154,"2026-10-02":35,"2026-10-03":8,"2026-10-04":6,"2026-10-05":14,"2026-10-06":10,"2026-10-07":67,"2026-10-08":24,"2026-10-09":12,"2026-10-10":11,"2026-10-11":12,"2026-10-12":12,"2026-10-13":9,"2026-10-14":6,"2026-10-15":8,"2026-10-16":8,"2026-10-17":5,"2026-10-18":6,"2026-10-19":6,"2026-10-20":13,"2026-10-21":12,"2026-10-22":6,"2026-10-23":4,"2026-10-24":4,"2026-10-25":3,"2026-10-26":2,"2026-10-27":3},"views":{"2026-07-30":1212,"2026-07-31":1414,"2026-08-01":1831,"2026-08-02":1500,"2026-08-03":1159,"2026-08-04":1758,"2026-08-05":1562,"2026-08-06":1550,"2026-08-07":1532,"2026-08-08":1032,"2026-08-09":1210,"2026-08-10":984,"2026-08-11":1628,"2026-08-12":479,"2026-08-13":450,"2026-08-14":308,"2026-08-15":299,"2026-08-16":685,"2026-08-17":440,"2026-08-18":617,"2026-08-19":990,"2026-08-20":540,"2026-08-21":1137,"2026-08-22":807,"2026-08-23":783,"2026-08-24":595,"2026-08-25":830,"2026-08-26":586,"2026-08-27":888,"2026-08-28":684,"2026-08-29":692,"2026-08-30":717,"2026-08-31":441,"2026-09-01":1285,"2026-09-02":2585,"2026-09-03":1584,"2026-09-04":1326,"2026-09-05":714,"2026-09-06":538,"2026-09-07":509,"2026-09-08":737,"2026-09-09":782,"2026-09-10":741,"2026-09-11":863,"2026-09-12":917,"2026-09-13":714,"2026-09-14":534,"2026-09-15":646,"2026-09-16":711,"2026-09-17":667,"2026-09-18":1389,"2026-09-19":615,"2026-09-20":892,"2026-09-21":433,"2026-09-22":730,"2026-09-23":712,"2026-09-24":600,"2026-09-25":799,"2026-09-26":607,"2026-09-27":632,"2026-09-28":16,"2026-09-29":395,"2026-09-30":660,"2026-10-01":259,"2026-10-02":85,"2026-10-03":40,"2026-10-04":28,"2026-10-05":33,"2026-10-06":21,"2026-10-07":382,"2026-10-08":51,"2026-10-09":92,"2026-10-10":49,"2026-10-11":56,"2026-10-12":30,"2026-10-13":50,"2026-10-14":23,"2026-10-15":42,"2026-10-16":35,"2026-10-17":70,"2026-10-18":41,"2026-10-19":73,"2026-10-20":89,"2026-10-21":103,"2026-10-22":26,"2026-10-23":31,"2026-10-24":37,"2026-10-25":18,"2026-10-26":12,"2026-10-27":47},"visits":{"2026-07-30":6,"2026-07-31":3,"2026-08-01":5,"2026-08-02":6,"2026-08-03":2,"2026-08-04":4,"2026-08-05":3,"2026-08-06":8,"2026-08-07":5,"2026-08-08":6,"2026-08-09":3,"2026-08-10":4,"2026-08-11":2,"2026-08-12":1,"2026-08-13":0,"2026-08-14":3,"2026-08-15":2,"2026-08-16":2,"2026-08-17":3,"2026-08-18":3,"2026-08-19":5,"2026-08-20":3,"2026-08-21":14,"2026-08-22":10,"2026-08-23":3,"2026-08-24":4,"2026-08-25":6,"2026-08-26":6,"2026-08-27":3,"2026-08-28":6,"2026-08-29":4,"2026-08-30":3,"2026-08-31":1,"2026-09-01":2,"2026-09-02":5,"2026-09-03":7,"2026-09-04":3,"2026-09-05":5,"2026-09-06":1,"2026-09-07":1,"2026-09-08":4,"2026-09-09":10,"2026-09-10":2,"2026-09-11":3,"2026-09-12":9,"2026-09-13":10,"2026-09-14":8,"2026-09-15":4,"2026-09-16":7,"2026-09-17":8,"2026-09-18":9,"2026-09-19":3,"2026-09-20":4,"2026-09-21":3,"2026-09-22":7,"2026-09-23":0,"2026-09-24":3,"2026-09-25":3,"2026-09-26":4,"2026-09-27":5,"2026-09-28":1,"2026-09-29":2,"2026-09-30":7,"2026-10-01":5,"2026-10-02":3,"2026-10-03":1,"2026-10-04":1,"2026-10-05":4,"2026-10-06":4,"2026-10-07":8,"2026-10-08":6,"2026-10-09":2,"2026-10-10":3,"2026-10-11":4,"2026-10-12":3,"2026-10-13":8,"2026-10-14":4,"2026-10-15":5,"2026-10-16":5,"2026-10-17":6,"2026-10-18":3,"2026-10-19":7,"2026-10-20":3,"2026-10-21":7,"2026-10-22":0,"2026-10-23":2,"2026-10-24":1,"2026-10-25":1,"2026-10-26":1,"2026-10-27":2}},"posts":{"17881485192527143":{"cap":"","date":"2026-09-14","dur":11,"id":"17881485192527143","likes":0,"link":"https://www.instagram.com/stories/towerhomeloans_esp/3986229811055607862","name":"Tower Homeloans","nav":21,"reach":20,"replies":0,"shares":0,"type":"story","user":"towerhomeloans_esp","views":23,"visits":0},"17886230124678653":{"cap":"🏡✨ ¡Tenemos algo nuevo para ti! En Tower Home Loans queremos que comprar una casa sea un proceso más claro, sencillo y acompañado. Por eso ","comments":0,"date":"2026-08-21","dur":0,"follows":0,"id":"17886230124678653","likes":6,"link":"https://www.instagram.com/p/DcT_wPqlUIz/","name":"Tower Homeloans","reach":235,"saves":1,"shares":0,"type":"carrossel","user":"towerhomeloans_esp","views":596},"17896395657595211":{"cap":"No se trata solo de encontrar una casa. Se trata de construir el futuro que imaginas. En Tower Home Loans, te acompañamos para que avances c","comments":0,"date":"2026-08-16","dur":51,"follows":0,"id":"17896395657595211","likes":10,"link":"https://www.instagram.com/reel/DcHKO9aqBsM/","name":"Tower Homeloans","reach":330,"saves":1,"shares":2,"type":"reel","user":"towerhomeloans_esp","views":488},"17897628081670670":{"cap":"","date":"2026-10-02","dur":0,"id":"17897628081670670","likes":2,"link":"https://www.instagram.com/stories/towerhomeloans_esp/3999053790470328182","name":"Tower Homeloans","nav":17,"reach":15,"replies":0,"shares":0,"type":"story","user":"towerhomeloans_esp","views":17,"visits":0},"17899247058481199":{"cap":"Fortune favors those who dare to play the game. Congratulations, Jose. Two multifamily properties down, and we’re just getting started. 🫡🏡","comments":0,"date":"2026-07-30","dur":0,"follows":1,"id":"17899247058481199","likes":13,"link":"https://www.instagram.com/p/Dba4VKflahZ/","name":"Juan C Cotes | Loan Officer","reach":278,"saves":0,"shares":3,"type":"carrossel","user":"jcoteshomeloans","views":757},"17903635365547743":{"cap":"Felicidades a nuestros compradores por su segunda propiedad! 🏡 Qué alegría tan grande verlos seguir creciendo, construyendo su patrimonio y","comments":4,"date":"2026-08-21","dur":0,"follows":0,"id":"17903635365547743","likes":13,"link":"https://www.instagram.com/p/DcUMa7PmXv0/","name":"María Cappadona | Compra tu Casa en USA 🇺🇸","reach":248,"saves":0,"shares":0,"type":"carrossel","user":"maria.cappadona","views":581},"17907455274498141":{"cap":"🏡 ¿Pagas renta en Massachusetts? Tal vez estés más cerca de lo que imaginas. Muchas familias creen que todavía no califican, pero nunca han","comments":1,"date":"2026-09-04","dur":28,"follows":0,"id":"17907455274498141","likes":7,"link":"https://www.instagram.com/reel/Dc34MZIq6Yj/","name":"Tower Homeloans","reach":398,"saves":0,"shares":2,"type":"reel","user":"towerhomeloans_esp","views":556},"17921111748216751":{"cap":"","date":"2026-09-16","dur":0,"id":"17921111748216751","likes":0,"link":"https://www.instagram.com/stories/towerhomeloans_esp/3987759794466761459","name":"Tower Homeloans","nav":18,"reach":71,"replies":0,"shares":1,"type":"story","user":"towerhomeloans_esp","views":89,"visits":0},"17928814389142050":{"cap":"No vinimos a este país solo a pagar cuentas o renta toda la vida. Vinimos buscando oportunidades, estabilidad y un futuro mejor. 🏡✨ Muchas ","comments":2,"date":"2026-08-19","dur":31,"follows":0,"id":"17928814389142050","likes":9,"link":"https://www.instagram.com/reel/DcO5PNqqhtW/","name":"Tower Homeloans","reach":217,"saves":0,"shares":1,"type":"reel","user":"towerhomeloans_esp","views":316},"17930713329143616":{"cap":"23 años y ya dueño de su primera propiedad 🏡 Qué gratificante ver a jóvenes que desde hoy están pensando en su futuro, en crecer su patrimo","comments":2,"date":"2026-09-04","dur":0,"follows":0,"id":"17930713329143616","likes":15,"link":"https://www.instagram.com/p/Dc4IkoykRbk/","name":"María Cappadona | Compra tu Casa en USA 🇺🇸","reach":374,"saves":0,"shares":2,"type":"carrossel","user":"maria.cappadona","views":740},"17936321721364393":{"cap":"","date":"2026-08-21","dur":20,"id":"17936321721364393","likes":0,"link":"https://www.instagram.com/stories/towerhomeloans_esp/3968793623382389155","name":"Tower Homeloans","nav":21,"reach":20,"replies":0,"shares":0,"type":"story","user":"towerhomeloans_esp","views":24,"visits":0},"17942342976356178":{"cap":"🏠 ¿Cansado de pagar renta cada mes y sentir que ese dinero simplemente desaparece? Lo que muchas personas no saben es que existen programas","comments":0,"date":"2026-09-02","dur":37,"follows":0,"id":"17942342976356178","likes":13,"link":"https://www.instagram.com/reel/Dcyy0MQqjBW/","name":"Tower Homeloans","reach":344,"saves":0,"shares":4,"type":"reel","user":"towerhomeloans_esp","views":609},"17961885843176210":{"cap":"","date":"2026-09-01","dur":15,"id":"17961885843176210","likes":0,"link":"https://www.instagram.com/stories/towerhomeloans_esp/3976754138754723281","name":"Tower Homeloans","nav":27,"reach":20,"replies":1,"shares":0,"type":"story","user":"towerhomeloans_esp","views":30,"visits":1},"17964024738198655":{"cap":"","date":"2026-10-05","dur":0,"id":"17964024738198655","likes":1,"link":"https://www.instagram.com/stories/towerhomeloans_esp/4001594193479781754","name":"Tower Homeloans","nav":17,"reach":14,"replies":0,"shares":0,"type":"story","user":"towerhomeloans_esp","views":17,"visits":0},"17964592431137624":{"cap":"","date":"2026-08-12","dur":15,"id":"17964592431137624","likes":1,"link":"https://www.instagram.com/stories/towerhomeloans_esp/3962331979915650244","name":"Tower Homeloans","nav":16,"reach":13,"replies":0,"shares":0,"type":"story","user":"towerhomeloans_esp","views":16,"visits":0},"17983762935028266":{"cap":"","date":"2026-08-21","dur":0,"id":"17983762935028266","likes":0,"link":"https://www.instagram.com/stories/towerhomeloans_esp/3968859041448869045","name":"Tower Homeloans","nav":16,"reach":17,"replies":0,"shares":0,"type":"story","user":"towerhomeloans_esp","views":19,"visits":0},"17991440609843251":{"cap":"","date":"2026-09-04","dur":0,"id":"17991440609843251","likes":0,"link":"https://www.instagram.com/stories/towerhomeloans_esp/3979164011981379114","name":"Tower Homeloans","nav":13,"reach":13,"replies":0,"shares":0,"type":"story","user":"towerhomeloans_esp","views":15,"visits":0},"18039522293830288":{"cap":"","date":"2026-09-18","dur":0,"id":"18039522293830288","likes":0,"link":"https://www.instagram.com/stories/towerhomeloans_esp/3989155632378357065","name":"Tower Homeloans","nav":20,"reach":16,"replies":0,"shares":0,"type":"story","user":"towerhomeloans_esp","views":22,"visits":0},"18072950897383746":{"cap":"","date":"2026-07-30","dur":15,"id":"18072950897383746","likes":0,"link":"https://www.instagram.com/stories/towerhomeloans_esp/3952854082150615422","name":"Tower Homeloans","nav":14,"reach":12,"replies":0,"shares":0,"type":"story","user":"towerhomeloans_esp","views":15,"visits":0},"18081322463497143":{"cap":"","date":"2026-08-21","dur":15,"id":"18081322463497143","likes":0,"link":"https://www.instagram.com/stories/towerhomeloans_esp/3968796705356906647","name":"Tower Homeloans","nav":20,"reach":19,"replies":0,"shares":0,"type":"story","user":"towerhomeloans_esp","views":23,"visits":0},"18085331621277507":{"cap":"¿Ya tienes casa propia? 🏡 Tu próxima oportunidad podría estar más cerca de lo que imaginas. Comprar una segunda propiedad no siempre signif","comments":0,"date":"2026-08-11","dur":30,"follows":0,"id":"18085331621277507","likes":8,"link":"https://www.instagram.com/reel/Db6NIvfq0VP/","name":"Tower Homeloans","reach":287,"saves":0,"shares":0,"type":"reel","user":"towerhomeloans_esp","views":395},"18092723000098136":{"cap":"Closing day! 🏡🔑 Congratulations to my clients on their new home. Grateful for the trust! 🙏","comments":0,"date":"2026-08-12","dur":0,"follows":0,"id":"18092723000098136","likes":15,"link":"https://www.instagram.com/p/Db8-uUyD8rc/","name":"Juan C Cotes | Loan Officer","reach":279,"saves":0,"shares":1,"type":"carrossel","user":"jcoteshomeloans","views":772},"18096632555430895":{"cap":"","date":"2026-09-18","dur":15,"id":"18096632555430895","likes":0,"link":"https://www.instagram.com/stories/towerhomeloans_esp/3989108493180894795","name":"Tower Homeloans","nav":28,"reach":23,"replies":0,"shares":0,"type":"story","user":"towerhomeloans_esp","views":32,"visits":0},"18096989000541368":{"cap":"","date":"2026-10-07","dur":8,"id":"18096989000541368","likes":1,"link":"https://www.instagram.com/stories/towerhomeloans_esp/4002794397032389855","name":"Tower Homeloans","nav":19,"reach":20,"replies":0,"shares":0,"type":"story","user":"towerhomeloans_esp","views":23,"visits":0},"18103927088574028":{"cap":"🏡 ¡Tu primera casa en Massachusetts puede estar más cerca de lo que imaginas! Cada mes surgen nuevas construcciones y nuevas oportunidades ","comments":3,"date":"2026-09-30","dur":12,"follows":0,"id":"18103927088574028","likes":6,"link":"https://www.instagram.com/reel/Dd6--YPq24y/","name":"Tower Homeloans","reach":231,"saves":0,"shares":1,"type":"reel","user":"towerhomeloans_esp","views":354},"18106121423243207":{"cap":"🎃🏡 Este Halloween, imagina que la puerta donde toquen los niños sea la de TU propia casa. Este puede ser el momento perfecto para dar el p","comments":1,"date":"2026-10-07","dur":8,"follows":0,"id":"18106121423243207","likes":2,"link":"https://www.instagram.com/reel/DeMxy7AqLkB/","name":"Tower Homeloans","reach":130,"saves":0,"shares":0,"type":"reel","user":"towerhomeloans_esp","views":237},"18113356046293365":{"cap":"","date":"2026-07-30","dur":16,"id":"18113356046293365","likes":0,"link":"https://www.instagram.com/stories/towerhomeloans_esp/3952851683705015114","name":"Tower Homeloans","nav":18,"reach":14,"replies":0,"shares":0,"type":"story","user":"towerhomeloans_esp","views":19,"visits":0},"18113836631004369":{"cap":"","date":"2026-09-16","dur":0,"id":"18113836631004369","likes":1,"link":"https://www.instagram.com/stories/towerhomeloans_esp/3987759721192326763","name":"Tower Homeloans","nav":23,"reach":83,"replies":0,"shares":1,"type":"story","user":"towerhomeloans_esp","views":109,"visits":1},"18120637360884144":{"cap":"","date":"2026-08-04","dur":53,"id":"18120637360884144","likes":1,"link":"https://www.instagram.com/stories/towerhomeloans_esp/3956479793625191971","name":"Tower Homeloans","nav":15,"reach":15,"replies":0,"shares":0,"type":"story","user":"towerhomeloans_esp","views":16,"visits":0},"18128831167743877":{"cap":"Nada más emocionante que ver a tus clientes firmar los documentos de su nueva propiedad. Felicidades! Que este sea solo el comienzo de mucha","comments":7,"date":"2026-09-18","dur":0,"follows":0,"id":"18128831167743877","likes":21,"link":"https://www.instagram.com/p/DdcJwxNmWd8/","name":"María Cappadona | Compra tu Casa en USA 🇺🇸","reach":461,"saves":0,"shares":2,"type":"carrossel","user":"maria.cappadona","views":1215},"18351987205169332":{"cap":"","date":"2026-08-19","dur":31,"id":"18351987205169332","likes":2,"link":"https://www.instagram.com/stories/towerhomeloans_esp/3967361077993992832","name":"Tower Homeloans","nav":25,"reach":23,"replies":0,"shares":0,"type":"story","user":"towerhomeloans_esp","views":29,"visits":0},"18365302633241756":{"cap":"¿Quieres comenzar a construir tu crédito en Estados Unidos? 💳🇺🇸 Empieza con estos 5 pasos: 1. Abre una tarjeta de crédito asegurada. 2. R","comments":2,"date":"2026-08-04","dur":53,"follows":1,"id":"18365302633241756","likes":6,"link":"https://www.instagram.com/reel/DboOt6tKI9C/","name":"Tower Homeloans","reach":305,"saves":1,"shares":1,"type":"reel","user":"towerhomeloans_esp","views":422},"18372024595230726":{"cap":"Another one closed. 🫡🏡 Felicidades por su primera casa! 🔑","comments":0,"date":"2026-08-04","dur":0,"follows":0,"id":"18372024595230726","likes":12,"link":"https://www.instagram.com/p/DboOUC_Gt09/","name":"Juan C Cotes | Loan Officer","reach":280,"saves":0,"shares":2,"type":"carrossel","user":"jcoteshomeloans","views":766},"18373709236224097":{"cap":"","date":"2026-08-05","dur":20,"id":"18373709236224097","likes":0,"link":"https://www.instagram.com/stories/towerhomeloans_esp/3957400972917631104","name":"Tower Homeloans","nav":25,"reach":16,"replies":0,"shares":0,"type":"story","user":"towerhomeloans_esp","views":30,"visits":0},"18394256800203184":{"cap":"","date":"2026-09-22","dur":0,"id":"18394256800203184","likes":1,"link":"https://www.instagram.com/stories/towerhomeloans_esp/3991795459099981711","name":"Tower Homeloans","nav":10,"reach":10,"replies":0,"shares":0,"type":"story","user":"towerhomeloans_esp","views":16,"visits":0},"18474498937107715":{"cap":"","date":"2026-08-11","dur":30,"id":"18474498937107715","likes":0,"link":"https://www.instagram.com/stories/towerhomeloans_esp/3961537065028073443","name":"Tower Homeloans","nav":13,"reach":14,"replies":0,"shares":0,"type":"story","user":"towerhomeloans_esp","views":17,"visits":1},"18618037543063169":{"cap":"","date":"2026-08-25","dur":15,"id":"18618037543063169","likes":0,"link":"https://www.instagram.com/stories/towerhomeloans_esp/3971522120005600351","name":"Tower Homeloans","nav":20,"reach":232,"replies":0,"shares":1,"type":"story","user":"towerhomeloans_esp","views":294,"visits":0},"18623074972036218":{"cap":"","date":"2026-09-02","dur":37,"id":"18623074972036218","likes":0,"link":"https://www.instagram.com/stories/towerhomeloans_esp/3977466146177313394","name":"Tower Homeloans","nav":23,"reach":20,"replies":0,"shares":0,"type":"story","user":"towerhomeloans_esp","views":25,"visits":0},"18636882796038053":{"cap":"","date":"2026-09-30","dur":12,"id":"18636882796038053","likes":1,"link":"https://www.instagram.com/stories/towerhomeloans_esp/3997785776687058463","name":"Tower Homeloans","nav":30,"reach":26,"replies":1,"shares":0,"type":"story","user":"towerhomeloans_esp","views":38,"visits":0}},"updatedAt":"2026-10-28T15:17:26.039Z"};
 const LOCALDB = !(window.claude && window.claude.use);
 const SEED = {"instagram/current": IG0};
@@ -2066,7 +2435,8 @@ let SITEDATA = false;
 function loadSiteData(){
   if (!/^https?:$/.test(location.protocol)) return;
   const grab = n => fetch("data/" + n + ".json", {cache: "no-cache"}).then(r => r.ok ? r.json() : null).catch(() => null);
-  Promise.all([grab("ads"), grab("funnel"), grab("instagram")]).then(([a, f, g]) => {
+  Promise.all([grab("ads"), grab("funnel"), grab("instagram"), grab("video3s")]).then(([a, f, g, v]) => {
+    if (v && Array.isArray(v.rows)) { let own = null; try { own = localStorage.getItem("lab-db:ads/video3s"); } catch(e) {} if (!own) V3 = v; }
     if (a && Array.isArray(a.ads) && a.ads.length) { ADSNAP = a; SITEDATA = true; }
     if (f && f.leads) FUN = f;
     if (g && g.daily && (!SEED["instagram/current"].updatedAt || (g.updatedAt || "") > SEED["instagram/current"].updatedAt)) {
@@ -2102,7 +2472,8 @@ let needIdeas = false, needScripts = false;
     db.doc("instagram/current").onSnapshot(snap => { IG = snap.exists ? snap.data() : null; igStatus = snap.exists ? "ok" : "empty"; if (panoMode === "ig") renderIG(); }, () => { igStatus = "nodb"; if (panoMode === "ig") renderIG(); });
     db.doc("ads/snapshot").onSnapshot(snap => { if (snap.exists) ADSNAP = snap.data(); rerenderData(); rerenderBoard(); }, () => {});
     db.doc("funnel/current").onSnapshot(snap => { if (snap.exists) FUN = snap.data(); if (panoMode === "ads") renderAdsPanorama(); }, () => {});
-    db.doc("board/main").onSnapshot(snap => { BOARD = snap.exists ? snap.data() : {}; rerenderBoard(); }, () => {});
+    db.doc("board/main").onSnapshot(snap => { BOARD = snap.exists ? snap.data() : {}; rerenderBoard(); if (!tagEdit) refreshTagCard(); }, () => {});
+    db.doc("ads/video3s").onSnapshot(snap => { if (snap.exists) V3 = snap.data(); else if (!LOCALDB) V3 = null; if (panoMode === "ads") renderAdsPanorama(); }, () => {});
     if (igOwner) rerenderBoard();
   } catch(e) { igStatus = "nodb"; rerenderData(); }
 })();
