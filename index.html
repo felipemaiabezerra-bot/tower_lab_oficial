@@ -45,21 +45,21 @@ a{color:var(--navy)}
 .ico{width:18px;height:18px;flex:none;stroke:currentColor;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
 
 /* masthead */
-.mast{background:var(--mast-bg);color:var(--mast-ink);position:relative;overflow:hidden}
-.mast::before{content:"";display:block;height:12px;background:repeating-linear-gradient(135deg,var(--mast-ink) 0 16px,var(--stripe) 16px 32px);opacity:.9}
-.mast::after{content:"";position:absolute;inset:12px 0 0;background:radial-gradient(620px 260px at 92% 0%,rgba(95,168,58,.24),transparent 70%),linear-gradient(transparent 31px,rgba(255,255,255,.045) 32px) 0 0/100% 32px;pointer-events:none}
-.mast .wrap{position:relative;z-index:1;padding-block:28px 26px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:18px 32px;align-items:end}
-.mast .kick{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mast-muted)}
-.mast h1{font-size:clamp(2.1rem,5.4vw,3.5rem);font-weight:900;letter-spacing:-.02em;font-stretch:70%;margin-top:6px}
-.mast h1 em{font-style:normal;color:var(--green-bright)}
-.mast .sub{color:var(--mast-muted);max-width:62ch;margin-top:10px;font-size:.98rem}
-.mast-side{display:grid;gap:14px;justify-items:end}
+
+
+
+
+
+
+
+
+
 .lang{display:inline-flex;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:3px}
 .lang button{appearance:none;border:0;background:none;color:var(--mast-muted);font:700 .8rem var(--f-body);padding:6px 13px;border-radius:999px;cursor:pointer;letter-spacing:.04em}
 .lang button:hover{color:var(--mast-ink)}
 .lang button[aria-pressed="true"]{background:var(--mast-ink);color:#16305A}
-.slate{font-family:var(--f-mono);font-size:.72rem;color:var(--mast-muted);display:grid;grid-template-columns:auto auto;gap:3px 14px;border:1px solid rgba(255,255,255,.18);border-radius:10px;padding:10px 12px;background:rgba(0,0,0,.14)}
-.slate b{color:var(--mast-ink);font-weight:500}
+
+
 
 /* tabs */
 .tabs{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--surface);border-bottom:1px solid var(--line);box-shadow:0 4px 14px -12px rgba(17,28,46,.35)}
@@ -106,15 +106,15 @@ section.view{display:grid;gap:22px}
 .find li{list-style:none;display:grid;grid-template-columns:30px 1fr;gap:12px;align-items:start;font-size:.93rem}
 .find .k{font-family:var(--f-mono);font-size:.78rem;font-weight:500;color:var(--navy);background:var(--navy-soft);border-radius:8px;height:28px;display:grid;place-items:center}
 .chart{display:grid;gap:10px}
-.crow,.axis{display:grid;grid-template-columns:minmax(0,230px) minmax(0,1fr) 56px;gap:12px;align-items:center}
-.crow{font-size:.86rem}
-.crow .nm{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.crow .track{position:relative;height:18px;border-radius:5px;background:repeating-linear-gradient(90deg,var(--line) 0 1px,transparent 1px 25%),var(--sunk)}
-.crow .fill{position:absolute;inset:0 auto 0 0;border-radius:5px;background:var(--navy)}
-.crow.juan .fill{background:var(--green-bright)}
-.crow .val{font-family:var(--f-mono);font-size:.82rem;text-align:right;font-variant-numeric:tabular-nums}
-.axis{font-family:var(--f-mono);font-size:.68rem;color:var(--faint)}
-.axis .ticks{display:flex;justify-content:space-between}
+
+
+
+
+
+
+
+
+
 .legend{display:flex;gap:16px;flex-wrap:wrap;font-size:.8rem;color:var(--muted);margin-top:12px}
 .legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px}
 table{border-collapse:collapse;width:100%;font-size:.88rem}
@@ -125,12 +125,12 @@ th:first-child{border-radius:8px 0 0 8px} th:last-child{border-radius:0 8px 8px 
 td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;font-family:var(--f-mono)}
 tr.hi td{background:var(--green-soft)}
 .scroll{overflow-x:auto}
-.qlist{display:grid;gap:8px}
-.ql{display:grid;grid-template-columns:96px 1fr auto;gap:12px;align-items:start;padding:11px 13px;border-radius:10px;background:var(--sunk)}
-.ql .tag{font-family:var(--f-mono);font-size:.66rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);padding-top:3px}
-.ql .q{font-size:.9rem;min-width:0;overflow-wrap:anywhere}
-.ql.read{background:var(--amber-soft)}
-.ql.read .tag{color:var(--amber)}
+
+
+
+
+
+
 
 /* controls */
 .toolbar{display:grid;gap:12px;background:var(--surface);border:1px solid var(--line-soft);border-radius:14px;padding:14px 16px;box-shadow:var(--shadow)}
@@ -190,8 +190,8 @@ input[type=search]{width:min(260px,100%)}
 .sdetail{display:grid;gap:18px;min-width:0}
 .shead{display:grid;gap:10px}
 .shead h2{font-size:clamp(1.7rem,3.6vw,2.4rem);font-stretch:70%;font-weight:850}
-.why2{font-size:.92rem;background:var(--navy-soft);border-radius:12px;padding:14px 16px;display:grid;grid-template-columns:auto 1fr;gap:10px;color:var(--ink)}
-.why2 .ico{color:var(--navy);margin-top:2px}
+
+
 .board{border:1px solid var(--line-soft);border-radius:14px;overflow:hidden;background:var(--surface);box-shadow:var(--shadow)}
 .board-h{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 16px;background:var(--sunk);flex-wrap:wrap}
 .shot{display:grid;grid-template-columns:96px 1fr;border-top:1px solid var(--line-soft)}
@@ -342,13 +342,13 @@ table.posts td.cap a:hover{text-decoration:underline}
   .slist{position:static;grid-auto-flow:column;grid-auto-columns:minmax(210px,72%);grid-template-columns:none;overflow-x:auto;padding-bottom:6px}
   .slist .eyebrow{display:none}
   .pillars{position:static;grid-auto-flow:column;grid-auto-columns:max-content;overflow-x:auto;padding-bottom:6px}
-  .mast .wrap{grid-template-columns:1fr}
-  .mast-side{justify-items:start}
+  
+  
 }
 @media (max-width:620px){
-  .crow,.axis{grid-template-columns:minmax(0,1fr) 52px}
-  .crow .nm{grid-column:1/-1;margin-bottom:-6px}
-  .axis > span:first-child{display:none}
+  
+  
+  
   .copyrow{grid-template-columns:1fr auto}
   .copyrow .l{grid-column:1/-1}
   .hk{grid-template-columns:1fr auto}
@@ -360,8 +360,8 @@ table.posts td.cap a:hover{text-decoration:underline}
   .stsum{grid-template-columns:1fr 1fr}
   .stsum button:nth-child(2){border-right:0}
   .stsum button:nth-child(-n+2){border-bottom:1px solid var(--line-soft)}
-  .ql{grid-template-columns:1fr auto}
-  .ql .tag{grid-column:1/-1}
+  
+  
 }
 @media (prefers-reduced-motion:no-preference){
   .idea,.ref,.hk,.sitem,.pill,.pbtn{transition:border-color .15s,background-color .15s}
@@ -396,30 +396,26 @@ a{color:var(--acc-2)}
 .lang button[aria-pressed="true"]{background:var(--ink);color:#0A0A0B}
 
 /* hero */
-.hero{position:relative;overflow:hidden;text-align:center;padding-block:56px 150px;isolation:isolate}
-.hero .wrap{display:grid;justify-items:center;gap:18px;position:relative;z-index:2}
-.pillhint{display:inline-flex;align-items:center;gap:8px;font:500 .74rem var(--f-body);color:var(--muted);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:6px 12px}
-.pillhint i{width:6px;height:6px;border-radius:50%;background:var(--acc);box-shadow:0 0 0 3px rgba(var(--acc-rgb),.22)}
-.hero h1{font-size:clamp(2.3rem,6vw,4rem);font-weight:400;line-height:1.06;max-width:16ch;margin:0}
-.hero h1 em{font-style:normal;color:var(--ink)}
-.hero .sub{color:var(--muted);max-width:56ch;font-size:1rem;margin:0}
+
+
+
+
+
+
+
 .cta{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
 .pillbtn{appearance:none;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:500 .9rem var(--f-body);border-radius:999px;padding:11px 20px;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
 .pillbtn:hover{border-color:rgba(255,255,255,.22)}
 .pillbtn.primary{background:linear-gradient(180deg,var(--g1),var(--g2));border-color:transparent;color:#fff;box-shadow:0 10px 30px -10px rgba(var(--acc-rgb),.8),inset 0 1px 0 rgba(255,255,255,.25)}
 .pillbtn .ico{width:15px;height:15px}
-.sources{display:grid;gap:14px;justify-items:center;margin-top:26px}
-.sources .lab{font:500 .9rem var(--f-body);color:var(--ink)}
-.sources .row{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 30px}
-.sources .row span{font:600 1.05rem var(--f-display);letter-spacing:-.02em;color:#8D8D95;display:inline-flex;align-items:center;gap:8px}
-.sources .row span i{width:8px;height:8px;border-radius:2px;background:#5A5A61}
-.sources .dates{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 18px;font:400 .72rem var(--f-mono);color:var(--faint)}
-.sources .dates b{color:var(--muted);font-weight:500}
-.arc{position:absolute;left:50%;top:calc(100% - 120px);width:min(1500px,170vw);aspect-ratio:1;transform:translateX(-50%);border-radius:50%;z-index:1;pointer-events:none;
-  border-top:1px solid rgba(var(--glow2-rgb),.85);
-  box-shadow:0 -26px 80px -10px rgba(var(--glow-rgb),.55),0 -2px 18px rgba(var(--glow3-rgb),.6),inset 0 26px 60px -20px rgba(var(--glow-rgb),.45);
-  background:radial-gradient(closest-side,transparent 92%,rgba(var(--glow-rgb),.05));
-  -webkit-mask-image:linear-gradient(180deg,#000 0,#000 30px,transparent 118px);mask-image:linear-gradient(180deg,#000 0,#000 30px,transparent 118px)}
+
+
+
+
+
+
+
+
 main.wrap{position:relative;z-index:2;margin-top:-70px;padding-block:0 80px}
 
 /* seções */
@@ -455,20 +451,20 @@ main.wrap{position:relative;z-index:2;margin-top:-70px;padding-block:0 80px}
 th{background:rgba(255,255,255,.04);color:var(--faint)}
 td{border-bottom-color:var(--line-soft)}
 tr.hi td{background:rgba(var(--acc-rgb),.08)}
-.crow .track{background:repeating-linear-gradient(90deg,var(--line-soft) 0 1px,transparent 1px 25%),rgba(255,255,255,.04)}
-.crow .fill{background:#4A4A51}
-.crow.juan .fill{background:linear-gradient(90deg,var(--g3),var(--g1))}
-.ql{background:rgba(255,255,255,.035);border:1px solid var(--line-soft)}
-.ql.read{background:rgba(var(--acc-rgb),.08);border-color:rgba(var(--acc-rgb),.22)}
-.ql.read .tag{color:var(--acc-2)}
+
+
+
+
+
+
 .idea .why,.formula div,.rule,.day,.kpi.mini{background:rgba(255,255,255,.035)}
 .idea.alta::before{background:linear-gradient(90deg,var(--g3),var(--g1))}
 .hook::before,.hook::after{color:var(--acc)}
 .stsum button[aria-pressed="true"]{background:rgba(var(--acc-rgb),.10)}
 .stsum{border-radius:16px}
 .who{color:var(--acc-2);background:rgba(var(--acc-rgb),.12)}
-.why2{background:rgba(var(--acc-rgb),.08);border:1px solid rgba(var(--acc-rgb),.18)}
-.why2 .ico{color:var(--acc-2)}
+
+
 .tc{border-right-color:var(--line-soft)}
 .shot{border-top-color:var(--line-soft)}
 .board-h{background:rgba(255,255,255,.035)}
@@ -502,8 +498,8 @@ tr.hi td{background:rgba(var(--acc-rgb),.08)}
 @media (max-width:860px){
   .topbar{grid-template-columns:1fr auto;gap:8px 12px}
   #tabs{grid-column:1/-1;grid-row:2;justify-content:flex-start;margin-inline:-4px}
-  .hero{padding-block:40px 120px}
-  .arc{top:calc(100% - 95px)}
+  
+  
   main.wrap{margin-top:-55px}
   .seg{border-radius:16px}
   .seg button{border-radius:12px}
@@ -526,21 +522,21 @@ tr.hi td{background:rgba(var(--acc-rgb),.08)}
 .tab .ts{display:none}
 
 /* hero só no Painel */
-body:not([data-view="panorama"]) .hero{display:none}
+
 body:not([data-view="panorama"]) main.wrap{margin-top:0;padding-top:34px}
 
 /* frescor dos dados */
-.freshrow{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;font-size:.84rem;color:var(--muted);padding:12px 16px;border:1px solid var(--line-soft);border-radius:14px;background:var(--surface)}
-.freshrow b{color:var(--ink);font-weight:600}
-.fdot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px rgba(61,214,140,.16);flex:none}
-.fdot.old{background:var(--amber);box-shadow:0 0 0 4px rgba(245,177,76,.16)}
-.freshrow .bad{color:var(--amber)}
-.freshrow .act{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-left:auto}
-.freshrow .act .chip small{opacity:.7}
+
+
+
+
+
+
+
 .stalebar{display:flex;align-items:center;gap:10px;padding:12px 16px;border-radius:14px;background:rgba(245,177,76,.10);border:1px solid rgba(245,177,76,.25);color:var(--amber);font-size:.88rem}
 .stalebar .ico{width:18px;height:18px;flex:none;stroke:var(--amber)}
 .limn{margin:-8px 2px 0;font-size:.8rem}
-.v.vbad{color:var(--red)}.v.vok{color:var(--green)}
+
 
 /* metas */
 .goals{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:12px}
@@ -551,58 +547,58 @@ body:not([data-view="panorama"]) main.wrap{margin-top:0;padding-top:34px}
 .goal .gb i{display:block;height:100%;border-radius:99px;background:var(--faint)}
 .goal.ok .gb i{background:var(--green)} .goal.ok .gv{color:var(--green)}
 .goal.bad .gb i{background:var(--red)} .goal.bad .gv{color:var(--red)}
-.goal.neu .gb i{background:var(--acc)}
+
 .goal .gm{display:flex;justify-content:space-between;gap:8px;font-size:.76rem;color:var(--muted)}
 .goal .gm b{font-weight:500;color:var(--ink);white-space:nowrap}
 
 /* funil */
-.funnel{display:grid;gap:10px}
-.fst{position:relative;border-radius:12px;overflow:hidden;background:rgba(255,255,255,.03);min-height:52px}
-.fbar{position:absolute;inset:0 auto 0 0;background:linear-gradient(90deg,rgba(var(--acc-rgb),.38),rgba(var(--acc-rgb),.14));border-right:2px solid var(--acc)}
-.fl{position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:baseline;gap:2px 14px;padding:10px 14px}
-.fl span{font-size:.88rem;color:var(--ink);font-weight:500}
-.fl b{font:500 1.3rem var(--f-display);letter-spacing:-.02em;text-align:right}
-.fl small{color:var(--muted);font-size:.74rem}
-.fl em{font-style:normal;font:500 .74rem var(--f-mono);color:var(--muted);text-align:right}
-.fgrid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:18px}
-.ftab th{white-space:normal;vertical-align:bottom}
-@media (max-width:1000px){ .fgrid{grid-template-columns:1fr} }
-.fspeed{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:12px}
-.fspeed div{display:grid;gap:2px;padding:10px 12px;border-radius:12px;background:rgba(255,255,255,.03);border:1px solid var(--line-soft)}
-.fspeed b{font:500 1.15rem var(--f-display)}
-.fspeed span{font-size:.74rem;color:var(--muted);line-height:1.3}
-.fspeed .bad b{color:var(--red)}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* tabela de anúncios */
-.adt td small{display:block;color:var(--faint);font-size:.72rem;max-width:30ch;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.adt td:first-child{min-width:190px}
-.sd{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--faint);margin-right:7px;vertical-align:1px}
-.sd.on{background:var(--green);box-shadow:0 0 0 3px rgba(61,214,140,.18)}
+
+
+
+
 td.up,b.up{color:var(--green)} td.dn,b.dn{color:var(--red)}
-.olink{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:8px;color:var(--muted);border:1px solid var(--line-soft)}
-.olink:hover{color:var(--acc-2);border-color:rgba(var(--acc-rgb),.5)}
-.olink .ico{width:14px;height:14px}
+
+
+
 
 /* vínculos */
-.lslot{display:grid;gap:10px}
-.lslot:empty{display:none}
-.lres{display:grid;gap:8px;padding:12px;border-radius:12px;background:rgba(61,214,140,.06);border:1px solid rgba(61,214,140,.18)}
-.lres .eyebrow{color:var(--green)}
-.lgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(82px,1fr));gap:8px 10px}
-.lgrid div{display:grid;gap:1px}
-.lgrid span{font-size:.68rem;color:var(--muted);font-family:var(--f-mono);text-transform:uppercase;letter-spacing:.04em}
-.lgrid b{font:500 .98rem var(--f-display)}
-.lbtn{justify-self:start;display:inline-flex;align-items:center;gap:6px}
-.lbtn .ico{width:14px;height:14px}
-.lpanel{display:grid;gap:10px;padding:12px;border-radius:12px;background:var(--surface-2);border:1px solid var(--line)}
-.lpick{display:grid;gap:4px;max-height:220px;overflow-y:auto;padding-right:4px}
-.lpick label{display:grid;grid-template-columns:auto minmax(0,1fr);gap:8px;align-items:start;padding:6px 8px;border-radius:8px;cursor:pointer;font-size:.84rem}
-.lpick label:hover{background:rgba(255,255,255,.04)}
-.lpick input{margin-top:3px;accent-color:var(--acc)}
-.lpick small{display:block;color:var(--muted);font-size:.72rem}
-.ldocs{display:grid;gap:4px;font-size:.78rem;color:var(--muted)}
-.ldocs input{width:120px;padding:7px 10px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:inherit}
-.lact{display:flex;gap:8px;flex-wrap:wrap}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .flash{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);opacity:0;pointer-events:none;z-index:120;background:var(--surface-2);border:1px solid var(--line);color:var(--ink);padding:10px 16px;border-radius:12px;font-size:.88rem;box-shadow:0 20px 40px -20px #000;transition:opacity .2s,transform .2s}
 .flash.on{opacity:1;transform:translate(-50%,0)}
 
@@ -628,8 +624,8 @@ td.up,b.up{color:var(--green)} td.dn,b.dn{color:var(--red)}
 .kcard .chip{font-size:.66rem;padding:2px 7px}
 .kt{font:500 .92rem/1.3 var(--f-display);letter-spacing:-.01em}
 .kk{font-size:.78rem;color:var(--muted);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.km{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:.74rem;color:var(--muted)}
-.km b{color:var(--green);font-weight:600}
+
+
 .kf .status{width:100%}
 .kcard[data-st="roteirizar"] .status{background:rgba(245,177,76,.12);color:var(--amber)}
 .kcard[data-st="gravado"] .status{background:rgba(var(--acc-rgb),.12);color:var(--acc-2)}
@@ -675,49 +671,85 @@ body.tp-open{overflow:hidden}
   .kb{grid-template-columns:1fr}
   .kcard[draggable="true"]{cursor:default}
   .vt{margin-left:0}
-  .fspeed{grid-template-columns:1fr}
+  
   .brand span:last-child{display:none}
 }
 /* ===== v7: etiquetas, cansaço, gancho real ===== */
-.tagbar{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:12px}
-.tagbar .vt{margin-left:0;flex-wrap:wrap;border-radius:16px}
-.tagbar .cbtn{margin-left:auto}
-.tagread{margin:0 0 12px;font-size:.95rem}
-.tagread:not(.note){padding:10px 14px;border-radius:12px;background:rgba(var(--acc-rgb),.08);border:1px solid rgba(var(--acc-rgb),.2)}
-.tagt td b{font-weight:600}
-.tagt .chip{font-size:.66rem;padding:1px 7px;margin-left:4px;vertical-align:1px}
-.cplc{min-width:150px}
-.cplb{display:inline-block;width:64px;height:6px;border-radius:99px;background:rgba(255,255,255,.07);margin-right:10px;vertical-align:middle;overflow:hidden}
-.cplb i{display:block;height:100%;border-radius:99px;background:var(--acc)}
-tr.hi .cplb i{background:var(--green)}
-.tagedit{margin-top:16px;padding:14px;border-radius:14px;background:var(--surface-2);border:1px solid var(--line)}
-.tagedit select{font:500 .8rem var(--f-body);padding:6px 8px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--ink);max-width:190px}
-.tagedit td{vertical-align:middle}
-.fatsum{display:flex;align-items:center;gap:8px;margin:0 0 12px;padding:10px 14px;border-radius:12px;font-size:.92rem}
-.fatsum .ico{width:16px;height:16px;flex:none}
-.fatsum.bad{background:var(--red-soft);color:var(--red)} .fatsum.bad .ico{stroke:var(--red)}
-.fatsum.warn{background:var(--amber-soft);color:var(--amber)} .fatsum.warn .ico{stroke:var(--amber)}
-.fatsum.ok{background:var(--green-soft);color:var(--green)}
-.fatl{display:grid;gap:10px}
-.fat{display:grid;gap:10px;padding:14px;border-radius:14px;background:rgba(255,255,255,.03);border:1px solid var(--line-soft);border-left:3px solid var(--faint)}
-.fat.ok{border-left-color:var(--green)} .fat.warn{border-left-color:var(--amber)} .fat.tired{border-left-color:var(--red)} .fat.new{border-left-color:var(--acc)}
-.fh{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px}
-.fh b{font:500 1rem var(--f-display)}
-.fh small{color:var(--muted);font-size:.76rem}
-.fchip{font:600 .68rem var(--f-mono);text-transform:uppercase;letter-spacing:.06em;padding:3px 8px;border-radius:99px;background:rgba(255,255,255,.06);color:var(--muted)}
-.fchip.ok{background:var(--green-soft);color:var(--green)} .fchip.warn{background:var(--amber-soft);color:var(--amber)} .fchip.tired{background:var(--red-soft);color:var(--red)} .fchip.new{background:rgba(var(--acc-rgb),.12);color:var(--acc-2)}
-.fm{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px 12px}
-.fm > div{display:grid;gap:1px;min-width:0}
-.fm span{font:500 .66rem var(--f-mono);text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
-.fm b{font:500 1.05rem var(--f-display)}
-.fm small{font-size:.7rem;color:var(--faint)}
-.spark{width:96px;height:30px;display:block;margin-top:2px}
-.spark rect{fill:rgba(255,255,255,.18)} .spark rect.last{fill:var(--acc)}
-.fsig{margin:0;font-size:.82rem;color:var(--amber)}
-.fat.tired .fsig{color:var(--red)}
-.frec{margin:0;font-size:.88rem;color:var(--ink)}
-.v3how{margin:12px 0 0;padding-left:20px;display:grid;gap:4px;font-size:.84rem;color:var(--muted)}
-@media (max-width:860px){ .fm{grid-template-columns:repeat(2,minmax(0,1fr))} .fsp{grid-column:1/-1} .tagbar .cbtn{margin-left:0} }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+
+
+
+   
+
+
+
+
+   
+
+
+
+
+
+
+ 
+
+
+
+
+
+/* v9: sem capa, linha de raciocínio, montar roteiro, "ver mais" */
+main.wrap,body:not([data-view="panorama"]) main.wrap{margin-top:0;padding-top:34px}
+.chwrap{padding:16px;border-radius:16px;background:rgba(var(--acc-rgb),.06);border:1px solid rgba(var(--acc-rgb),.18)}
+.chain{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.chs{display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px;padding:12px;border-radius:12px;background:var(--surface);border:1px solid var(--line-soft);align-content:start}
+.chs b{display:block;font:500 .95rem/1.3 var(--f-display);margin:3px 0 4px}
+.chs b small{font:400 .74rem var(--f-mono);color:var(--muted)}
+.chs p{margin:0;font-size:.84rem;color:var(--muted)}
+.chs .chq{color:var(--ink);font-style:italic;margin-bottom:4px}
+.chn{width:24px;height:24px;border-radius:50%;display:grid;place-items:center;font:600 .74rem var(--f-mono);background:rgba(var(--acc-rgb),.16);color:var(--acc-2)}
+.chwhy{margin:12px 0 0;font-size:.88rem;color:var(--muted)}
+.chwhy b{color:var(--ink);font-weight:600}
+.bpick{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:16px}
+.bpick label{display:grid;gap:6px;font:500 .74rem var(--f-mono);text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+.bpick select{font:500 .9rem var(--f-body);text-transform:none;letter-spacing:0;padding:10px 12px;border-radius:12px;border:1px solid var(--line);background:var(--surface-2);color:var(--ink);width:100%}
+.bout{border-top:1px solid var(--line-soft);padding-top:14px}
+.bshot{display:grid;grid-template-columns:110px minmax(0,1fr);gap:12px;padding:12px 0;border-top:1px solid var(--line-soft)}
+.bshot:first-of-type{border-top:0}
+.bshot .tc{font:500 .78rem var(--f-mono);color:var(--muted);display:grid;gap:2px;border:0}
+.bshot .tc b{font:600 .68rem var(--f-mono);text-transform:uppercase;letter-spacing:.06em;color:var(--acc-2)}
+.bshot .say{font:500 1.02rem/1.4 var(--f-display)}
+.bpts{margin:0;padding-left:20px;display:grid;gap:4px;font:500 .98rem/1.4 var(--f-display)}
+.bmeta{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:12px}
+.bmeta > div{padding:12px;border-radius:12px;background:rgba(255,255,255,.03);border:1px solid var(--line-soft)}
+.bmeta p{margin:4px 0 0;font-size:.84rem;color:var(--muted)}
+.rulec{margin-top:18px}
+details.more summary{cursor:pointer;font:500 .8rem var(--f-body);color:var(--acc-2);list-style:none;display:inline-flex;align-items:center;gap:6px}
+details.more summary::-webkit-details-marker{display:none}
+details.more summary::before{content:"+";display:inline-grid;place-items:center;width:16px;height:16px;border-radius:50%;border:1px solid currentColor;font-size:.75rem;line-height:1}
+details.more[open] summary::before{content:"–"}
+details.more[open] summary{margin-bottom:10px}
+details.more > *:not(summary){margin-top:10px}
+@media (max-width:860px){ .chain,.bpick,.bmeta{grid-template-columns:1fr} .bshot{grid-template-columns:1fr;gap:4px} }
+.real{margin-top:8px;padding:8px 10px;border-radius:10px;background:rgba(255,255,255,.035);border-left:2px solid var(--acc)}
+.real p{margin:3px 0 0;font-size:.8rem;color:var(--ink);font-style:italic}
+.real p b,.chs .real p b{display:inline;font:600 .78rem var(--f-body);font-style:normal;margin:0;color:var(--muted)}
 </style>
 </head>
 <body>
@@ -736,61 +768,68 @@ tr.hi .cplb i{background:var(--green)}
   </div>
 </header>
 
-<section class="hero">
-  <div class="wrap">
-    <span class="pillhint"><i></i><span id="m-kick"></span></span>
-    <h1 id="m-title"></h1>
-    <p class="sub" id="m-sub"></p>
-    <div class="cta"><button type="button" class="pillbtn primary" data-go="roteiros" id="cta1"></button><button type="button" class="pillbtn" data-go="ideias" id="cta2"></button></div>
-    <div class="sources">
-      <span class="lab" id="m-src"></span>
-      <div class="row"><span><i></i>Instagram</span><span><i></i>Business Suite</span><span><i></i>GoHighLevel</span><span><i></i>vidIQ</span></div>
-      <div class="dates" id="m-slate"></div>
-    </div>
-  </div>
-  <div class="arc" aria-hidden="true"></div>
-</section>
 
 <main class="wrap">
-  <section class="view" id="v-panorama"></section>
+  <section class="view" id="v-roteiros"></section>
   <section class="view" id="v-ideias" hidden></section>
-  <section class="view" id="v-roteiros" hidden></section>
   <section class="view" id="v-ganchos" hidden></section>
   <section class="view" id="v-referencias" hidden></section>
-  <section class="view" id="v-metodo" hidden></section>
+  <section class="view" id="v-panorama" hidden></section>
 </main>
 
 <script>
 /* ============ i18n: interface ============ */
 const T = {
- pt:{
-  kick:"Tower Home Loans · público hispano · CT · MA · RI",
-  title:"Laboratório de <em>Roteiros</em>",
-  sub:"Ideias, ganchos e roteiros de vídeo montados a partir das dúvidas que os clientes trazem nas conversas e do que funciona para outros criadores do nicho.",
-  slate:[["conversas","20/08 a 19/10/2026"],["referências","conferidas em 26/10/2026"]],
-  tabs:{panorama:"Panorama",ideias:"Banco de ideias",roteiros:"Roteiros",ganchos:"Ganchos",referencias:"Referências",metodo:"Método"},
-  copy:"copiar", copied:"copiado", select:"selecione",
+ pt:{tabs:{panorama:"Panorama",ideias:"Banco de ideias",roteiros:"Roteiros",ganchos:"Ganchos",referencias:"Referências",metodo:"Método"},
+  copy:"copiar",
+  copied:"copiado",
+  select:"selecione",
   es:"falas em espanhol para o público; tradução em itálico",
-  // panorama
-  p_h:"Perfil do Instagram", p_s:"Estatísticas do @towerhomeloans_esp para decidir o que gravar a seguir.",
-  i_h:"Banco de ideias", i_s:"Cada ideia traz o gancho dos 3 primeiros segundos, o esqueleto do vídeo e a evidência que a sustenta. O status fica salvo na página, para todo mundo que abre o link.",
-  pilar:"Pilar", fmt:"Formato", uso:"Uso", busca:"Buscar", busca_ph:"crédito, ITIN, Juan…", todos:"Todos", todas:"Todas",
+  p_h:"Perfil do Instagram",
+  p_s:"Estatísticas do @towerhomeloans_esp para decidir o que gravar a seguir.",
+  i_h:"Banco de ideias",
+  i_s:"Cada ideia traz o gancho dos 3 primeiros segundos, o esqueleto do vídeo e a evidência que a sustenta. O status fica salvo na página, para todo mundo que abre o link.",
+  fmt:"Formato",
+  uso:"Uso",
+  busca:"Buscar",
+  busca_ph:"crédito, ITIN, Juan…",
+  todos:"Todos",
   st:{nova:"Nova",roteirizar:"Roteirizar",gravado:"Gravado","no-ar":"No ar"},
-  of:"de", prio:"prioridade", porque:"Por quê", vazio:"Nenhuma ideia com esses filtros.", limpar:"Limpar filtros",
-  // roteiros
-  r_h:"Roteiros prontos", r_s:"Roteiros completos para gravar, com tempo de cada cena, fala, texto na tela e imagem, mais o texto do anúncio e a legenda. Os quatro primeiros são os que eu gravaria antes.",
-  r_list:"9 roteiros", first:"gravar primeiro", r_why:"Por que este vídeo", board:"Roteiro de gravação", na_tela:"Na tela", imagem:"Imagem",
-  prontos:"Textos prontos", inteiro:"Roteiro inteiro", inteiro_d:"Falas e texto na tela, para mandar a quem vai gravar.",
-  ad_p:"Texto principal", ad_h:"Título", ad_d:"Descrição", ad_c:"Botão", cap:"Legenda Instagram", atencao:"Atenção",
-  // ganchos
-  g_h:"Laboratório de ganchos", g_s:"Escolha a dor do cliente e uma fórmula. Os ganchos estão em espanhol, prontos para o texto na tela ou a primeira frase falada.",
-  embaralhar:"Embaralhar", formulas:"As 6 fórmulas", todas_f:"Todas as fórmulas",
-  // refs
-  rf_h:"Perfis de referência", rf_s:"Perfis para estudar formato, ritmo e ganchos. Seguidores conferidos em 26/10/2026.",
-  seg:"seguidores", insc:"inscritos", oque:"O que copiar", plataforma:"Plataforma", grupo:"Grupo",
+  of:"de",
+  prio:"prioridade",
+  porque:"Por quê",
+  vazio:"Nenhuma ideia com esses filtros.",
+  limpar:"Limpar filtros",
+  r_h:"Roteiros prontos",
+  r_s:"Roteiros completos para gravar, com tempo de cada cena, fala, texto na tela e imagem, mais o texto do anúncio e a legenda. Os quatro primeiros são os que eu gravaria antes.",
+  r_list:"9 roteiros",
+  first:"gravar primeiro",
+  r_why:"Por que este vídeo",
+  board:"Roteiro de gravação",
+  na_tela:"Na tela",
+  imagem:"Imagem",
+  prontos:"Textos prontos",
+  inteiro:"Roteiro inteiro",
+  inteiro_d:"Falas e texto na tela, para mandar a quem vai gravar.",
+  ad_p:"Texto principal",
+  ad_h:"Título",
+  ad_d:"Descrição",
+  ad_c:"Botão",
+  cap:"Legenda Instagram",
+  atencao:"Atenção",
+  g_h:"Laboratório de ganchos",
+  g_s:"Escolha a dor do cliente e uma fórmula. Os ganchos estão em espanhol, prontos para o texto na tela ou a primeira frase falada.",
+  embaralhar:"Embaralhar",
+  formulas:"As 6 fórmulas",
+  todas_f:"Todas as fórmulas",
+  rf_h:"Perfis de referência",
+  rf_s:"Perfis para estudar formato, ritmo e ganchos. Seguidores conferidos em 26/10/2026.",
+  seg:"seguidores",
+  insc:"inscritos",
+  oque:"O que copiar",
   rf_note:"Instagram e YouTube consultados pelo vidIQ em 26/10/2026. O número do Scott Betley é de uma reportagem de 2022. Os concorrentes que anunciam hoje estão no Panorama.",
-  // metodo
-  m_h:"Método e regras", m_s:"Como estruturar, testar e publicar cada vídeo.",
+  m_h:"Método e regras",
+  m_s:"Como estruturar, testar e publicar cada vídeo.",
   m_est:"Estrutura de um vídeo de 40 segundos",
   m_tl:[["0–3 s","Gancho"],["3–8 s","Filtro"],["8–35 s","Conteúdo"],["35–40 s","Ação"]],
   m_tlx:[["Gancho","Texto grande na tela e a mesma frase falada. Nada de \"hola, bienvenidos\"."],["Filtro","Diga para quem é: \"Si vives en CT, MA o RI…\". Evita contatos de fora da área."],["Conteúdo","No máximo 3 pontos, um por cena, cada um com um número concreto."],["Ação","Uma só: formulário, comentar uma palavra ou mandar mensagem."]],
@@ -802,31 +841,58 @@ const T = {
   m_no:"O que não dizer",
   m_noi:["\"Aprobación garantizada\" ou \"todos califican\"","Taxa de juros sem data e condições da cotação","\"1% de entrada\" ou \"$0 de entrada\" sem nomear o programa e quem se qualifica","Score mínimo diferente do que a equipe fala ao telefone (hoje: 620)","Promessas sobre status migratório: fale de documentos aceitos","Valores de programas estaduais sem conferir no site do órgão na semana da gravação"],
   m_legal:"Isto é orientação de marketing, não revisão jurídica. Anúncios de hipoteca seguem regras de publicidade de crédito; passe cada copy nova pelo responsável de compliance da Tower.",
-  m_prod:"Produção", m_prodt:"A edição segue o guia do CapCut salvo no projeto: legenda automática Tower (Montserrat, palavra-chave em verde), corte de silêncios, zoom a cada 4–6 s, b-roll em cada número e CTA final de 3 s. Gere as legendas em Spanish e corrija os termos em inglês que o público usa (FHA, ITIN, closing, down payment)."
- },
- es:{
-  kick:"Tower Home Loans · público hispano · CT · MA · RI",
-  title:"Laboratorio de <em>Guiones</em>",
-  sub:"Ideas, ganchos y guiones de video armados a partir de las dudas que traen los clientes en las conversaciones y de lo que les funciona a otros creadores del nicho.",
-  slate:[["conversaciones","20/08 al 19/10/2026"],["referencias","revisadas el 26/10/2026"]],
-  tabs:{panorama:"Panorama",ideias:"Banco de ideas",roteiros:"Guiones",ganchos:"Ganchos",referencias:"Referencias",metodo:"Método"},
-  copy:"copiar", copied:"copiado", select:"selecciona",
+  m_prod:"Produção",
+  m_prodt:"A edição segue o guia do CapCut salvo no projeto: legenda automática Tower (Montserrat, palavra-chave em verde), corte de silêncios, zoom a cada 4–6 s, b-roll em cada número e CTA final de 3 s. Gere as legendas em Spanish e corrija os termos em inglês que o público usa (FHA, ITIN, closing, down payment)."},
+ es:{tabs:{panorama:"Panorama",ideias:"Banco de ideas",roteiros:"Guiones",ganchos:"Ganchos",referencias:"Referencias",metodo:"Método"},
+  copy:"copiar",
+  copied:"copiado",
+  select:"selecciona",
   es:"diálogos en español para el público",
-  p_h:"Perfil de Instagram", p_s:"Estadísticas de @towerhomeloans_esp para decidir qué grabar después.",
-  i_h:"Banco de ideas", i_s:"Cada idea trae el gancho de los primeros 3 segundos, la estructura del video y la evidencia que la respalda. El estado queda guardado en la página para todos los que abren el link.",
-  pilar:"Pilar", fmt:"Formato", uso:"Uso", busca:"Buscar", busca_ph:"crédito, ITIN, Juan…", todos:"Todos", todas:"Todas",
+  p_h:"Perfil de Instagram",
+  p_s:"Estadísticas de @towerhomeloans_esp para decidir qué grabar después.",
+  i_h:"Banco de ideas",
+  i_s:"Cada idea trae el gancho de los primeros 3 segundos, la estructura del video y la evidencia que la respalda. El estado queda guardado en la página para todos los que abren el link.",
+  fmt:"Formato",
+  uso:"Uso",
+  busca:"Buscar",
+  busca_ph:"crédito, ITIN, Juan…",
+  todos:"Todos",
   st:{nova:"Nueva",roteirizar:"Escribir guion",gravado:"Grabado","no-ar":"Publicado"},
-  of:"de", prio:"prioridad", porque:"Por qué", vazio:"Ninguna idea con esos filtros.", limpar:"Quitar filtros",
-  r_h:"Guiones listos", r_s:"Guiones completos para grabar, con tiempo de cada escena, diálogo, texto en pantalla e imagen, además del texto del anuncio y la descripción. Los cuatro primeros son los que grabaría antes.",
-  r_list:"9 guiones", first:"grabar primero", r_why:"Por qué este video", board:"Guion de grabación", na_tela:"En pantalla", imagem:"Imagen",
-  prontos:"Textos listos", inteiro:"Guion completo", inteiro_d:"Diálogos y texto en pantalla, para enviar a quien va a grabar.",
-  ad_p:"Texto principal", ad_h:"Título", ad_d:"Descripción", ad_c:"Botón", cap:"Descripción Instagram", atencao:"Atención",
-  g_h:"Laboratorio de ganchos", g_s:"Elige el dolor del cliente y una fórmula. Los ganchos están listos para el texto en pantalla o la primera frase.",
-  embaralhar:"Mezclar", formulas:"Las 6 fórmulas", todas_f:"Todas las fórmulas",
-  rf_h:"Perfiles de referencia", rf_s:"Perfiles para estudiar formato, ritmo y ganchos. Seguidores revisados el 26/10/2026.",
-  seg:"seguidores", insc:"suscriptores", oque:"Qué copiar", plataforma:"Plataforma", grupo:"Grupo",
+  of:"de",
+  prio:"prioridad",
+  porque:"Por qué",
+  vazio:"Ninguna idea con esos filtros.",
+  limpar:"Quitar filtros",
+  r_h:"Guiones listos",
+  r_s:"Guiones completos para grabar, con tiempo de cada escena, diálogo, texto en pantalla e imagen, además del texto del anuncio y la descripción. Los cuatro primeros son los que grabaría antes.",
+  r_list:"9 guiones",
+  first:"grabar primero",
+  r_why:"Por qué este video",
+  board:"Guion de grabación",
+  na_tela:"En pantalla",
+  imagem:"Imagen",
+  prontos:"Textos listos",
+  inteiro:"Guion completo",
+  inteiro_d:"Diálogos y texto en pantalla, para enviar a quien va a grabar.",
+  ad_p:"Texto principal",
+  ad_h:"Título",
+  ad_d:"Descripción",
+  ad_c:"Botón",
+  cap:"Descripción Instagram",
+  atencao:"Atención",
+  g_h:"Laboratorio de ganchos",
+  g_s:"Elige el dolor del cliente y una fórmula. Los ganchos están listos para el texto en pantalla o la primera frase.",
+  embaralhar:"Mezclar",
+  formulas:"Las 6 fórmulas",
+  todas_f:"Todas las fórmulas",
+  rf_h:"Perfiles de referencia",
+  rf_s:"Perfiles para estudiar formato, ritmo y ganchos. Seguidores revisados el 26/10/2026.",
+  seg:"seguidores",
+  insc:"suscriptores",
+  oque:"Qué copiar",
   rf_note:"Instagram y YouTube consultados con vidIQ el 26/10/2026. La cifra de Scott Betley es de un artículo de 2022. La competencia que anuncia hoy está en Panorama.",
-  m_h:"Método y reglas", m_s:"Cómo estructurar, probar y publicar cada video.",
+  m_h:"Método y reglas",
+  m_s:"Cómo estructurar, probar y publicar cada video.",
   m_est:"Estructura de un video de 40 segundos",
   m_tl:[["0–3 s","Gancho"],["3–8 s","Filtro"],["8–35 s","Contenido"],["35–40 s","Acción"]],
   m_tlx:[["Gancho","Texto grande en pantalla y la misma frase dicha. Nada de \"hola, bienvenidos\"."],["Filtro","Di para quién es: \"Si vives en CT, MA o RI…\". Evita contactos de fuera del área."],["Contenido","Máximo 3 puntos, uno por escena, cada uno con un número concreto."],["Acción","Solo una: formulario, comentar una palabra o mandar mensaje."]],
@@ -838,31 +904,58 @@ const T = {
   m_no:"Qué no decir",
   m_noi:["\"Aprobación garantizada\" o \"todos califican\"","Una tasa de interés sin fecha ni condiciones","\"1% de entrada\" o \"$0 de entrada\" sin nombrar el programa y quién califica","Un puntaje mínimo distinto al que dice el equipo por teléfono (hoy: 620)","Promesas sobre estatus migratorio: hablen de documentos aceptados","Montos de programas estatales sin revisar la página oficial esa semana"],
   m_legal:"Esto es orientación de marketing, no revisión legal. Los anuncios de hipotecas siguen reglas de publicidad de crédito; pasen cada texto nuevo por el responsable de compliance de Tower.",
-  m_prod:"Producción", m_prodt:"La edición sigue la guía de CapCut guardada en el proyecto: subtítulos automáticos Tower (Montserrat, palabra clave en verde), quitar silencios, zoom cada 4–6 s, b-roll en cada número y cierre de 3 s. Generen los subtítulos en Spanish y corrijan los términos en inglés que usa el público (FHA, ITIN, closing, down payment)."
- },
- en:{
-  kick:"Tower Home Loans · Hispanic audience · CT · MA · RI",
-  title:"Script <em>Lab</em>",
-  sub:"Video ideas, hooks and scripts built from the questions customers bring up in conversations and from what is working for other creators in the niche.",
-  slate:[["conversations","08/20 to 10/19/2026"],["references","checked 10/26/2026"]],
-  tabs:{panorama:"Overview",ideias:"Idea bank",roteiros:"Scripts",ganchos:"Hooks",referencias:"References",metodo:"Method"},
-  copy:"copy", copied:"copied", select:"select it",
+  m_prod:"Producción",
+  m_prodt:"La edición sigue la guía de CapCut guardada en el proyecto: subtítulos automáticos Tower (Montserrat, palabra clave en verde), quitar silencios, zoom cada 4–6 s, b-roll en cada número y cierre de 3 s. Generen los subtítulos en Spanish y corrijan los términos en inglés que usa el público (FHA, ITIN, closing, down payment)."},
+ en:{tabs:{panorama:"Overview",ideias:"Idea bank",roteiros:"Scripts",ganchos:"Hooks",referencias:"References",metodo:"Method"},
+  copy:"copy",
+  copied:"copied",
+  select:"select it",
   es:"lines in Spanish for the audience; translation in italics",
-  p_h:"Instagram profile", p_s:"Stats for @towerhomeloans_esp to decide what to shoot next.",
-  i_h:"Idea bank", i_s:"Each idea has the hook for the first 3 seconds, the video outline, and the evidence behind it. Status is saved on the page for everyone who opens the link.",
-  pilar:"Pillar", fmt:"Format", uso:"Use", busca:"Search", busca_ph:"credit, ITIN, Juan…", todos:"All", todas:"All",
+  p_h:"Instagram profile",
+  p_s:"Stats for @towerhomeloans_esp to decide what to shoot next.",
+  i_h:"Idea bank",
+  i_s:"Each idea has the hook for the first 3 seconds, the video outline, and the evidence behind it. Status is saved on the page for everyone who opens the link.",
+  fmt:"Format",
+  uso:"Use",
+  busca:"Search",
+  busca_ph:"credit, ITIN, Juan…",
+  todos:"All",
   st:{nova:"New",roteirizar:"To script",gravado:"Shot","no-ar":"Live"},
-  of:"of", prio:"priority", porque:"Why", vazio:"No ideas match these filters.", limpar:"Clear filters",
-  r_h:"Ready-to-shoot scripts", r_s:"Full scripts with timing for each scene, lines, on-screen text and visuals, plus ad copy and caption. The first four are the ones I'd shoot first.",
-  r_list:"9 scripts", first:"shoot first", r_why:"Why this video", board:"Shooting script", na_tela:"On screen", imagem:"Visual",
-  prontos:"Ready copy", inteiro:"Full script", inteiro_d:"Lines and on-screen text, to send to whoever is filming.",
-  ad_p:"Primary text", ad_h:"Headline", ad_d:"Description", ad_c:"Button", cap:"Instagram caption", atencao:"Heads-up",
-  g_h:"Hook lab", g_s:"Pick the customer's pain point and a formula. Hooks are in Spanish, ready for on-screen text or the first spoken line.",
-  embaralhar:"Shuffle", formulas:"The 6 formulas", todas_f:"All formulas",
-  rf_h:"Reference creators", rf_s:"Accounts to study for format, pacing and hooks. Follower counts checked 10/26/2026.",
-  seg:"followers", insc:"subscribers", oque:"What to borrow", plataforma:"Platform", grupo:"Group",
+  of:"of",
+  prio:"priority",
+  porque:"Why",
+  vazio:"No ideas match these filters.",
+  limpar:"Clear filters",
+  r_h:"Ready-to-shoot scripts",
+  r_s:"Full scripts with timing for each scene, lines, on-screen text and visuals, plus ad copy and caption. The first four are the ones I'd shoot first.",
+  r_list:"9 scripts",
+  first:"shoot first",
+  r_why:"Why this video",
+  board:"Shooting script",
+  na_tela:"On screen",
+  imagem:"Visual",
+  prontos:"Ready copy",
+  inteiro:"Full script",
+  inteiro_d:"Lines and on-screen text, to send to whoever is filming.",
+  ad_p:"Primary text",
+  ad_h:"Headline",
+  ad_d:"Description",
+  ad_c:"Button",
+  cap:"Instagram caption",
+  atencao:"Heads-up",
+  g_h:"Hook lab",
+  g_s:"Pick the customer's pain point and a formula. Hooks are in Spanish, ready for on-screen text or the first spoken line.",
+  embaralhar:"Shuffle",
+  formulas:"The 6 formulas",
+  todas_f:"All formulas",
+  rf_h:"Reference creators",
+  rf_s:"Accounts to study for format, pacing and hooks. Follower counts checked 10/26/2026.",
+  seg:"followers",
+  insc:"subscribers",
+  oque:"What to borrow",
   rf_note:"Instagram and YouTube checked via vidIQ on 10/26/2026. Scott Betley's count is from a 2022 article. Competitors advertising today are on the Overview tab.",
-  m_h:"Method and rules", m_s:"How to structure, test and publish each video.",
+  m_h:"Method and rules",
+  m_s:"How to structure, test and publish each video.",
   m_est:"Structure of a 40-second video",
   m_tl:[["0–3 s","Hook"],["3–8 s","Filter"],["8–35 s","Content"],["35–40 s","Action"]],
   m_tlx:[["Hook","Big on-screen text plus the same line spoken. No \"hola, bienvenidos\"."],["Filter","Say who it's for: \"Si vives en CT, MA o RI…\". Cuts out-of-area inquiries."],["Content","Three points max, one per scene, each with a concrete number."],["Action","Just one: the form, comment a keyword, or send a message."]],
@@ -874,8 +967,8 @@ const T = {
   m_no:"What not to say",
   m_noi:["\"Guaranteed approval\" or \"everyone qualifies\"","An interest rate without the quote date and terms","\"1% down\" or \"$0 down\" without naming the program and who qualifies","A minimum score different from what the team says on calls (today: 620)","Promises about immigration status: talk about accepted documents","State program amounts not checked on the agency site that week"],
   m_legal:"This is marketing guidance, not legal review. Mortgage ads follow credit advertising rules; run every new piece of copy past Tower's compliance contact.",
-  m_prod:"Production", m_prodt:"Editing follows the CapCut guide saved in the project: Tower auto-captions (Montserrat, keyword in green), silence removal, zoom every 4–6 s, b-roll on every number, and a 3-second end card. Generate captions in Spanish and fix the English terms the audience uses (FHA, ITIN, closing, down payment)."
- }
+  m_prod:"Production",
+  m_prodt:"Editing follows the CapCut guide saved in the project: Tower auto-captions (Montserrat, keyword in green), silence removal, zoom every 4–6 s, b-roll on every number, and a 3-second end card. Generate captions in Spanish and fix the English terms the audience uses (FHA, ITIN, closing, down payment)."},
 };
 
 const PILAR = {
@@ -1598,26 +1691,26 @@ const ICONS = {
   roteiros:'<path d="M3 8h18v12H3zM3 8l2.5-4h4L7 8M10.5 8 13 4h4l-2.5 4"/>',
   ganchos:'<path d="M13 2 4 14h7l-1 8 9-12h-7z"/>',
   referencias:'<path d="M16 20v-1.5a3.5 3.5 0 0 0-3.5-3.5h-5A3.5 3.5 0 0 0 4 18.5V20M10 11a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM20 20v-1.5a3.5 3.5 0 0 0-2.5-3.35M15.5 4.2a3.5 3.5 0 0 1 0 6.6"/>',
-  metodo:'<path d="M9 11l2.5 2.5L20 5M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/>',
   bulb:'<path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9V16h7v-2.1A6 6 0 0 0 12 3z"/>',
-  info:'<circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v5h1"/>',
   warn:'<path d="M12 3 2 20h20L12 3zM12 10v4M12 17h.01"/>',
   phone:'<rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/>',
   upload:'<path d="M12 16V4M7 9l5-5 5 5M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3"/>',
   shuffle:'<path d="M16 3h5v5M4 20 21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/>',
-  link:'<path d="M10 14a4.5 4.5 0 0 0 6.4 0l3.2-3.2a4.5 4.5 0 0 0-6.4-6.4L12 5.6M14 10a4.5 4.5 0 0 0-6.4 0l-3.2 3.2a4.5 4.5 0 0 0 6.4 6.4l1.2-1.2"/>',
-  ext:'<path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/>',
   tp:'<rect x="3" y="4" width="18" height="13" rx="2"/><path d="M7 9h10M7 12.5h6M9 21h6"/>',
   grid:'<rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/>',
   kanban:'<rect x="3.5" y="4" width="5" height="16" rx="1.5"/><rect x="10" y="4" width="5" height="11" rx="1.5"/><rect x="16.5" y="4" width="4" height="7" rx="1.5"/>'
 };
 const svg = (k, cls = "ico") => `<svg class="${cls}" viewBox="0 0 24 24" aria-hidden="true">${ICONS[k]}</svg>`;
-const VIEWS = ["panorama","ideias","roteiros","ganchos","referencias","metodo"];
+const VIEWS = ["roteiros","ideias","ganchos","referencias","panorama"];
+const TABS = {pt:{roteiros:["Roteiros","Roteiros"],ideias:["Banco de ideias","Ideias"],ganchos:["Ganchos e método","Guia"],referencias:["Referências","Perfis"],panorama:["Instagram","Insta"]},
+ es:{roteiros:["Guiones","Guiones"],ideias:["Banco de ideas","Ideas"],ganchos:["Ganchos y método","Guía"],referencias:["Referencias","Perfiles"],panorama:["Instagram","Insta"]},
+ en:{roteiros:["Scripts","Scripts"],ideias:["Idea bank","Ideas"],ganchos:["Hooks & method","Guide"],referencias:["References","Creators"],panorama:["Instagram","Insta"]}};
 const LOC = {pt:"pt-BR", es:"es-ES", en:"en-US"};
 
 let accent = store.get("lab-accent", ""); if (accent === "tower") document.documentElement.dataset.accent = "tower";
 let lang = store.get("lab-lang", "pt"); if (!T[lang]) lang = "pt";
-let view = (location.hash || "").slice(1); if (!VIEWS.includes(view)) view = store.get("lab-tab", "panorama"); if (!VIEWS.includes(view)) view = "panorama";
+const fixView = v => v === "metodo" ? "ganchos" : v;
+let view = fixView((location.hash || "").slice(1)); if (!VIEWS.includes(view)) view = fixView(store.get("lab-tab", "roteiros")); if (!VIEWS.includes(view)) view = "roteiros";
 const ST = store.get("lab-status", {});
 const F = {p:"", f:"", u:"", st:"", q:""};
 let curScript = store.get("lab-script", "r1"); if (!ROTEIROS.find(r => r.id === curScript)) curScript = "r1";
@@ -1647,15 +1740,9 @@ document.addEventListener("click", e => { const b = e.target.closest(".cbtn"); i
 /* ---------- shell ---------- */
 function renderShell(){
   document.documentElement.lang = lang === "pt" ? "pt-BR" : lang;
-  $("#m-kick").textContent = t("kick");
-  $("#m-title").innerHTML = t("title");
-  $("#m-sub").textContent = t("sub");
-  $("#m-slate").innerHTML = t("slate").map(([a, b]) => `<span>${esc(a)} <b>${esc(b)}</b></span>`).join("");
-  const HC = {pt:["Ver roteiros","Banco de ideias","Montado com dados de"], es:["Ver guiones","Banco de ideas","Hecho con datos de"], en:["See scripts","Idea bank","Built on data from"]}[lang];
-  $("#cta1").innerHTML = svg("roteiros") + esc(HC[0]); $("#cta2").innerHTML = svg("ideias") + esc(HC[1]); $("#m-src").textContent = HC[2];
   document.querySelectorAll(".lang button").forEach(b => b.setAttribute("aria-pressed", b.dataset.lang === lang));
   const counts = {ideias:IDEIAS.length + STORIES.length, roteiros:ROTEIROS.length, referencias:REFS.length};
-  $("#tabs").innerHTML = VIEWS.map(v => `<button class="tab" role="tab" id="tab-${v}" data-v="${v}" aria-selected="${v === view}">${svg(v)}<span class="tl">${esc(t("tabs")[v])}</span><span class="ts">${esc(xt("short")[v])}</span>${counts[v] ? `<span class="n">${counts[v]}</span>` : ""}</button>`).join("");
+  $("#tabs").innerHTML = VIEWS.map(v => `<button class="tab" role="tab" id="tab-${v}" data-v="${v}" aria-selected="${v === view}">${svg(v === "panorama" ? "phone" : v)}<span class="tl">${esc(TABS[lang][v][0])}</span><span class="ts">${esc(TABS[lang][v][1])}</span>${counts[v] ? `<span class="n">${counts[v]}</span>` : ""}</button>`).join("");
   const ab = $("#accent"); if (ab) { ab.setAttribute("aria-label", xt("accent")); ab.title = xt("accent"); ab.setAttribute("aria-pressed", accent === "tower"); }
   document.title = lang === "pt" ? "Laboratório de Roteiros Tower" : lang === "es" ? "Laboratorio de Guiones Tower" : "Tower Script Lab";
 }
@@ -1666,74 +1753,142 @@ function show(v){
   VIEWS.forEach(x => { $("#v-" + x).hidden = x !== v; });
   document.querySelectorAll(".tab").forEach(b => b.setAttribute("aria-selected", b.dataset.v === v));
 }
-const toContent = () => { if (view !== "panorama") { if (window.scrollY > 0) window.scrollTo({top: 0}); return; } const m = document.querySelector("main"); const y = m.getBoundingClientRect().top + window.scrollY - (document.querySelector(".top").offsetHeight + 12); if (window.scrollY > y) window.scrollTo({top: y}); };
+const toContent = () => { if (window.scrollY > 0) window.scrollTo({top: 0}); };
 $("#tabs").addEventListener("click", e => { const b = e.target.closest(".tab"); if (!b) return; show(b.dataset.v); toContent(); });
-document.querySelectorAll(".cta [data-go]").forEach(b => b.addEventListener("click", () => { show(b.dataset.go); window.scrollTo({top: 0}); }));
 document.addEventListener("click", e => { if (!e.target.closest("#accent")) return; accent = accent === "tower" ? "" : "tower"; store.set("lab-accent", accent); if (accent) document.documentElement.dataset.accent = accent; else delete document.documentElement.dataset.accent; $("#accent").setAttribute("aria-pressed", accent === "tower"); });
 document.querySelectorAll(".lang button").forEach(b => b.addEventListener("click", () => { lang = b.dataset.lang; store.set("lab-lang", lang); renderAll(); }));
 
 /* ============ instagram ============ */
 const IGT = {
- pt:{seg_ig:"Perfil do Instagram",
-  h:"Perfil do Instagram", s:"Estatísticas do perfil exportadas do Meta Business Suite. Os números ficam salvos nesta página e qualquer pessoa com acesso vê a mesma versão.",
-  period:"período", updated:"atualizado em", source:"fonte", src:"Meta Business Suite (CSV)",
-  imp:"Atualizar com CSV", imp_h:"Selecione os arquivos exportados do Business Suite (estatísticas diárias e relatórios de conteúdo). Datas novas entram no histórico; as repetidas são substituídas.",
-  imp_busy:"Importando…", imp_ok:(d,c)=>`Importado: ${d} séries diárias e ${c} relatórios de conteúdo.`, imp_none:"Nenhum arquivo reconhecido. Use os CSVs exportados do Business Suite.", imp_err:"Não foi possível salvar. Tente de novo em instantes.",
-  loading:"Carregando as estatísticas…", nodb:"As estatísticas do Instagram aparecem para quem abre a página logado no claude.ai.", empty:"Ainda não há dados do Instagram. Use \"Atualizar com CSV\" para enviar os arquivos do Business Suite.", empty_v:"Ainda não há dados do Instagram nesta página.",
+ pt:{h:"Perfil do Instagram",
+  s:"Estatísticas do perfil exportadas do Meta Business Suite. Os números ficam salvos nesta página e qualquer pessoa com acesso vê a mesma versão.",
+  period:"período",
+  updated:"atualizado em",
+  source:"fonte",
+  src:"Meta Business Suite (CSV)",
+  imp:"Atualizar com CSV",
+  imp_h:"Selecione os arquivos exportados do Business Suite (estatísticas diárias e relatórios de conteúdo). Datas novas entram no histórico; as repetidas são substituídas.",
+  imp_busy:"Importando…",
+  imp_ok:(d,c)=>`Importado: ${d} séries diárias e ${c} relatórios de conteúdo.`,
+  imp_none:"Nenhum arquivo reconhecido. Use os CSVs exportados do Business Suite.",
+  imp_err:"Não foi possível salvar. Tente de novo em instantes.",
+  loading:"Carregando as estatísticas…",
+  nodb:"As estatísticas do Instagram aparecem para quem abre a página logado no claude.ai.",
+  empty:"Ainda não há dados do Instagram. Use \"Atualizar com CSV\" para enviar os arquivos do Business Suite.",
+  empty_v:"Ainda não há dados do Instagram nesta página.",
   k:{views:"Visualizações",reach:"Alcance",visits:"Visitas ao perfil",followers:"Novos seguidores",interactions:"Interações",clicks:"Cliques no link"},
-  kd:{reach:"soma do alcance diário"}, vs:"últimos 30 dias vs 30 anteriores",
+  kd:{reach:"soma do alcance diário"},
+  vs:"últimos 30 dias vs 30 anteriores",
   alert_t:"O alcance do perfil caiu e o anúncio continua no ar",
   alert_p:(a,b,p)=>`Nos últimos 30 dias o perfil teve ${a} visualizações, contra ${b} nos 30 anteriores (${p}). As visitas ao perfil quase não mudaram, então o interesse orgânico se manteve; o que sumiu foi o volume que vinha dos anúncios.`,
   alert_d:"Diagnóstico de 28/10: no dia 28/09, com a campanha pausada, todas as métricas foram a quase zero; a partir de 01/10 o volume não voltou, embora os anúncios tenham entregado de 600 a 1.300 impressões por dia no Instagram em outubro. O mais provável é que os anúncios refeitos no fim de setembro rodem com outra identidade do Instagram. Confira em cada anúncio ativo, em Identidade › Conta do Instagram, se está @towerhomeloans_esp.",
-  c1:"Visualizações e alcance por dia", c2:"Novos seguidores por dia", c3:"Visitas ao perfil por dia", c4:"Cliques no link por dia", c5:"Interações por dia",
+  c1:"Visualizações e alcance por dia",
+  c2:"Novos seguidores por dia",
+  c3:"Visitas ao perfil por dia",
+  c4:"Cliques no link por dia",
+  c5:"Interações por dia",
   hover:"passe o mouse ou toque no gráfico para ver o dia",
-  mt:"Mês a mês", mth:["Mês","Dias","Visualizações","Alcance","Visitas","Seguidores","Interações","Cliques"], perday:"média por dia",
-  pt_t:"Posts do perfil", pt_s:"Feed e Reels, ordenados por visualizações", pth:["Data","Tipo","Post","Visualiz.","Alcance","Curtidas","Coment.","Compart.","Salvos"],
-  bm_t:"Comparação com outros perfis do mesmo export", bm_p:(a,b,x)=>`Os carrosséis de fechamento dos loan officers tiveram em média ${a} visualizações por post, contra ${b} dos posts da Tower (${x}×). Fotos de chaves e de clientes assinando funcionam melhor que vídeos genéricos de \"planificación\".`,
+  mt:"Mês a mês",
+  mth:["Mês","Dias","Visualizações","Alcance","Visitas","Seguidores","Interações","Cliques"],
+  perday:"média por dia",
+  pt_t:"Posts do perfil",
+  pt_s:"Feed e Reels, ordenados por visualizações",
+  pth:["Data","Tipo","Post","Visualiz.","Alcance","Curtidas","Coment.","Compart.","Salvos"],
+  bm_t:"Comparação com outros perfis do mesmo export",
+  bm_p:(a,b,x)=>`Os carrosséis de fechamento dos loan officers tiveram em média ${a} visualizações por post, contra ${b} dos posts da Tower (${x}×). Fotos de chaves e de clientes assinando funcionam melhor que vídeos genéricos de \"planificación\".`,
   bmh:["Perfil","Posts","Média de visualizações","Média de alcance"],
-  st_t:"Stories", st_s:"Cada story publicado no período", sth:["Data","Visualiz.","Alcance","Respostas","Navegação","Abrir"],
-  st_k:["Stories","Média de visualizações","Média de alcance","Melhor story"], ver:"ver",
+  st_t:"Stories",
+  st_s:"Cada story publicado no período",
+  sth:["Data","Visualiz.","Alcance","Respostas","Navegação","Abrir"],
+  st_k:["Stories","Média de visualizações","Média de alcance","Melhor story"],
+  ver:"ver",
   types:{reel:"Reel",carrossel:"Carrossel",story:"Story",foto:"Foto",post:"Post"}},
- es:{seg_ig:"Perfil de Instagram",
-  h:"Perfil de Instagram", s:"Estadísticas del perfil exportadas de Meta Business Suite. Los números quedan guardados en esta página y todos los que tienen acceso ven la misma versión.",
-  period:"periodo", updated:"actualizado el", source:"fuente", src:"Meta Business Suite (CSV)",
-  imp:"Actualizar con CSV", imp_h:"Selecciona los archivos exportados de Business Suite (estadísticas diarias e informes de contenido). Las fechas nuevas se suman al historial; las repetidas se reemplazan.",
-  imp_busy:"Importando…", imp_ok:(d,c)=>`Importado: ${d} series diarias y ${c} informes de contenido.`, imp_none:"Ningún archivo reconocido. Usa los CSV exportados de Business Suite.", imp_err:"No se pudo guardar. Intenta de nuevo en un momento.",
-  loading:"Cargando estadísticas…", nodb:"Las estadísticas de Instagram aparecen para quien abre la página con sesión iniciada en claude.ai.", empty:"Todavía no hay datos de Instagram. Usa \"Actualizar con CSV\" para subir los archivos de Business Suite.", empty_v:"Todavía no hay datos de Instagram en esta página.",
+ es:{h:"Perfil de Instagram",
+  s:"Estadísticas del perfil exportadas de Meta Business Suite. Los números quedan guardados en esta página y todos los que tienen acceso ven la misma versión.",
+  period:"periodo",
+  updated:"actualizado el",
+  source:"fuente",
+  src:"Meta Business Suite (CSV)",
+  imp:"Actualizar con CSV",
+  imp_h:"Selecciona los archivos exportados de Business Suite (estadísticas diarias e informes de contenido). Las fechas nuevas se suman al historial; las repetidas se reemplazan.",
+  imp_busy:"Importando…",
+  imp_ok:(d,c)=>`Importado: ${d} series diarias y ${c} informes de contenido.`,
+  imp_none:"Ningún archivo reconocido. Usa los CSV exportados de Business Suite.",
+  imp_err:"No se pudo guardar. Intenta de nuevo en un momento.",
+  loading:"Cargando estadísticas…",
+  nodb:"Las estadísticas de Instagram aparecen para quien abre la página con sesión iniciada en claude.ai.",
+  empty:"Todavía no hay datos de Instagram. Usa \"Actualizar con CSV\" para subir los archivos de Business Suite.",
+  empty_v:"Todavía no hay datos de Instagram en esta página.",
   k:{views:"Visualizaciones",reach:"Alcance",visits:"Visitas al perfil",followers:"Nuevos seguidores",interactions:"Interacciones",clicks:"Clics en el enlace"},
-  kd:{reach:"suma del alcance diario"}, vs:"últimos 30 días vs 30 anteriores",
+  kd:{reach:"suma del alcance diario"},
+  vs:"últimos 30 días vs 30 anteriores",
   alert_t:"El alcance del perfil cayó y el anuncio sigue activo",
   alert_p:(a,b,p)=>`En los últimos 30 días el perfil tuvo ${a} visualizaciones, contra ${b} en los 30 anteriores (${p}). Las visitas al perfil casi no cambiaron, así que el interés orgánico se mantuvo; lo que desapareció fue el volumen que venía de los anuncios.`,
   alert_d:"Diagnóstico del 28/10: el 28/09, con la campaña en pausa, todas las métricas bajaron casi a cero; desde el 01/10 el volumen no volvió, aunque los anuncios entregaron de 600 a 1.300 impresiones diarias en Instagram en octubre. Lo más probable es que los anuncios rehechos a fines de septiembre corran con otra identidad de Instagram. Revisen en cada anuncio activo, en Identidad › Cuenta de Instagram, que sea @towerhomeloans_esp.",
-  c1:"Visualizaciones y alcance por día", c2:"Nuevos seguidores por día", c3:"Visitas al perfil por día", c4:"Clics en el enlace por día", c5:"Interacciones por día",
+  c1:"Visualizaciones y alcance por día",
+  c2:"Nuevos seguidores por día",
+  c3:"Visitas al perfil por día",
+  c4:"Clics en el enlace por día",
+  c5:"Interacciones por día",
   hover:"pasa el mouse o toca el gráfico para ver el día",
-  mt:"Mes a mes", mth:["Mes","Días","Visualizaciones","Alcance","Visitas","Seguidores","Interacciones","Clics"], perday:"promedio por día",
-  pt_t:"Publicaciones del perfil", pt_s:"Feed y Reels, ordenados por visualizaciones", pth:["Fecha","Tipo","Publicación","Visualiz.","Alcance","Me gusta","Coment.","Compart.","Guardados"],
-  bm_t:"Comparación con otros perfiles del mismo export", bm_p:(a,b,x)=>`Los carruseles de cierre de los loan officers promediaron ${a} visualizaciones por publicación, contra ${b} de Tower (${x}×). Fotos de llaves y de clientes firmando funcionan mejor que videos genéricos de \"planificación\".`,
+  mt:"Mes a mes",
+  mth:["Mes","Días","Visualizaciones","Alcance","Visitas","Seguidores","Interacciones","Clics"],
+  perday:"promedio por día",
+  pt_t:"Publicaciones del perfil",
+  pt_s:"Feed y Reels, ordenados por visualizaciones",
+  pth:["Fecha","Tipo","Publicación","Visualiz.","Alcance","Me gusta","Coment.","Compart.","Guardados"],
+  bm_t:"Comparación con otros perfiles del mismo export",
+  bm_p:(a,b,x)=>`Los carruseles de cierre de los loan officers promediaron ${a} visualizaciones por publicación, contra ${b} de Tower (${x}×). Fotos de llaves y de clientes firmando funcionan mejor que videos genéricos de \"planificación\".`,
   bmh:["Perfil","Publicaciones","Promedio de visualizaciones","Promedio de alcance"],
-  st_t:"Stories", st_s:"Cada story publicado en el periodo", sth:["Fecha","Visualiz.","Alcance","Respuestas","Navegación","Abrir"],
-  st_k:["Stories","Promedio de visualizaciones","Promedio de alcance","Mejor story"], ver:"ver",
+  st_t:"Stories",
+  st_s:"Cada story publicado en el periodo",
+  sth:["Fecha","Visualiz.","Alcance","Respuestas","Navegación","Abrir"],
+  st_k:["Stories","Promedio de visualizaciones","Promedio de alcance","Mejor story"],
+  ver:"ver",
   types:{reel:"Reel",carrossel:"Carrusel",story:"Story",foto:"Foto",post:"Publicación"}},
- en:{seg_ig:"Instagram profile",
-  h:"Instagram profile", s:"Profile stats exported from Meta Business Suite. The numbers are saved in this page and everyone with access sees the same version.",
-  period:"period", updated:"updated", source:"source", src:"Meta Business Suite (CSV)",
-  imp:"Update from CSV", imp_h:"Select the files exported from Business Suite (daily stats and content reports). New dates are added to the history; repeated dates are replaced.",
-  imp_busy:"Importing…", imp_ok:(d,c)=>`Imported: ${d} daily series and ${c} content reports.`, imp_none:"No file recognized. Use the CSVs exported from Business Suite.", imp_err:"Couldn't save. Try again in a moment.",
-  loading:"Loading stats…", nodb:"Instagram stats show for viewers signed in to claude.ai.", empty:"No Instagram data yet. Use \"Update from CSV\" to upload the Business Suite files.", empty_v:"No Instagram data on this page yet.",
+ en:{h:"Instagram profile",
+  s:"Profile stats exported from Meta Business Suite. The numbers are saved in this page and everyone with access sees the same version.",
+  period:"period",
+  updated:"updated",
+  source:"source",
+  src:"Meta Business Suite (CSV)",
+  imp:"Update from CSV",
+  imp_h:"Select the files exported from Business Suite (daily stats and content reports). New dates are added to the history; repeated dates are replaced.",
+  imp_busy:"Importing…",
+  imp_ok:(d,c)=>`Imported: ${d} daily series and ${c} content reports.`,
+  imp_none:"No file recognized. Use the CSVs exported from Business Suite.",
+  imp_err:"Couldn't save. Try again in a moment.",
+  loading:"Loading stats…",
+  nodb:"Instagram stats show for viewers signed in to claude.ai.",
+  empty:"No Instagram data yet. Use \"Update from CSV\" to upload the Business Suite files.",
+  empty_v:"No Instagram data on this page yet.",
   k:{views:"Views",reach:"Reach",visits:"Profile visits",followers:"New followers",interactions:"Interactions",clicks:"Link clicks"},
-  kd:{reach:"sum of daily reach"}, vs:"last 30 days vs previous 30",
+  kd:{reach:"sum of daily reach"},
+  vs:"last 30 days vs previous 30",
   alert_t:"Profile reach dropped while the ad is still running",
   alert_p:(a,b,p)=>`In the last 30 days the profile got ${a} views, vs ${b} in the previous 30 (${p}). Profile visits barely moved, so organic interest held; what disappeared was the volume coming from ads.`,
   alert_d:"Diagnosis as of 10/28: on 09/28, with the campaign paused, every metric fell to almost zero; from 10/01 volume never came back, even though ads delivered 600 to 1,300 Instagram impressions a day in October. Most likely the ads rebuilt in late September run under a different Instagram identity. Check each active ad under Identity › Instagram account and make sure it's @towerhomeloans_esp.",
-  c1:"Views and reach per day", c2:"New followers per day", c3:"Profile visits per day", c4:"Link clicks per day", c5:"Interactions per day",
+  c1:"Views and reach per day",
+  c2:"New followers per day",
+  c3:"Profile visits per day",
+  c4:"Link clicks per day",
+  c5:"Interactions per day",
   hover:"hover or tap the chart to see a day",
-  mt:"Month by month", mth:["Month","Days","Views","Reach","Visits","Followers","Interactions","Clicks"], perday:"daily average",
-  pt_t:"Profile posts", pt_s:"Feed and Reels, sorted by views", pth:["Date","Type","Post","Views","Reach","Likes","Comm.","Shares","Saves"],
-  bm_t:"Compared with other profiles in the same export", bm_p:(a,b,x)=>`Loan officers' closing-day carousels averaged ${a} views per post, vs ${b} for Tower's posts (${x}×). Photos of keys and clients signing beat generic \"planificación\" videos.`,
+  mt:"Month by month",
+  mth:["Month","Days","Views","Reach","Visits","Followers","Interactions","Clicks"],
+  perday:"daily average",
+  pt_t:"Profile posts",
+  pt_s:"Feed and Reels, sorted by views",
+  pth:["Date","Type","Post","Views","Reach","Likes","Comm.","Shares","Saves"],
+  bm_t:"Compared with other profiles in the same export",
+  bm_p:(a,b,x)=>`Loan officers' closing-day carousels averaged ${a} views per post, vs ${b} for Tower's posts (${x}×). Photos of keys and clients signing beat generic \"planificación\" videos.`,
   bmh:["Profile","Posts","Avg views","Avg reach"],
-  st_t:"Stories", st_s:"Every story posted in the period", sth:["Date","Views","Reach","Replies","Navigation","Open"],
-  st_k:["Stories","Avg views","Avg reach","Best story"], ver:"view",
-  types:{reel:"Reel",carrossel:"Carousel",story:"Story",foto:"Photo",post:"Post"}}
+  st_t:"Stories",
+  st_s:"Every story posted in the period",
+  sth:["Date","Views","Reach","Replies","Navigation","Open"],
+  st_k:["Stories","Avg views","Avg reach","Best story"],
+  ver:"view",
+  types:{reel:"Reel",carrossel:"Carousel",story:"Story",foto:"Photo",post:"Post"}},
 };
 const IG_MAIN = "towerhomeloans_esp";
 const SERIES = ["views","reach","visits","followers","interactions","clicks"];
@@ -2085,6 +2240,159 @@ function bindIG(){
   box.addEventListener("click", onHit);
 }
 
+/* ============ linha de raciocínio: ligação que deu certo + vídeo + referência ============ */
+/* Dúvidas típicas das ligações (análise de 20/08 a 19/10/2026, sem dados de clientes). "q" é a frase típica, não citação literal. */
+const CALLS = [
+ {id:"c1", rc:"Yo sé que tengo más o menos un buen crédito, pero no sé exactamente.", rt:"Correr su crédito no le va a afectar su puntaje, sabiendo que hacemos un soft pull, ¿sí?", p:"credito",
+  t:{pt:"Será que eu califico com meu crédito?",es:"¿Califico con mi crédito?",en:"Do I qualify with my credit?"},
+  q:"No sé si califico con mi crédito.",
+  w:{pt:"Avança quando o atendente explica com quais faixas de score a equipe trabalha, monta um plano para melhorar o crédito e já combina o próximo passo.",es:"Avanza cuando el asesor explica con qué puntajes trabaja el equipo, arma un plan para mejorar el crédito y deja acordado el siguiente paso.",en:"It moves forward when the advisor explains which score ranges the team works with, builds a plan to improve credit and agrees on the next step."},
+  pts:["Hay programas para distintos puntajes de crédito","Si hoy no llegas, armamos un plan para subirlo","Revisamos tu caso sin costo y te decimos qué falta"],
+  cta:"Escríbenos por WhatsApp y revisamos tu crédito contigo."},
+ {id:"c2", rc:"Déjame preguntarle a mi esposa y ya regreso contigo.", rt:"Si usted logra aplicar con alguien que pueda cumplir con los requisitos, créame que usted está a un paso de poder hacerlo, ¿sí?", p:"renda",
+  t:{pt:"Preciso falar com meu marido ou esposa",es:"Tengo que hablarlo con mi pareja",en:"I need to talk to my spouse"},
+  q:"Tengo que hablarlo con mi esposo.",
+  w:{pt:"Avança quando o atendente convida o casal para a mesma conversa e marca dia e hora com os dois. Família pode entrar como co-aplicante.",es:"Avanza cuando el asesor invita a la pareja a la misma conversación y agenda día y hora con los dos. La familia puede entrar como coaplicante.",en:"It moves forward when the advisor invites both partners to the same call and books a day and time with them. Family can join as co-applicants."},
+  pts:["Pueden aplicar juntos como coaplicantes","Los ingresos de los dos pueden contar","Agenda una llamada con tu pareja y lo vemos juntos"],
+  cta:"Agenda la llamada con tu pareja: escríbenos \"CASA\"."},
+ {id:"c3", rc:"Sí, yo trabajo, pero de manera como independiente.", rt:"Como usted recibe cash, usted puede justificar que recibe cierta cantidad de dinero para poder calificar para su casa.", p:"renda",
+  t:{pt:"Recebo em cash",es:"Me pagan en cash",en:"I get paid in cash"},
+  q:"Me pagan en cash, ¿eso cuenta?",
+  w:{pt:"É a dúvida que mais trava a conversa. Avança quando o atendente explica como comprovar renda e manda pelo WhatsApp a lista do que juntar.",es:"Es la duda que más frena la conversación. Avanza cuando el asesor explica cómo comprobar ingresos y manda por WhatsApp la lista de lo que hay que juntar.",en:"It's the question that stalls calls most. It moves forward when the advisor explains how to prove income and sends the checklist on WhatsApp."},
+  pts:["El banco necesita ver tus ingresos en papel","Taxes, depósitos en el banco o 1099 sirven","Si hoy no lo tienes todo, armamos el plan"],
+  cta:"Pídenos la lista por WhatsApp."},
+ {id:"c4", rc:"No sé cuánto tengo que acumular para el down payment.", rt:"Sobre el down payment, sí puede estar entre el tres al cinco por ciento, ¿de acuerdo?", p:"entrada",
+  t:{pt:"Quanto preciso de entrada?",es:"¿Cuánto necesito de entrada?",en:"How much do I need down?"},
+  q:"¿Cuánto necesito de entrada? Vi que era el 1%.",
+  w:{pt:"Avança quando o atendente corrige a expectativa com um exemplo concreto (FHA a partir de 3,5%) e cita os programas de ajuda do estado.",es:"Avanza cuando el asesor corrige la expectativa con un ejemplo concreto (FHA desde 3.5%) y menciona los programas de ayuda del estado.",en:"It moves forward when the advisor resets expectations with a concrete example (FHA from 3.5%) and names the state assistance programs."},
+  pts:["Con FHA, si calificas, desde 3.5%","Ejemplo: casa de $350,000 → $12,250","En tu estado hay programas de ayuda para la entrada"],
+  cta:"Te decimos cuánto necesitas tú: escríbenos."},
+ {id:"c5", rc:"Solamente con ITIN number, no tenía nada.", rt:"La forma más sencilla es que usted aplique con alguien más y que ese alguien más, por lo menos, tenga su social, ¿sí?", p:"itin",
+  t:{pt:"Não tenho social",es:"No tengo social",en:"I don't have an SSN"},
+  q:"No tengo social, ¿puedo comprar?",
+  w:{pt:"Avança quando o atendente pergunta o status logo no começo (cidadão, residente ou permissão de trabalho) e mostra o caminho mais simples: aplicar junto com alguém que tenha social.",es:"Avanza cuando el asesor pregunta el estatus al inicio (ciudadano, residente o permiso de trabajo) y muestra el camino más sencillo: aplicar con alguien que tenga social.",en:"It moves forward when the advisor asks about status up front (citizen, resident or work permit) and shows the simplest path: applying with someone who has an SSN."},
+  pts:["Primero vemos tu estatus: ciudadano, residente o permiso de trabajo","Si solo tienes ITIN, puedes aplicar con alguien que tenga social","Revisamos tu caso antes de que pierdas tiempo"],
+  cta:"Escríbenos \"ITIN\" y te explicamos."},
+ {id:"c6", rc:"Yo vivo en Springfield, Massachusetts.", rt:"Usted nos contactó por su interés de comprar casa aquí en Massachusetts, y quisiéramos brindarle la información del proceso.", p:"estado",
+  t:{pt:"Vocês atendem meu estado?",es:"¿Trabajan en mi estado?",en:"Do you serve my state?"},
+  q:"¿Trabajan en mi estado?",
+  w:{pt:"Muita gente pergunta onde a Tower fica. A conversa rende quando o estado já está claro desde o primeiro contato.",es:"Mucha gente pregunta dónde está Tower. La conversación rinde cuando el estado queda claro desde el primer contacto.",en:"Many people ask where Tower is. Calls go better when the state is clear from the first contact."},
+  pts:["Trabajamos en Connecticut, Massachusetts y Rhode Island","Si vives aquí, este video es para ti","Equipo en español, en Reading, Massachusetts"],
+  cta:"Si vives en CT, MA o RI, llena el formulario."},
+ {id:"c7", rc:"Ahorita fíjese que me encuentro trabajando.", rt:"Para no dispersar más el tema, me comprometo a llamarlo esta noche.", p:"processo",
+  t:{pt:"Estou trabalhando, liga depois",es:"Estoy trabajando, llámame después",en:"I'm at work, call me later"},
+  q:"Ahorita estoy trabajando, llámame después.",
+  w:{pt:"Avança quando o atendente marca dia e hora exatos, inclusive à noite, e confirma pelo WhatsApp, em vez de só tentar ligar de novo.",es:"Avanza cuando el asesor agenda día y hora exactos, también de noche, y confirma por WhatsApp, en lugar de solo volver a llamar.",en:"It moves forward when the advisor books an exact day and time, evenings included, and confirms on WhatsApp instead of just calling again."},
+  pts:["Sabemos que trabajas todo el día","Te llamamos de 6 a 8 de la noche","O seguimos por WhatsApp, a tu ritmo"],
+  cta:"Elige tu horario en el formulario."},
+ {id:"c8", rc:"Me manda todo lo que tengo que buscar y me pone la agenda para el miércoles, si puede.", rt:"Si usted decide dar el siguiente paso, le entregamos la preaprobación, y con la preaprobación lo conectamos con un realtor.", p:"processo",
+  t:{pt:"E agora, qual é o próximo passo?",es:"¿Y qué sigue?",en:"So what's next?"},
+  q:"¿Y qué sigue?",
+  w:{pt:"As conversas que avançaram fecharam com data marcada, mensagem no WhatsApp e pedido de documentos. A pré-aprovação dá um objetivo concreto.",es:"Las conversaciones que avanzaron cerraron con fecha agendada, mensaje por WhatsApp y pedido de documentos. La preaprobación da un objetivo concreto.",en:"Calls that moved forward closed with a booked date, a WhatsApp follow-up and a document request. Pre-approval gives a concrete goal."},
+  pts:["El primer paso es la preaprobación","Te pedimos los documentos por WhatsApp","Con eso sabes cuánto puedes comprar"],
+  cta:"Escríbenos y agendamos tu preaprobación."}
+];
+/* Vídeos da própria Tower que servem de base (Instagram ago–out/2026) */
+const VIDS = [
+ {id:"v1", url:"https://www.instagram.com/reel/Dcyy0MQqjBW/", views:609,
+  t:{pt:"¿Cansado de pagar renta cada mes?",es:"¿Cansado de pagar renta cada mes?",en:"¿Cansado de pagar renta cada mes?"},
+  d:{pt:"Reel mais visto do perfil: pergunta direta sobre renta no gancho.",es:"El reel más visto del perfil: pregunta directa sobre la renta en el gancho.",en:"The profile's most-viewed reel: a direct rent question as the hook."}},
+ {id:"v2", url:"https://www.instagram.com/reel/Dc34MZIq6Yj/", views:556,
+  t:{pt:"¿Pagas renta en Massachusetts?",es:"¿Pagas renta en Massachusetts?",en:"¿Pagas renta en Massachusetts?"},
+  d:{pt:"Estado e renta na mesma frase de abertura; o reel com maior alcance.",es:"Estado y renta en la misma frase de apertura; el reel con mayor alcance.",en:"State and rent in the same opening line; the reel with the widest reach."}},
+ {id:"v3", url:"https://www.instagram.com/reel/DboOt6tKI9C/", views:422,
+  t:{pt:"Construir crédito en 5 pasos",es:"Construir crédito en 5 pasos",en:"Construir crédito en 5 pasos"},
+  d:{pt:"Lista prática numerada: fácil de salvar e de repetir com outros temas.",es:"Lista práctica numerada: fácil de guardar y de repetir con otros temas.",en:"A numbered how-to list: easy to save and to repeat with other topics."}},
+ {id:"v4", url:"https://www.instagram.com/reel/DcO5PNqqhtW/", views:316,
+  t:{pt:"No vinimos a este país solo a pagar renta",es:"No vinimos a este país solo a pagar renta",en:"No vinimos a este país solo a pagar renta"},
+  d:{pt:"Tom emocional de identidade e conquista, bom para histórias de cliente.",es:"Tono emocional de identidad y logro, bueno para historias de clientes.",en:"Emotional identity-and-achievement tone, good for client stories."}},
+ {id:"v5", url:"https://www.instagram.com/reel/Db6NIvfq0VP/", views:395,
+  t:{pt:"¿Ya tienes casa propia?",es:"¿Ya tienes casa propia?",en:"¿Ya tienes casa propia?"},
+  d:{pt:"Fala com quem já é dono: segunda casa e investimento.",es:"Le habla a quien ya es dueño: segunda casa e inversión.",en:"Speaks to existing owners: second home and investment."}},
+ {id:"v6", url:"",  views:0,
+  t:{pt:"Conversa Juan + Mafe sobre renta",es:"Conversación Juan + Mafe sobre la renta",en:"Juan + Mafe conversation on rent"},
+  d:{pt:"Formato de conversa a dois usado nos vídeos pagos: o que mais segurou atenção até agora.",es:"Formato de conversación a dos usado en los videos pagados: el que más ha retenido la atención.",en:"The two-person conversation format used in paid videos: the one that has held attention best."}}
+];
+/* cada roteiro pronto: [ligação, vídeo, @referência] */
+const CHAIN = {r1:["c4","v6","@skycredit45"], r2:["c1","v4","@realtorconniequintanilla"], r3:["c3","v3","@superdinero"], r4:["c4","v2","@alopezgrupol"], r5:["c8","v5","@cuevassandy"], r6:["c6","v2","@prestamosdecasaennc"], r7:["c5","v3","@lourdescampooficial"], r8:["c4","v6","@thatmortgageguy"], r9:["c1","v3","@realmortgagedude"]};
+const CH = {
+ pt:{real:"Na ligação real", rc:"cliente", rt:"equipe Tower", src2:"Trechos reais de ligações de clientes que avançaram (documentos, pré-aprovação), sem nomes nem valores. Fonte: banco de ligações do GHL, 2026.", chain:"Linha de raciocínio", call:"Ligação que deu certo", vid:"Vídeo da Tower", ref:"Referência", q:"o cliente diz", w:"o que funcionou", open:"abrir", views:n => `${n} visualizações`,
+  rule_t:"O que as ligações que avançaram têm em comum", rule:["Fecham com dia e hora marcados","Seguem pelo WhatsApp","Pedem os documentos já na ligação"],
+  m_ready:"Roteiros prontos", m_build:"Montar roteiro", b_s:"Escolha uma dúvida das ligações, um vídeo da Tower e uma referência. O esqueleto sai pronto para revisar e gravar.",
+  b_pick:["1. Ligação","2. Vídeo base","3. Referência"], b_out:"Esqueleto do roteiro", b_hook:"Gancho", b_filter:"Filtro", b_content:"Conteúdo", b_cta:"Ação", b_base:"Base", b_style:"Estilo",
+  filter:"Si vives en Connecticut, Massachusetts o Rhode Island, esto es para ti.",
+  b_note:"O gancho é a dúvida típica que aparece nas ligações, não a frase literal de um cliente. Revise com a equipe antes de gravar.",
+  src:"Fonte das ligações: análise das conversas de 20/08 a 19/10/2026, sem dados de clientes.", more:"ver estrutura e porquê", more_s:"ver telas e porquê"},
+ es:{real:"En la llamada real", rc:"cliente", rt:"equipo Tower", src2:"Fragmentos reales de llamadas de clientes que avanzaron (documentos, preaprobación), sin nombres ni montos. Fuente: base de llamadas de GHL, 2026.", chain:"Línea de razonamiento", call:"Llamada que funcionó", vid:"Video de Tower", ref:"Referencia", q:"el cliente dice", w:"lo que funcionó", open:"abrir", views:n => `${n} vistas`,
+  rule_t:"Lo que tienen en común las llamadas que avanzaron", rule:["Cierran con día y hora agendados","Siguen por WhatsApp","Piden los documentos en la misma llamada"],
+  m_ready:"Guiones listos", m_build:"Armar guion", b_s:"Elige una duda de las llamadas, un video de Tower y una referencia. El esqueleto sale listo para revisar y grabar.",
+  b_pick:["1. Llamada","2. Video base","3. Referencia"], b_out:"Esqueleto del guion", b_hook:"Gancho", b_filter:"Filtro", b_content:"Contenido", b_cta:"Acción", b_base:"Base", b_style:"Estilo",
+  filter:"Si vives en Connecticut, Massachusetts o Rhode Island, esto es para ti.",
+  b_note:"El gancho es la duda típica que aparece en las llamadas, no la frase literal de un cliente. Revísalo con el equipo antes de grabar.",
+  src:"Fuente de las llamadas: análisis de las conversaciones del 20/08 al 19/10/2026, sin datos de clientes.", more:"ver estructura y porqué", more_s:"ver pantallas y porqué"},
+ en:{real:"On the real call", rc:"customer", rt:"Tower team", src2:"Real excerpts from calls with customers who moved forward (documents, pre-approval), no names or amounts. Source: GHL call database, 2026.", chain:"Line of reasoning", call:"Call that worked", vid:"Tower video", ref:"Reference", q:"the customer says", w:"what worked", open:"open", views:n => `${n} views`,
+  rule_t:"What calls that moved forward have in common", rule:["They close with a booked day and time","They follow up on WhatsApp","They ask for documents on the call"],
+  m_ready:"Ready scripts", m_build:"Build a script", b_s:"Pick a question from the calls, a Tower video and a reference. You get a skeleton ready to review and shoot.",
+  b_pick:["1. Call","2. Base video","3. Reference"], b_out:"Script skeleton", b_hook:"Hook", b_filter:"Filter", b_content:"Content", b_cta:"Call to action", b_base:"Base", b_style:"Style",
+  filter:"Si vives en Connecticut, Massachusetts o Rhode Island, esto es para ti.",
+  b_note:"The hook is the typical question heard on calls, not a customer's literal words. Review with the team before shooting.",
+  src:"Call source: analysis of conversations from 08/20 to 10/19/2026, no customer data.", more:"see outline and why", more_s:"see screens and why"}
+};
+const ct = k => CH[lang][k];
+const refBy = h => REFS.find(r => r.h === h);
+function realHTML(c){
+  if (!c.rc) return "";
+  return `<div class="real"><span class="eyebrow">${esc(ct("real"))}</span><p><b>${esc(ct("rc"))}:</b> “${esc(c.rc)}”</p><p><b>${esc(ct("rt"))}:</b> “${esc(c.rt)}”</p></div>`;
+}
+function chainHTML(id){
+  const ch = CHAIN[id]; if (!ch) return "";
+  const c = CALLS.find(x => x.id === ch[0]), v = VIDS.find(x => x.id === ch[1]), r = refBy(ch[2]);
+  return `<div class="chain">
+    <div class="chs"><span class="chn">1</span><div><span class="eyebrow">${esc(ct("call"))}</span><b>${esc(L(c.t))}</b><p class="chq">“${esc(c.q)}”</p><p>${esc(L(c.w))}</p>${realHTML(c)}</div></div>
+    <div class="chs"><span class="chn">2</span><div><span class="eyebrow">${esc(ct("vid"))}</span><b>${v.url ? `<a href="${esc(v.url)}" target="_blank" rel="noopener">${esc(L(v.t))}</a>` : esc(L(v.t))}</b><p>${esc(L(v.d))}${v.views ? ` · ${esc(ct("views")(num(v.views)))}` : ""}</p></div></div>
+    ${r ? `<div class="chs"><span class="chn">3</span><div><span class="eyebrow">${esc(ct("ref"))}</span><b><a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.nm)}</a> <small>${esc(r.h)}</small></b><p>${esc(L(r.s))}</p></div></div>` : ""}
+  </div>`;
+}
+/* montar roteiro */
+let bSel = store.get("lab-build", {c:"c1", v:"v6", r:"@skycredit45"});
+function buildText(c, v, r){
+  const lines = [L(c.t), "",
+    `[0–3 s] ${ct("b_hook").toUpperCase()}: ${c.q}`,
+    `[3–8 s] ${ct("b_filter").toUpperCase()}: ${ct("filter")}`,
+    `[8–30 s] ${ct("b_content").toUpperCase()}:`, ...c.pts.map((p, i) => `  ${i + 1}. ${p}`),
+    `[30–40 s] ${ct("b_cta").toUpperCase()}: ${c.cta}`, "",
+    `${ct("b_base")}: ${L(v.t)} — ${L(v.d)}`,
+    r ? `${ct("b_style")}: ${r.nm} (${r.h}) — ${L(r.s)}` : ""];
+  return lines.join("\n").replace(/\n{3,}/g, "\n\n").trim();
+}
+function renderBuilder(box){
+  const c = CALLS.find(x => x.id === bSel.c) || CALLS[0], v = VIDS.find(x => x.id === bSel.v) || VIDS[0], r = refBy(bSel.r) || REFS[0];
+  const opt = (arr, cur, val, lab) => arr.map(o => `<option value="${esc(val(o))}"${val(o) === cur ? " selected" : ""}>${esc(lab(o))}</option>`).join("");
+  const txt = buildText(c, v, r);
+  box.innerHTML = `<div class="card build">
+    <p class="note" style="margin:0 0 14px;font-size:.95rem">${esc(ct("b_s"))}</p>
+    <div class="bpick">
+      <label>${esc(ct("b_pick")[0])}<select data-b="c">${opt(CALLS, c.id, o => o.id, o => L(o.t))}</select></label>
+      <label>${esc(ct("b_pick")[1])}<select data-b="v">${opt(VIDS, v.id, o => o.id, o => L(o.t))}</select></label>
+      <label>${esc(ct("b_pick")[2])}<select data-b="r">${opt(REFS.filter(x => x.g === "es").concat(REFS.filter(x => x.g !== "es")), r.h, o => o.h, o => o.nm)}</select></label>
+    </div>
+    <div class="bout">
+      <div class="head" style="margin-bottom:8px"><h3 style="margin:0">${esc(ct("b_out"))}</h3>${cbtn(txt)}</div>
+      <div class="bshot"><span class="tc">0–3 s<b>${esc(ct("b_hook"))}</b></span><div><div class="say">${esc(c.q)}</div></div></div>
+      <div class="bshot"><span class="tc">3–8 s<b>${esc(ct("b_filter"))}</b></span><div><div class="say">${esc(ct("filter"))}</div></div></div>
+      <div class="bshot"><span class="tc">8–30 s<b>${esc(ct("b_content"))}</b></span><div><ol class="bpts">${c.pts.map(p => `<li>${esc(p)}</li>`).join("")}</ol></div></div>
+      <div class="bshot"><span class="tc">30–40 s<b>${esc(ct("b_cta"))}</b></span><div><div class="say">${esc(c.cta)}</div></div></div>
+      <div class="bmeta"><div><span class="eyebrow">${esc(ct("w"))}</span><p>${esc(L(c.w))}</p>${realHTML(c)}</div><div><span class="eyebrow">${esc(ct("b_base"))}</span><p>${v.url ? `<a href="${esc(v.url)}" target="_blank" rel="noopener">${esc(L(v.t))}</a>` : esc(L(v.t))} — ${esc(L(v.d))}</p></div><div><span class="eyebrow">${esc(ct("b_style"))}</span><p><a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.nm)}</a> — ${esc(L(r.s))}</p></div></div>
+      <p class="note" style="margin-top:12px">${esc(ct("b_note"))}</p>
+    </div>
+  </div>
+  ${ruleCard()}`;
+  box.querySelectorAll("select[data-b]").forEach(s => s.addEventListener("change", () => { bSel[s.dataset.b] = s.value; store.set("lab-build", bSel); renderBuilder(box); }));
+}
+function ruleCard(){
+  return `<div class="card rulec"><h3>${esc(ct("rule_t"))}</h3><ul class="checks yes">${ct("rule").map(s => `<li>${esc(s)}</li>`).join("")}</ul><p class="note" style="margin-top:10px">${esc(ct("src"))} ${esc(ct("src2"))}</p></div>`;
+}
+
 /* ---------- ideias ---------- */
 const usoMatch = (u, f) => !f || u === f || (u === "both" && f !== "both");
 let iview = store.get("lab-iview", "grid"); if (!["grid","kanban"].includes(iview)) iview = "grid";
@@ -2160,8 +2468,9 @@ function renderIdeas(){
       <div class="chips"><span class="chip p">${esc(L(PILAR[i.p]))}</span><span class="chip">${esc(L(FMT[i.f]))}</span><span class="chip">${esc(L(USO[i.u]))}</span>${i.pri ? `<span class="chip hot">${esc(t("prio"))}</span>` : ""}</div>
       <div class="t">${esc(L(i.t))}</div>
       <div><div class="hook">${esc(i.h)}</div>${lang !== "es" ? `<div class="tr" style="margin-top:4px">${esc(i.ht[lang])}</div>` : ""}</div>
+      <details class="more"><summary>${esc(ct("more"))}</summary>
       <ol>${(i.s[lang] || i.s.pt).map(x => `<li>${esc(x)}</li>`).join("")}</ol>
-      <div class="why"><b>${esc(t("porque"))}:</b> ${esc(L(i.b))}</div>
+      <div class="why"><b>${esc(t("porque"))}:</b> ${esc(L(i.b))}</div></details>
       <div class="foot">
         ${stSelect(i.id, st)}
         ${cbtn(i.h)}
@@ -2210,10 +2519,10 @@ function renderStories(){
       <div class="chips"><span class="chip p">${esc(L(STIPO[s.k]))}</span><span class="chip">${esc(L(SOBJ[s.o]))}</span><span class="chip mono">${esc(L(SFREQ[s.fq]))}</span>${s.pri ? `<span class="chip hot">${esc(t("prio"))}</span>` : ""}</div>
       <div class="t">${esc(L(s.t))}</div>
       <div class="stk"><div class="sh">${esc(s.sl)}</div><div class="sb">${esc(s.h)}${lang !== "es" ? `<span class="tr">${esc(s.ht[lang])}</span>` : ""}</div></div>
-      <div><div class="eyebrow" style="margin-bottom:8px">${esc(S.seq)} · ${s.f.pt.length} ${esc(S.tela.toLowerCase())}s</div>
+      <details class="more"><summary>${esc(ct("more_s"))}</summary><div><div class="eyebrow" style="margin-bottom:8px">${esc(S.seq)} · ${s.f.pt.length} ${esc(S.tela.toLowerCase())}s</div>
         <div class="frames">${(s.f[lang] || s.f.pt).map((x, i, a) => `<div class="frame"><span class="pg">${a.map((_, j) => `<i class="${j <= i ? "on" : ""}"></i>`).join("")}</span><span class="fn">${String(i + 1).padStart(2, "0")}</span><span class="fx">${esc(x)}</span></div>`).join("")}</div>
       </div>
-      <div class="why"><b>${esc(t("porque"))}:</b> ${esc(L(s.b))}</div>
+      <div class="why"><b>${esc(t("porque"))}:</b> ${esc(L(s.b))}</div></details>
       <div class="foot">
         ${stSelect(s.id, st)}
         ${cbtn(s.h)}
@@ -2232,11 +2541,20 @@ function renderStories(){
 }
 
 /* ---------- roteiros ---------- */
+let sMode = store.get("lab-smode", "ready"); if (!["ready","build"].includes(sMode)) sMode = "ready";
 function renderScripts(){
   const r = ROTEIROS.find(x => x.id === curScript);
   const full = L(r.t) + "\n\n" + r.shots.map(s => `[${s.tc}] ${L(WHO[s.w]).toUpperCase()}: ${s.s}${s.o ? `\n   ${t("na_tela")}: ${s.o}` : ""}`).join("\n");
   $("#v-roteiros").innerHTML = `
   <div class="vhead"><h2>${esc(t("r_h"))}</h2><p>${esc(t("r_s"))}</p></div>
+  <div class="seg" role="group" aria-label="${esc(t("r_h"))}">
+    <button type="button" data-sm="ready" aria-pressed="${sMode === "ready"}">${svg("roteiros")}${esc(ct("m_ready"))}<span class="n">${ROTEIROS.length}</span></button>
+    <button type="button" data-sm="build" aria-pressed="${sMode === "build"}">${svg("bulb")}${esc(ct("m_build"))}</button>
+  </div>
+  <div id="sbody"></div>`;
+  $("#v-roteiros .seg").addEventListener("click", e => { const b = e.target.closest("button"); if (!b) return; sMode = b.dataset.sm; store.set("lab-smode", sMode); renderScripts(); });
+  if (sMode === "build") { renderBuilder($("#sbody")); return; }
+  $("#sbody").innerHTML = `
   <div class="reader">
     <nav class="slist" aria-label="${esc(t("r_list"))}">
       <div class="eyebrow">${esc(t("r_list"))}</div>
@@ -2252,7 +2570,7 @@ function renderScripts(){
         ${lang !== "es" && r.sub[lang] ? `<p class="tr" style="font-size:1rem">${esc(r.sub[lang])}</p>` : ""}
         <div class="sact"><button type="button" class="pillbtn primary" data-tpopen>${svg("tp")}${esc(xt("tp_open"))}</button></div>
       </div>
-      <div class="why2">${svg("info")}<p><b>${esc(t("r_why"))}:</b> ${esc(L(r.why))}</p></div>
+      <div class="chwrap"><div class="head" style="margin-bottom:10px"><h3 style="margin:0">${esc(ct("chain"))}</h3></div>${chainHTML(r.id)}<p class="chwhy"><b>${esc(t("r_why"))}:</b> ${esc(L(r.why))}</p></div>
       <div class="board">
         <div class="board-h"><span class="eyebrow">${esc(t("board"))}</span><span class="note"><span class="es">ES</span>${esc(t("es"))}</span></div>
         ${r.shots.map(s => `<div class="shot">
@@ -2308,6 +2626,7 @@ function renderHooks(){
       </div>
     </div>
   </div>`;
+  $("#v-ganchos").insertAdjacentHTML("beforeend", methodHTML());
   $("#v-ganchos .pillars").addEventListener("click", e => { const b = e.target.closest(".pbtn"); if (!b) return; curPilar = b.dataset.p; curForm = ""; hookOrder = null; store.set("lab-pilar", curPilar); renderHooks(); });
   $("#frow").addEventListener("click", e => { const b = e.target.closest(".pill"); if (!b) return; curForm = b.dataset.f; renderHooks(); });
   $("#hk-shuffle").addEventListener("click", () => {
@@ -2354,9 +2673,9 @@ function renderRefs(){
 }
 
 /* ---------- método ---------- */
-function renderMethod(){
-  $("#v-metodo").innerHTML = `
-  <div class="vhead"><h2>${esc(t("m_h"))}</h2><p>${esc(t("m_s"))}</p></div>
+function methodHTML(){
+  return `
+  <div class="vhead" style="margin-top:18px"><h2>${esc(t("m_h"))}</h2><p>${esc(t("m_s"))}</p></div>
   <div class="card">
     <h3>${esc(t("m_est"))}</h3>
     <div class="tl">${t("m_tl").map(([s, b]) => `<div><span class="s">${esc(s)}</span><b>${esc(b)}</b></div>`).join("")}</div>
@@ -2375,7 +2694,7 @@ function renderMethod(){
 }
 
 function renderAll(){
-  renderShell(); renderPanorama(); renderIdeasTab(); renderScripts(); renderHooks(); renderRefs(); renderMethod(); show(view);
+  renderShell(); renderPanorama(); renderIdeasTab(); renderScripts(); renderHooks(); renderRefs(); show(view);
 }
 renderAll();
 </script>
