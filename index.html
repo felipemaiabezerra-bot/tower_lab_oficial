@@ -750,6 +750,30 @@ details.more > *:not(summary){margin-top:10px}
 .real{margin-top:8px;padding:8px 10px;border-radius:10px;background:rgba(255,255,255,.035);border-left:2px solid var(--acc)}
 .real p{margin:3px 0 0;font-size:.8rem;color:var(--ink);font-style:italic}
 .real p b,.chs .real p b{display:inline;font:600 .78rem var(--f-body);font-style:normal;margin:0;color:var(--muted)}
+.scope{margin-bottom:4px}
+.kcard.ks{border-color:rgba(61,214,140,.25)}
+.kf{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.kf .status{flex:1;min-width:0}
+.kbn .cbtn{margin-left:6px}
+.sdot{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:6px;vertical-align:1px;background:var(--faint)}
+.sdot.roteirizar{background:var(--amber)} .sdot.gravado{background:var(--acc)} .sdot.no-ar{background:var(--green)}
+.sact{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.sact .status{padding:9px 12px}
+.sact[data-st="roteirizar"] .status{background:rgba(245,177,76,.12);color:var(--amber)}
+.sact[data-st="gravado"] .status{background:rgba(var(--acc-rgb),.12);color:var(--acc-2)}
+.sact[data-st="no-ar"] .status{background:rgba(61,214,140,.12);color:var(--green)}
+.bhooks{margin:0 0 16px}
+.bhl{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,250px),1fr));gap:8px;margin-top:8px}
+.bhl button{appearance:none;text-align:left;cursor:pointer;display:grid;gap:3px;padding:10px 12px;border-radius:12px;border:1px solid var(--line);background:var(--surface-2);color:var(--ink);font:500 .9rem/1.35 var(--f-display)}
+.bhl button small{font:600 .64rem var(--f-mono);text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.bhl button em{font:italic .78rem var(--f-body);color:var(--muted)}
+.bhl button:hover{border-color:rgba(var(--acc-rgb),.5)}
+.bhl button[aria-checked="true"]{border-color:var(--acc);background:rgba(var(--acc-rgb),.12)}
+.bhl button[aria-checked="true"] small{color:var(--acc-2)}
+.bed{width:100%;font:500 1rem/1.4 var(--f-display);color:var(--ink);background:rgba(255,255,255,.03);border:1px solid var(--line-soft);border-radius:10px;padding:8px 10px;resize:vertical}
+.bed:focus{outline:none;border-color:var(--acc)}
+.bpe{display:grid;gap:6px}
+.bpe label{display:grid;grid-template-columns:auto minmax(0,1fr);gap:8px;align-items:center;font:600 .85rem var(--f-mono);color:var(--muted)}
 </style>
 </head>
 <body>
@@ -2000,7 +2024,7 @@ async function importFiles(fileList){
 /* ============ dados compartilhados (db) ============ */
 /* cópia embutida (28/10/2026): a página nunca abre vazia; o db, quando existe, substitui */
 const IG0 = {"account":"towerhomeloans_esp","daily":{"clicks":{"2026-07-30":20,"2026-07-31":10,"2026-08-01":19,"2026-08-02":20,"2026-08-03":7,"2026-08-04":8,"2026-08-05":19,"2026-08-06":9,"2026-08-07":17,"2026-08-08":7,"2026-08-09":10,"2026-08-10":6,"2026-08-11":11,"2026-08-12":0,"2026-08-13":9,"2026-08-14":1,"2026-08-15":2,"2026-08-16":2,"2026-08-17":1,"2026-08-18":7,"2026-08-19":15,"2026-08-20":8,"2026-08-21":2,"2026-08-22":7,"2026-08-23":6,"2026-08-24":13,"2026-08-25":9,"2026-08-26":15,"2026-08-27":8,"2026-08-28":8,"2026-08-29":8,"2026-08-30":5,"2026-08-31":5,"2026-09-01":5,"2026-09-02":16,"2026-09-03":7,"2026-09-04":5,"2026-09-05":7,"2026-09-06":2,"2026-09-07":1,"2026-09-08":6,"2026-09-09":6,"2026-09-10":9,"2026-09-11":10,"2026-09-12":8,"2026-09-13":13,"2026-09-14":11,"2026-09-15":8,"2026-09-16":11,"2026-09-17":8,"2026-09-18":2,"2026-09-19":8,"2026-09-20":12,"2026-09-21":5,"2026-09-22":6,"2026-09-23":5,"2026-09-24":6,"2026-09-25":5,"2026-09-26":6,"2026-09-27":4,"2026-09-28":0,"2026-09-29":6,"2026-09-30":5,"2026-10-01":0,"2026-10-02":0,"2026-10-03":0,"2026-10-04":0,"2026-10-05":0,"2026-10-06":0,"2026-10-07":0,"2026-10-08":0,"2026-10-09":0,"2026-10-10":0,"2026-10-11":0,"2026-10-12":0,"2026-10-13":0,"2026-10-14":0,"2026-10-15":0,"2026-10-16":0,"2026-10-17":0,"2026-10-18":0,"2026-10-19":0,"2026-10-20":0,"2026-10-21":0,"2026-10-22":0,"2026-10-23":0,"2026-10-24":0,"2026-10-25":0,"2026-10-26":0,"2026-10-27":0},"followers":{"2026-07-30":3,"2026-07-31":1,"2026-08-01":2,"2026-08-02":7,"2026-08-03":1,"2026-08-04":4,"2026-08-05":2,"2026-08-06":4,"2026-08-07":1,"2026-08-09":2,"2026-08-11":5,"2026-08-14":1,"2026-08-15":1,"2026-08-17":1,"2026-08-18":2,"2026-08-19":2,"2026-08-20":4,"2026-08-21":3,"2026-08-22":4,"2026-08-23":1,"2026-08-24":2,"2026-08-25":2,"2026-08-26":1,"2026-08-28":1,"2026-09-01":4,"2026-09-02":4,"2026-09-03":6,"2026-09-04":2,"2026-09-05":5,"2026-09-07":4,"2026-09-09":4,"2026-09-10":3,"2026-09-11":2,"2026-09-12":5,"2026-09-13":4,"2026-09-14":2,"2026-09-15":3,"2026-09-16":2,"2026-09-17":4,"2026-09-18":1,"2026-09-20":1,"2026-09-21":1,"2026-09-22":6,"2026-09-26":4,"2026-09-27":2,"2026-09-29":2,"2026-10-02":2,"2026-10-05":1,"2026-10-06":1,"2026-10-10":1,"2026-10-11":1,"2026-10-12":1,"2026-10-13":1,"2026-10-14":1,"2026-10-16":1,"2026-10-17":1,"2026-10-18":1,"2026-10-19":3,"2026-10-21":1,"2026-10-25":1,"2026-10-26":1},"interactions":{"2026-07-30":29,"2026-07-31":26,"2026-08-01":21,"2026-08-02":30,"2026-08-03":12,"2026-08-04":26,"2026-08-05":24,"2026-08-06":21,"2026-08-07":19,"2026-08-08":11,"2026-08-09":20,"2026-08-10":9,"2026-08-11":21,"2026-08-12":5,"2026-08-13":11,"2026-08-14":3,"2026-08-15":3,"2026-08-16":9,"2026-08-17":6,"2026-08-18":26,"2026-08-19":27,"2026-08-20":5,"2026-08-21":27,"2026-08-22":11,"2026-08-23":11,"2026-08-24":7,"2026-08-25":11,"2026-08-26":5,"2026-08-27":7,"2026-08-28":6,"2026-08-29":3,"2026-08-30":11,"2026-08-31":9,"2026-09-01":13,"2026-09-02":26,"2026-09-03":11,"2026-09-04":19,"2026-09-05":20,"2026-09-06":5,"2026-09-07":8,"2026-09-08":8,"2026-09-09":9,"2026-09-10":9,"2026-09-11":6,"2026-09-12":10,"2026-09-13":8,"2026-09-14":11,"2026-09-15":16,"2026-09-16":15,"2026-09-17":17,"2026-09-18":33,"2026-09-19":5,"2026-09-20":4,"2026-09-21":5,"2026-09-22":11,"2026-09-23":6,"2026-09-24":2,"2026-09-25":6,"2026-09-26":6,"2026-09-27":7,"2026-09-28":0,"2026-09-29":3,"2026-09-30":12,"2026-10-01":0,"2026-10-02":4,"2026-10-03":1,"2026-10-04":0,"2026-10-05":1,"2026-10-06":0,"2026-10-07":2,"2026-10-08":2,"2026-10-09":1,"2026-10-10":0,"2026-10-11":2,"2026-10-12":0,"2026-10-13":0,"2026-10-14":0,"2026-10-15":0,"2026-10-16":0,"2026-10-17":2,"2026-10-18":0,"2026-10-19":0,"2026-10-20":3,"2026-10-21":2,"2026-10-22":0,"2026-10-23":3,"2026-10-24":1,"2026-10-25":0,"2026-10-26":0,"2026-10-27":3},"reach":{"2026-07-30":840,"2026-07-31":1108,"2026-08-01":1446,"2026-08-02":1229,"2026-08-03":909,"2026-08-04":1003,"2026-08-05":1161,"2026-08-06":1238,"2026-08-07":1253,"2026-08-08":875,"2026-08-09":1033,"2026-08-10":813,"2026-08-11":1071,"2026-08-12":372,"2026-08-13":320,"2026-08-14":201,"2026-08-15":220,"2026-08-16":369,"2026-08-17":309,"2026-08-18":453,"2026-08-19":654,"2026-08-20":361,"2026-08-21":533,"2026-08-22":575,"2026-08-23":563,"2026-08-24":423,"2026-08-25":630,"2026-08-26":495,"2026-08-27":704,"2026-08-28":521,"2026-08-29":481,"2026-08-30":513,"2026-08-31":327,"2026-09-01":953,"2026-09-02":1813,"2026-09-03":1203,"2026-09-04":766,"2026-09-05":521,"2026-09-06":401,"2026-09-07":407,"2026-09-08":557,"2026-09-09":588,"2026-09-10":631,"2026-09-11":639,"2026-09-12":704,"2026-09-13":534,"2026-09-14":398,"2026-09-15":513,"2026-09-16":525,"2026-09-17":529,"2026-09-18":683,"2026-09-19":413,"2026-09-20":674,"2026-09-21":288,"2026-09-22":551,"2026-09-23":569,"2026-09-24":483,"2026-09-25":601,"2026-09-26":507,"2026-09-27":478,"2026-09-28":3,"2026-09-29":306,"2026-09-30":407,"2026-10-01":154,"2026-10-02":35,"2026-10-03":8,"2026-10-04":6,"2026-10-05":14,"2026-10-06":10,"2026-10-07":67,"2026-10-08":24,"2026-10-09":12,"2026-10-10":11,"2026-10-11":12,"2026-10-12":12,"2026-10-13":9,"2026-10-14":6,"2026-10-15":8,"2026-10-16":8,"2026-10-17":5,"2026-10-18":6,"2026-10-19":6,"2026-10-20":13,"2026-10-21":12,"2026-10-22":6,"2026-10-23":4,"2026-10-24":4,"2026-10-25":3,"2026-10-26":2,"2026-10-27":3},"views":{"2026-07-30":1212,"2026-07-31":1414,"2026-08-01":1831,"2026-08-02":1500,"2026-08-03":1159,"2026-08-04":1758,"2026-08-05":1562,"2026-08-06":1550,"2026-08-07":1532,"2026-08-08":1032,"2026-08-09":1210,"2026-08-10":984,"2026-08-11":1628,"2026-08-12":479,"2026-08-13":450,"2026-08-14":308,"2026-08-15":299,"2026-08-16":685,"2026-08-17":440,"2026-08-18":617,"2026-08-19":990,"2026-08-20":540,"2026-08-21":1137,"2026-08-22":807,"2026-08-23":783,"2026-08-24":595,"2026-08-25":830,"2026-08-26":586,"2026-08-27":888,"2026-08-28":684,"2026-08-29":692,"2026-08-30":717,"2026-08-31":441,"2026-09-01":1285,"2026-09-02":2585,"2026-09-03":1584,"2026-09-04":1326,"2026-09-05":714,"2026-09-06":538,"2026-09-07":509,"2026-09-08":737,"2026-09-09":782,"2026-09-10":741,"2026-09-11":863,"2026-09-12":917,"2026-09-13":714,"2026-09-14":534,"2026-09-15":646,"2026-09-16":711,"2026-09-17":667,"2026-09-18":1389,"2026-09-19":615,"2026-09-20":892,"2026-09-21":433,"2026-09-22":730,"2026-09-23":712,"2026-09-24":600,"2026-09-25":799,"2026-09-26":607,"2026-09-27":632,"2026-09-28":16,"2026-09-29":395,"2026-09-30":660,"2026-10-01":259,"2026-10-02":85,"2026-10-03":40,"2026-10-04":28,"2026-10-05":33,"2026-10-06":21,"2026-10-07":382,"2026-10-08":51,"2026-10-09":92,"2026-10-10":49,"2026-10-11":56,"2026-10-12":30,"2026-10-13":50,"2026-10-14":23,"2026-10-15":42,"2026-10-16":35,"2026-10-17":70,"2026-10-18":41,"2026-10-19":73,"2026-10-20":89,"2026-10-21":103,"2026-10-22":26,"2026-10-23":31,"2026-10-24":37,"2026-10-25":18,"2026-10-26":12,"2026-10-27":47},"visits":{"2026-07-30":6,"2026-07-31":3,"2026-08-01":5,"2026-08-02":6,"2026-08-03":2,"2026-08-04":4,"2026-08-05":3,"2026-08-06":8,"2026-08-07":5,"2026-08-08":6,"2026-08-09":3,"2026-08-10":4,"2026-08-11":2,"2026-08-12":1,"2026-08-13":0,"2026-08-14":3,"2026-08-15":2,"2026-08-16":2,"2026-08-17":3,"2026-08-18":3,"2026-08-19":5,"2026-08-20":3,"2026-08-21":14,"2026-08-22":10,"2026-08-23":3,"2026-08-24":4,"2026-08-25":6,"2026-08-26":6,"2026-08-27":3,"2026-08-28":6,"2026-08-29":4,"2026-08-30":3,"2026-08-31":1,"2026-09-01":2,"2026-09-02":5,"2026-09-03":7,"2026-09-04":3,"2026-09-05":5,"2026-09-06":1,"2026-09-07":1,"2026-09-08":4,"2026-09-09":10,"2026-09-10":2,"2026-09-11":3,"2026-09-12":9,"2026-09-13":10,"2026-09-14":8,"2026-09-15":4,"2026-09-16":7,"2026-09-17":8,"2026-09-18":9,"2026-09-19":3,"2026-09-20":4,"2026-09-21":3,"2026-09-22":7,"2026-09-23":0,"2026-09-24":3,"2026-09-25":3,"2026-09-26":4,"2026-09-27":5,"2026-09-28":1,"2026-09-29":2,"2026-09-30":7,"2026-10-01":5,"2026-10-02":3,"2026-10-03":1,"2026-10-04":1,"2026-10-05":4,"2026-10-06":4,"2026-10-07":8,"2026-10-08":6,"2026-10-09":2,"2026-10-10":3,"2026-10-11":4,"2026-10-12":3,"2026-10-13":8,"2026-10-14":4,"2026-10-15":5,"2026-10-16":5,"2026-10-17":6,"2026-10-18":3,"2026-10-19":7,"2026-10-20":3,"2026-10-21":7,"2026-10-22":0,"2026-10-23":2,"2026-10-24":1,"2026-10-25":1,"2026-10-26":1,"2026-10-27":2}},"posts":{"17881485192527143":{"cap":"","date":"2026-09-14","dur":11,"id":"17881485192527143","likes":0,"link":"https://www.instagram.com/stories/towerhomeloans_esp/3986229811055607862","name":"Tower Homeloans","nav":21,"reach":20,"replies":0,"shares":0,"type":"story","user":"towerhomeloans_esp","views":23,"visits":0},"17886230124678653":{"cap":"🏡✨ ¡Tenemos algo nuevo para ti! En Tower Home Loans queremos que comprar una casa sea un proceso más claro, sencillo y acompañado. Por eso ","comments":0,"date":"2026-08-21","dur":0,"follows":0,"id":"17886230124678653","likes":6,"link":"https://www.instagram.com/p/DcT_wPqlUIz/","name":"Tower Homeloans","reach":235,"saves":1,"shares":0,"type":"carrossel","user":"towerhomeloans_esp","views":596},"17896395657595211":{"cap":"No se trata solo de encontrar una casa. Se trata de construir el futuro que imaginas. En Tower Home Loans, te acompañamos para que avances c","comments":0,"date":"2026-08-16","dur":51,"follows":0,"id":"17896395657595211","likes":10,"link":"https://www.instagram.com/reel/DcHKO9aqBsM/","name":"Tower Homeloans","reach":330,"saves":1,"shares":2,"type":"reel","user":"towerhomeloans_esp","views":488},"17897628081670670":{"cap":"","date":"2026-10-02","dur":0,"id":"17897628081670670","likes":2,"link":"https://www.instagram.com/stories/towerhomeloans_esp/3999053790470328182","name":"Tower Homeloans","nav":17,"reach":15,"replies":0,"shares":0,"type":"story","user":"towerhomeloans_esp","views":17,"visits":0},"17899247058481199":{"cap":"Fortune favors those who dare to play the game. Congratulations, Jose. Two multifamily properties down, and we’re just getting started. 🫡🏡","comments":0,"date":"2026-07-30","dur":0,"follows":1,"id":"17899247058481199","likes":13,"link":"https://www.instagram.com/p/Dba4VKflahZ/","name":"Juan C Cotes | Loan Officer","reach":278,"saves":0,"shares":3,"type":"carrossel","user":"jcoteshomeloans","views":757},"17903635365547743":{"cap":"Felicidades a nuestros compradores por su segunda propiedad! 🏡 Qué alegría tan grande verlos seguir creciendo, construyendo su patrimonio y","comments":4,"date":"2026-08-21","dur":0,"follows":0,"id":"17903635365547743","likes":13,"link":"https://www.instagram.com/p/DcUMa7PmXv0/","name":"María Cappadona | Compra tu Casa en USA 🇺🇸","reach":248,"saves":0,"shares":0,"type":"carrossel","user":"maria.cappadona","views":581},"17907455274498141":{"cap":"🏡 ¿Pagas renta en Massachusetts? Tal vez estés más cerca de lo que imaginas. Muchas familias creen que todavía no califican, pero nunca han","comments":1,"date":"2026-09-04","dur":28,"follows":0,"id":"17907455274498141","likes":7,"link":"https://www.instagram.com/reel/Dc34MZIq6Yj/","name":"Tower Homeloans","reach":398,"saves":0,"shares":2,"type":"reel","user":"towerhomeloans_esp","views":556},"17921111748216751":{"cap":"","date":"2026-09-16","dur":0,"id":"17921111748216751","likes":0,"link":"https://www.instagram.com/stories/towerhomeloans_esp/3987759794466761459","name":"Tower Homeloans","nav":18,"reach":71,"replies":0,"shares":1,"type":"story","user":"towerhomeloans_esp","views":89,"visits":0},"17928814389142050":{"cap":"No vinimos a este país solo a pagar cuentas o renta toda la vida. Vinimos buscando oportunidades, estabilidad y un futuro mejor. 🏡✨ Muchas ","comments":2,"date":"2026-08-19","dur":31,"follows":0,"id":"17928814389142050","likes":9,"link":"https://www.instagram.com/reel/DcO5PNqqhtW/","name":"Tower Homeloans","reach":217,"saves":0,"shares":1,"type":"reel","user":"towerhomeloans_esp","views":316},"17930713329143616":{"cap":"23 años y ya dueño de su primera propiedad 🏡 Qué gratificante ver a jóvenes que desde hoy están pensando en su futuro, en crecer su patrimo","comments":2,"date":"2026-09-04","dur":0,"follows":0,"id":"17930713329143616","likes":15,"link":"https://www.instagram.com/p/Dc4IkoykRbk/","name":"María Cappadona | Compra tu Casa en USA 🇺🇸","reach":374,"saves":0,"shares":2,"type":"carrossel","user":"maria.cappadona","views":740},"17936321721364393":{"cap":"","date":"2026-08-21","dur":20,"id":"17936321721364393","likes":0,"link":"https://www.instagram.com/stories/towerhomeloans_esp/3968793623382389155","name":"Tower Homeloans","nav":21,"reach":20,"replies":0,"shares":0,"type":"story","user":"towerhomeloans_esp","views":24,"visits":0},"17942342976356178":{"cap":"🏠 ¿Cansado de pagar renta cada mes y sentir que ese dinero simplemente desaparece? Lo que muchas personas no saben es que existen programas","comments":0,"date":"2026-09-02","dur":37,"follows":0,"id":"17942342976356178","likes":13,"link":"https://www.instagram.com/reel/Dcyy0MQqjBW/","name":"Tower Homeloans","reach":344,"saves":0,"shares":4,"type":"reel","user":"towerhomeloans_esp","views":609},"17961885843176210":{"cap":"","date":"2026-09-01","dur":15,"id":"17961885843176210","likes":0,"link":"https://www.instagram.com/stories/towerhomeloans_esp/3976754138754723281","name":"Tower Homeloans","nav":27,"reach":20,"replies":1,"shares":0,"type":"story","user":"towerhomeloans_esp","views":30,"visits":1},"17964024738198655":{"cap":"","date":"2026-10-05","dur":0,"id":"17964024738198655","likes":1,"link":"https://www.instagram.com/stories/towerhomeloans_esp/4001594193479781754","name":"Tower Homeloans","nav":17,"reach":14,"replies":0,"shares":0,"type":"story","user":"towerhomeloans_esp","views":17,"visits":0},"17964592431137624":{"cap":"","date":"2026-08-12","dur":15,"id":"17964592431137624","likes":1,"link":"https://www.instagram.com/stories/towerhomeloans_esp/3962331979915650244","name":"Tower Homeloans","nav":16,"reach":13,"replies":0,"shares":0,"type":"story","user":"towerhomeloans_esp","views":16,"visits":0},"17983762935028266":{"cap":"","date":"2026-08-21","dur":0,"id":"17983762935028266","likes":0,"link":"https://www.instagram.com/stories/towerhomeloans_esp/3968859041448869045","name":"Tower Homeloans","nav":16,"reach":17,"replies":0,"shares":0,"type":"story","user":"towerhomeloans_esp","views":19,"visits":0},"17991440609843251":{"cap":"","date":"2026-09-04","dur":0,"id":"17991440609843251","likes":0,"link":"https://www.instagram.com/stories/towerhomeloans_esp/3979164011981379114","name":"Tower Homeloans","nav":13,"reach":13,"replies":0,"shares":0,"type":"story","user":"towerhomeloans_esp","views":15,"visits":0},"18039522293830288":{"cap":"","date":"2026-09-18","dur":0,"id":"18039522293830288","likes":0,"link":"https://www.instagram.com/stories/towerhomeloans_esp/3989155632378357065","name":"Tower Homeloans","nav":20,"reach":16,"replies":0,"shares":0,"type":"story","user":"towerhomeloans_esp","views":22,"visits":0},"18072950897383746":{"cap":"","date":"2026-07-30","dur":15,"id":"18072950897383746","likes":0,"link":"https://www.instagram.com/stories/towerhomeloans_esp/3952854082150615422","name":"Tower Homeloans","nav":14,"reach":12,"replies":0,"shares":0,"type":"story","user":"towerhomeloans_esp","views":15,"visits":0},"18081322463497143":{"cap":"","date":"2026-08-21","dur":15,"id":"18081322463497143","likes":0,"link":"https://www.instagram.com/stories/towerhomeloans_esp/3968796705356906647","name":"Tower Homeloans","nav":20,"reach":19,"replies":0,"shares":0,"type":"story","user":"towerhomeloans_esp","views":23,"visits":0},"18085331621277507":{"cap":"¿Ya tienes casa propia? 🏡 Tu próxima oportunidad podría estar más cerca de lo que imaginas. Comprar una segunda propiedad no siempre signif","comments":0,"date":"2026-08-11","dur":30,"follows":0,"id":"18085331621277507","likes":8,"link":"https://www.instagram.com/reel/Db6NIvfq0VP/","name":"Tower Homeloans","reach":287,"saves":0,"shares":0,"type":"reel","user":"towerhomeloans_esp","views":395},"18092723000098136":{"cap":"Closing day! 🏡🔑 Congratulations to my clients on their new home. Grateful for the trust! 🙏","comments":0,"date":"2026-08-12","dur":0,"follows":0,"id":"18092723000098136","likes":15,"link":"https://www.instagram.com/p/Db8-uUyD8rc/","name":"Juan C Cotes | Loan Officer","reach":279,"saves":0,"shares":1,"type":"carrossel","user":"jcoteshomeloans","views":772},"18096632555430895":{"cap":"","date":"2026-09-18","dur":15,"id":"18096632555430895","likes":0,"link":"https://www.instagram.com/stories/towerhomeloans_esp/3989108493180894795","name":"Tower Homeloans","nav":28,"reach":23,"replies":0,"shares":0,"type":"story","user":"towerhomeloans_esp","views":32,"visits":0},"18096989000541368":{"cap":"","date":"2026-10-07","dur":8,"id":"18096989000541368","likes":1,"link":"https://www.instagram.com/stories/towerhomeloans_esp/4002794397032389855","name":"Tower Homeloans","nav":19,"reach":20,"replies":0,"shares":0,"type":"story","user":"towerhomeloans_esp","views":23,"visits":0},"18103927088574028":{"cap":"🏡 ¡Tu primera casa en Massachusetts puede estar más cerca de lo que imaginas! Cada mes surgen nuevas construcciones y nuevas oportunidades ","comments":3,"date":"2026-09-30","dur":12,"follows":0,"id":"18103927088574028","likes":6,"link":"https://www.instagram.com/reel/Dd6--YPq24y/","name":"Tower Homeloans","reach":231,"saves":0,"shares":1,"type":"reel","user":"towerhomeloans_esp","views":354},"18106121423243207":{"cap":"🎃🏡 Este Halloween, imagina que la puerta donde toquen los niños sea la de TU propia casa. Este puede ser el momento perfecto para dar el p","comments":1,"date":"2026-10-07","dur":8,"follows":0,"id":"18106121423243207","likes":2,"link":"https://www.instagram.com/reel/DeMxy7AqLkB/","name":"Tower Homeloans","reach":130,"saves":0,"shares":0,"type":"reel","user":"towerhomeloans_esp","views":237},"18113356046293365":{"cap":"","date":"2026-07-30","dur":16,"id":"18113356046293365","likes":0,"link":"https://www.instagram.com/stories/towerhomeloans_esp/3952851683705015114","name":"Tower Homeloans","nav":18,"reach":14,"replies":0,"shares":0,"type":"story","user":"towerhomeloans_esp","views":19,"visits":0},"18113836631004369":{"cap":"","date":"2026-09-16","dur":0,"id":"18113836631004369","likes":1,"link":"https://www.instagram.com/stories/towerhomeloans_esp/3987759721192326763","name":"Tower Homeloans","nav":23,"reach":83,"replies":0,"shares":1,"type":"story","user":"towerhomeloans_esp","views":109,"visits":1},"18120637360884144":{"cap":"","date":"2026-08-04","dur":53,"id":"18120637360884144","likes":1,"link":"https://www.instagram.com/stories/towerhomeloans_esp/3956479793625191971","name":"Tower Homeloans","nav":15,"reach":15,"replies":0,"shares":0,"type":"story","user":"towerhomeloans_esp","views":16,"visits":0},"18128831167743877":{"cap":"Nada más emocionante que ver a tus clientes firmar los documentos de su nueva propiedad. Felicidades! Que este sea solo el comienzo de mucha","comments":7,"date":"2026-09-18","dur":0,"follows":0,"id":"18128831167743877","likes":21,"link":"https://www.instagram.com/p/DdcJwxNmWd8/","name":"María Cappadona | Compra tu Casa en USA 🇺🇸","reach":461,"saves":0,"shares":2,"type":"carrossel","user":"maria.cappadona","views":1215},"18351987205169332":{"cap":"","date":"2026-08-19","dur":31,"id":"18351987205169332","likes":2,"link":"https://www.instagram.com/stories/towerhomeloans_esp/3967361077993992832","name":"Tower Homeloans","nav":25,"reach":23,"replies":0,"shares":0,"type":"story","user":"towerhomeloans_esp","views":29,"visits":0},"18365302633241756":{"cap":"¿Quieres comenzar a construir tu crédito en Estados Unidos? 💳🇺🇸 Empieza con estos 5 pasos: 1. Abre una tarjeta de crédito asegurada. 2. R","comments":2,"date":"2026-08-04","dur":53,"follows":1,"id":"18365302633241756","likes":6,"link":"https://www.instagram.com/reel/DboOt6tKI9C/","name":"Tower Homeloans","reach":305,"saves":1,"shares":1,"type":"reel","user":"towerhomeloans_esp","views":422},"18372024595230726":{"cap":"Another one closed. 🫡🏡 Felicidades por su primera casa! 🔑","comments":0,"date":"2026-08-04","dur":0,"follows":0,"id":"18372024595230726","likes":12,"link":"https://www.instagram.com/p/DboOUC_Gt09/","name":"Juan C Cotes | Loan Officer","reach":280,"saves":0,"shares":2,"type":"carrossel","user":"jcoteshomeloans","views":766},"18373709236224097":{"cap":"","date":"2026-08-05","dur":20,"id":"18373709236224097","likes":0,"link":"https://www.instagram.com/stories/towerhomeloans_esp/3957400972917631104","name":"Tower Homeloans","nav":25,"reach":16,"replies":0,"shares":0,"type":"story","user":"towerhomeloans_esp","views":30,"visits":0},"18394256800203184":{"cap":"","date":"2026-09-22","dur":0,"id":"18394256800203184","likes":1,"link":"https://www.instagram.com/stories/towerhomeloans_esp/3991795459099981711","name":"Tower Homeloans","nav":10,"reach":10,"replies":0,"shares":0,"type":"story","user":"towerhomeloans_esp","views":16,"visits":0},"18474498937107715":{"cap":"","date":"2026-08-11","dur":30,"id":"18474498937107715","likes":0,"link":"https://www.instagram.com/stories/towerhomeloans_esp/3961537065028073443","name":"Tower Homeloans","nav":13,"reach":14,"replies":0,"shares":0,"type":"story","user":"towerhomeloans_esp","views":17,"visits":1},"18618037543063169":{"cap":"","date":"2026-08-25","dur":15,"id":"18618037543063169","likes":0,"link":"https://www.instagram.com/stories/towerhomeloans_esp/3971522120005600351","name":"Tower Homeloans","nav":20,"reach":232,"replies":0,"shares":1,"type":"story","user":"towerhomeloans_esp","views":294,"visits":0},"18623074972036218":{"cap":"","date":"2026-09-02","dur":37,"id":"18623074972036218","likes":0,"link":"https://www.instagram.com/stories/towerhomeloans_esp/3977466146177313394","name":"Tower Homeloans","nav":23,"reach":20,"replies":0,"shares":0,"type":"story","user":"towerhomeloans_esp","views":25,"visits":0},"18636882796038053":{"cap":"","date":"2026-09-30","dur":12,"id":"18636882796038053","likes":1,"link":"https://www.instagram.com/stories/towerhomeloans_esp/3997785776687058463","name":"Tower Homeloans","nav":30,"reach":26,"replies":1,"shares":0,"type":"story","user":"towerhomeloans_esp","views":38,"visits":0}},"updatedAt":"2026-10-28T15:17:26.039Z"};
-const LOCALDB = !(window.claude && window.claude.use);
+const LOCALDB = true; /* site estático na Vercel: dados no navegador + arquivos data/*.json do GitHub */
 const SEED = {"instagram/current": IG0};
 function localDb(){
   const L = {}, seed = SEED, key = k => "lab-db:" + k;
@@ -2012,16 +2036,26 @@ function localDb(){
   })};
 }
 /* no site (Vercel): lê data/*.json do repositório, se existir; senão fica a cópia embutida */
+function download(name, obj){
+  const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([JSON.stringify(obj, null, 1)], {type: "application/json"}));
+  a.download = name; document.body.appendChild(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 500);
+}
 function loadSiteData(){
   if (!/^https?:$/.test(location.protocol)) return;
   const grab = n => fetch("data/" + n + ".json", {cache: "no-cache"}).then(r => r.ok ? r.json() : null).catch(() => null);
-  grab("instagram").then(g => {
-    if (g && g.daily && (!SEED["instagram/current"].updatedAt || (g.updatedAt || "") > SEED["instagram/current"].updatedAt)) {
-      SEED["instagram/current"] = g;
-      let own = null; try { own = localStorage.getItem("lab-db:instagram/current"); } catch(e) {}
-      if (!own) { IG = g; igStatus = "ok"; }
+  const local = k => { try { return JSON.parse(localStorage.getItem("lab-db:" + k) || "null"); } catch(e) { return null; } };
+  const drop = k => { try { localStorage.removeItem("lab-db:" + k); } catch(e) {} };
+  Promise.all([grab("instagram"), grab("board")]).then(([g, bd]) => {
+    if (g && g.daily) {
+      if ((g.updatedAt || "") > (SEED["instagram/current"].updatedAt || "")) SEED["instagram/current"] = g;
+      const own = local("instagram/current");
+      if (!own || (g.updatedAt || "") >= (own.updatedAt || "")) { drop("instagram/current"); IG = g; igStatus = "ok"; }
     }
-    rerenderData();
+    if (bd && bd.status) {
+      const own = local("board/main");
+      if (!own || (bd.updatedAt || "") >= (own.updatedAt || "")) { drop("board/main"); BOARD = bd; }
+    }
+    rerenderData(); rerenderBoard();
   });
 }
 let BOARD = null;
@@ -2033,8 +2067,7 @@ let needIdeas = false, needScripts = false;
 (async () => {
   try {
     let db = null, user = null;
-    if (LOCALDB) { db = localDb(); igOwner = true; loadSiteData(); }
-    else { [db, user] = await Promise.all([window.claude.use("db"), window.claude.use("user")]); }
+    db = localDb(); igOwner = true; loadSiteData();
     if (user) { try { igOwner = await user.isOwner(); } catch(e) {} }
     if (!db) { igStatus = "nodb"; rerenderData(); return; }
     igDB = db;
@@ -2156,7 +2189,7 @@ function renderIG(){
   const head = `<div class="card ighead">
     <div class="igid"><span class="av ig" aria-hidden="true">TH</span><div><div class="nm">@${IG_MAIN}</div><div class="note">${esc(LOCALDB ? xt("ig_s_local") : gt("s"))}</div></div></div>
     ${IG && igStatus === "ok" ? `<div class="igmeta"><span><b>${esc(gt("period"))}</b>${(() => { const d = igDays(); return d.length ? esc(fmtDay(d[0], {day:"2-digit", month:"short", year:"numeric"})) + " – " + esc(fmtDay(d[d.length - 1], {day:"2-digit", month:"short", year:"numeric"})) : "—"; })()}</span><span><b>${esc(gt("updated"))}</b>${IG.updatedAt ? esc(new Intl.DateTimeFormat(LOC[lang], {dateStyle:"medium"}).format(new Date(IG.updatedAt))) : "—"}</span><span><b>${esc(gt("source"))}</b>${esc(gt("src"))}</span></div>` : ""}
-    ${igOwner && igDB ? `<div class="igimp"><label class="btn primary" for="ig-file">${svg("upload")}${esc(gt("imp"))}</label><input type="file" id="ig-file" accept=".csv,text/csv" multiple hidden><span class="note">${esc(igMsg || gt("imp_h"))}</span></div>` : ""}
+    ${igOwner && igDB ? `<div class="igimp"><label class="btn primary" for="ig-file">${svg("upload")}${esc(gt("imp"))}</label><input type="file" id="ig-file" accept=".csv,text/csv" multiple hidden>${IG ? `<button type="button" class="btn" data-dl="ig">${svg("upload")}${esc(ct("dl_ig"))}</button>` : ""}<span class="note">${esc(igMsg || gt("imp_h"))} ${esc(ct("dl_ig_h"))}</span></div>` : ""}
   </div>`;
   if (igStatus !== "ok" || !IG){
     const msg = igStatus === "loading" ? gt("loading") : igStatus === "nodb" ? gt("nodb") : (igOwner ? gt("empty") : gt("empty_v"));
@@ -2316,21 +2349,21 @@ const VIDS = [
 /* cada roteiro pronto: [ligação, vídeo, @referência] */
 const CHAIN = {r1:["c4","v6","@skycredit45"], r2:["c1","v4","@realtorconniequintanilla"], r3:["c3","v3","@superdinero"], r4:["c4","v2","@alopezgrupol"], r5:["c8","v5","@cuevassandy"], r6:["c6","v2","@prestamosdecasaennc"], r7:["c5","v3","@lourdescampooficial"], r8:["c4","v6","@thatmortgageguy"], r9:["c1","v3","@realmortgagedude"]};
 const CH = {
- pt:{real:"Na ligação real", rc:"cliente", rt:"equipe Tower", src2:"Trechos reais de ligações de clientes que avançaram (documentos, pré-aprovação), sem nomes nem valores. Fonte: banco de ligações do GHL, 2026.", chain:"Linha de raciocínio", call:"Ligação que deu certo", vid:"Vídeo da Tower", ref:"Referência", q:"o cliente diz", w:"o que funcionou", open:"abrir", views:n => `${n} visualizações`,
+ pt:{scope_free:"Sem roteiro", scope_done:"Viraram roteiro", open_script:"Abrir roteiro", chip_script:"Roteiro", chip_ready:"roteiro pronto", dl_ig:"Baixar para o GitHub", dl_ig_h:"Para a equipe ver os números novos, suba o instagram.json baixado na pasta data do GitHub (substitui o atual).", dl_board:"Baixar status para o GitHub", dl_board_h:"O status fica salvo neste navegador. Para a equipe ver, suba o board.json na pasta data do GitHub.", b_hooks:"Escolha o gancho", b_hk_q:"dúvida típica", b_hk_rc:"frase real do cliente", b_edit:"Ajuste o texto se quiser; o botão copiar leva a versão editada.", b_reset:"Restaurar texto", kb_note:"Funil único: ideias sem roteiro e roteiros prontos. Arraste os cartões entre as colunas.", real:"Na ligação real", rc:"cliente", rt:"equipe Tower", src2:"Trechos reais de ligações de clientes que avançaram (documentos, pré-aprovação), sem nomes nem valores. Fonte: banco de ligações do GHL, 2026.", chain:"Linha de raciocínio", call:"Ligação que deu certo", vid:"Vídeo da Tower", ref:"Referência", q:"o cliente diz", w:"o que funcionou", open:"abrir", views:n => `${n} visualizações`,
   rule_t:"O que as ligações que avançaram têm em comum", rule:["Fecham com dia e hora marcados","Seguem pelo WhatsApp","Pedem os documentos já na ligação"],
   m_ready:"Roteiros prontos", m_build:"Montar roteiro", b_s:"Escolha uma dúvida das ligações, um vídeo da Tower e uma referência. O esqueleto sai pronto para revisar e gravar.",
   b_pick:["1. Ligação","2. Vídeo base","3. Referência"], b_out:"Esqueleto do roteiro", b_hook:"Gancho", b_filter:"Filtro", b_content:"Conteúdo", b_cta:"Ação", b_base:"Base", b_style:"Estilo",
   filter:"Si vives en Connecticut, Massachusetts o Rhode Island, esto es para ti.",
   b_note:"O gancho é a dúvida típica que aparece nas ligações, não a frase literal de um cliente. Revise com a equipe antes de gravar.",
   src:"Fonte das ligações: análise das conversas de 20/08 a 19/10/2026, sem dados de clientes.", more:"ver estrutura e porquê", more_s:"ver telas e porquê"},
- es:{real:"En la llamada real", rc:"cliente", rt:"equipo Tower", src2:"Fragmentos reales de llamadas de clientes que avanzaron (documentos, preaprobación), sin nombres ni montos. Fuente: base de llamadas de GHL, 2026.", chain:"Línea de razonamiento", call:"Llamada que funcionó", vid:"Video de Tower", ref:"Referencia", q:"el cliente dice", w:"lo que funcionó", open:"abrir", views:n => `${n} vistas`,
+ es:{scope_free:"Sin guion", scope_done:"Ya son guion", open_script:"Abrir guion", chip_script:"Guion", chip_ready:"guion listo", dl_ig:"Descargar para GitHub", dl_ig_h:"Para que el equipo vea los números nuevos, sube el instagram.json descargado a la carpeta data de GitHub (reemplaza el actual).", dl_board:"Descargar estado para GitHub", dl_board_h:"El estado se guarda en este navegador. Para que el equipo lo vea, sube el board.json a la carpeta data de GitHub.", b_hooks:"Elige el gancho", b_hk_q:"duda típica", b_hk_rc:"frase real del cliente", b_edit:"Ajusta el texto si quieres; el botón copiar lleva la versión editada.", b_reset:"Restaurar texto", kb_note:"Embudo único: ideas sin guion y guiones listos. Arrastra las tarjetas entre las columnas.", real:"En la llamada real", rc:"cliente", rt:"equipo Tower", src2:"Fragmentos reales de llamadas de clientes que avanzaron (documentos, preaprobación), sin nombres ni montos. Fuente: base de llamadas de GHL, 2026.", chain:"Línea de razonamiento", call:"Llamada que funcionó", vid:"Video de Tower", ref:"Referencia", q:"el cliente dice", w:"lo que funcionó", open:"abrir", views:n => `${n} vistas`,
   rule_t:"Lo que tienen en común las llamadas que avanzaron", rule:["Cierran con día y hora agendados","Siguen por WhatsApp","Piden los documentos en la misma llamada"],
   m_ready:"Guiones listos", m_build:"Armar guion", b_s:"Elige una duda de las llamadas, un video de Tower y una referencia. El esqueleto sale listo para revisar y grabar.",
   b_pick:["1. Llamada","2. Video base","3. Referencia"], b_out:"Esqueleto del guion", b_hook:"Gancho", b_filter:"Filtro", b_content:"Contenido", b_cta:"Acción", b_base:"Base", b_style:"Estilo",
   filter:"Si vives en Connecticut, Massachusetts o Rhode Island, esto es para ti.",
   b_note:"El gancho es la duda típica que aparece en las llamadas, no la frase literal de un cliente. Revísalo con el equipo antes de grabar.",
   src:"Fuente de las llamadas: análisis de las conversaciones del 20/08 al 19/10/2026, sin datos de clientes.", more:"ver estructura y porqué", more_s:"ver pantallas y porqué"},
- en:{real:"On the real call", rc:"customer", rt:"Tower team", src2:"Real excerpts from calls with customers who moved forward (documents, pre-approval), no names or amounts. Source: GHL call database, 2026.", chain:"Line of reasoning", call:"Call that worked", vid:"Tower video", ref:"Reference", q:"the customer says", w:"what worked", open:"open", views:n => `${n} views`,
+ en:{scope_free:"No script yet", scope_done:"Already scripted", open_script:"Open script", chip_script:"Script", chip_ready:"script ready", dl_ig:"Download for GitHub", dl_ig_h:"For the team to see the new numbers, upload the downloaded instagram.json to the data folder on GitHub (it replaces the current one).", dl_board:"Download status for GitHub", dl_board_h:"Status is saved in this browser. For the team to see it, upload board.json to the data folder on GitHub.", b_hooks:"Pick the hook", b_hk_q:"typical question", b_hk_rc:"customer's real words", b_edit:"Edit the text if you like; the copy button takes the edited version.", b_reset:"Reset text", kb_note:"One pipeline: ideas without a script and ready scripts. Drag cards between columns.", real:"On the real call", rc:"customer", rt:"Tower team", src2:"Real excerpts from calls with customers who moved forward (documents, pre-approval), no names or amounts. Source: GHL call database, 2026.", chain:"Line of reasoning", call:"Call that worked", vid:"Tower video", ref:"Reference", q:"the customer says", w:"what worked", open:"open", views:n => `${n} views`,
   rule_t:"What calls that moved forward have in common", rule:["They close with a booked day and time","They follow up on WhatsApp","They ask for documents on the call"],
   m_ready:"Ready scripts", m_build:"Build a script", b_s:"Pick a question from the calls, a Tower video and a reference. You get a skeleton ready to review and shoot.",
   b_pick:["1. Call","2. Base video","3. Reference"], b_out:"Script skeleton", b_hook:"Hook", b_filter:"Filter", b_content:"Content", b_cta:"Call to action", b_base:"Base", b_style:"Style",
@@ -2354,13 +2387,21 @@ function chainHTML(id){
   </div>`;
 }
 /* montar roteiro */
-let bSel = store.get("lab-build", {c:"c1", v:"v6", r:"@skycredit45"});
-function buildText(c, v, r){
+let bSel = store.get("lab-build", {c:"c1", v:"v6", r:"@skycredit45", h:"q"}); if (!bSel.h) bSel.h = "q";
+let bEdit = null; /* texto editado do esqueleto: {hook, pts:[3], cta} */
+const CALLP = {c1:"credito", c2:"renda", c3:"renda", c4:"entrada", c5:"itin", c6:"estado", c7:"processo", c8:"processo"};
+function hookOpts(c){
+  const o = [{k:"q", s:c.q, lab:ct("b_hk_q")}];
+  if (c.rc) o.push({k:"rc", s:c.rc, lab:ct("b_hk_rc")});
+  (GANCHOS[CALLP[c.id] || c.p] || []).forEach((g, i) => o.push({k:"g" + i, s:g[1], lab:L(FORM[g[0]]), tr: lang === "pt" ? g[2] : lang === "en" ? g[3] : ""}));
+  return o;
+}
+function editText(c, v, r, e){
   const lines = [L(c.t), "",
-    `[0–3 s] ${ct("b_hook").toUpperCase()}: ${c.q}`,
+    `[0–3 s] ${ct("b_hook").toUpperCase()}: ${e.hook}`,
     `[3–8 s] ${ct("b_filter").toUpperCase()}: ${ct("filter")}`,
-    `[8–30 s] ${ct("b_content").toUpperCase()}:`, ...c.pts.map((p, i) => `  ${i + 1}. ${p}`),
-    `[30–40 s] ${ct("b_cta").toUpperCase()}: ${c.cta}`, "",
+    `[8–30 s] ${ct("b_content").toUpperCase()}:`, ...e.pts.map((p, i) => `  ${i + 1}. ${p}`),
+    `[30–40 s] ${ct("b_cta").toUpperCase()}: ${e.cta}`, "",
     `${ct("b_base")}: ${L(v.t)} — ${L(v.d)}`,
     r ? `${ct("b_style")}: ${r.nm} (${r.h}) — ${L(r.s)}` : ""];
   return lines.join("\n").replace(/\n{3,}/g, "\n\n").trim();
@@ -2368,7 +2409,9 @@ function buildText(c, v, r){
 function renderBuilder(box){
   const c = CALLS.find(x => x.id === bSel.c) || CALLS[0], v = VIDS.find(x => x.id === bSel.v) || VIDS[0], r = refBy(bSel.r) || REFS[0];
   const opt = (arr, cur, val, lab) => arr.map(o => `<option value="${esc(val(o))}"${val(o) === cur ? " selected" : ""}>${esc(lab(o))}</option>`).join("");
-  const txt = buildText(c, v, r);
+  const hooks = hookOpts(c), hk = hooks.find(o => o.k === bSel.h) || hooks[0];
+  if (!bEdit || bEdit.key !== c.id + "|" + hk.k) bEdit = {key: c.id + "|" + hk.k, hook: hk.s, pts: c.pts.slice(), cta: c.cta};
+  const txt = editText(c, v, r, bEdit);
   box.innerHTML = `<div class="card build">
     <p class="note" style="margin:0 0 14px;font-size:.95rem">${esc(ct("b_s"))}</p>
     <div class="bpick">
@@ -2376,30 +2419,66 @@ function renderBuilder(box){
       <label>${esc(ct("b_pick")[1])}<select data-b="v">${opt(VIDS, v.id, o => o.id, o => L(o.t))}</select></label>
       <label>${esc(ct("b_pick")[2])}<select data-b="r">${opt(REFS.filter(x => x.g === "es").concat(REFS.filter(x => x.g !== "es")), r.h, o => o.h, o => o.nm)}</select></label>
     </div>
+    <div class="bhooks"><span class="eyebrow">${esc(ct("b_hooks"))} · ${hooks.length}</span>
+      <div class="bhl" role="radiogroup" aria-label="${esc(ct("b_hooks"))}">${hooks.map(o => `<button type="button" role="radio" aria-checked="${o.k === hk.k}" data-hk="${o.k}"><small>${esc(o.lab)}</small><span>${esc(o.s)}</span>${o.tr ? `<em>${esc(o.tr)}</em>` : ""}</button>`).join("")}</div>
+    </div>
     <div class="bout">
-      <div class="head" style="margin-bottom:8px"><h3 style="margin:0">${esc(ct("b_out"))}</h3>${cbtn(txt)}</div>
-      <div class="bshot"><span class="tc">0–3 s<b>${esc(ct("b_hook"))}</b></span><div><div class="say">${esc(c.q)}</div></div></div>
+      <div class="head" style="margin-bottom:4px"><h3 style="margin:0">${esc(ct("b_out"))}</h3><span style="display:inline-flex;gap:8px"><button type="button" class="cbtn" data-breset>${esc(ct("b_reset"))}</button>${cbtn(txt)}</span></div>
+      <p class="note" style="margin:0 0 6px">${esc(ct("b_edit"))}</p>
+      <div class="bshot"><span class="tc">0–3 s<b>${esc(ct("b_hook"))}</b></span><div><textarea class="bed say" rows="2" data-e="hook" aria-label="${esc(ct("b_hook"))}">${esc(bEdit.hook)}</textarea></div></div>
       <div class="bshot"><span class="tc">3–8 s<b>${esc(ct("b_filter"))}</b></span><div><div class="say">${esc(ct("filter"))}</div></div></div>
-      <div class="bshot"><span class="tc">8–30 s<b>${esc(ct("b_content"))}</b></span><div><ol class="bpts">${c.pts.map(p => `<li>${esc(p)}</li>`).join("")}</ol></div></div>
-      <div class="bshot"><span class="tc">30–40 s<b>${esc(ct("b_cta"))}</b></span><div><div class="say">${esc(c.cta)}</div></div></div>
+      <div class="bshot"><span class="tc">8–30 s<b>${esc(ct("b_content"))}</b></span><div class="bpe">${bEdit.pts.map((p, i) => `<label><span>${i + 1}.</span><input class="bed" data-e="p${i}" value="${esc(p)}" aria-label="${esc(ct("b_content"))} ${i + 1}"></label>`).join("")}</div></div>
+      <div class="bshot"><span class="tc">30–40 s<b>${esc(ct("b_cta"))}</b></span><div><input class="bed say" data-e="cta" value="${esc(bEdit.cta)}" aria-label="${esc(ct("b_cta"))}"></div></div>
       <div class="bmeta"><div><span class="eyebrow">${esc(ct("w"))}</span><p>${esc(L(c.w))}</p>${realHTML(c)}</div><div><span class="eyebrow">${esc(ct("b_base"))}</span><p>${v.url ? `<a href="${esc(v.url)}" target="_blank" rel="noopener">${esc(L(v.t))}</a>` : esc(L(v.t))} — ${esc(L(v.d))}</p></div><div><span class="eyebrow">${esc(ct("b_style"))}</span><p><a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.nm)}</a> — ${esc(L(r.s))}</p></div></div>
       <p class="note" style="margin-top:12px">${esc(ct("b_note"))}</p>
     </div>
   </div>
   ${ruleCard()}`;
-  box.querySelectorAll("select[data-b]").forEach(s => s.addEventListener("change", () => { bSel[s.dataset.b] = s.value; store.set("lab-build", bSel); renderBuilder(box); }));
+  box.querySelectorAll("select[data-b]").forEach(s => s.addEventListener("change", () => { bSel[s.dataset.b] = s.value; if (s.dataset.b === "c") bSel.h = "q"; store.set("lab-build", bSel); renderBuilder(box); }));
+  box.querySelector(".bhl").addEventListener("click", e => { const b = e.target.closest("[data-hk]"); if (!b) return; bSel.h = b.dataset.hk; store.set("lab-build", bSel); renderBuilder(box); });
+  box.querySelector("[data-breset]").addEventListener("click", () => { bEdit = null; renderBuilder(box); });
+  const copy = box.querySelector(".bout .head .cbtn:not([data-breset])");
+  box.querySelectorAll(".bed").forEach(el => el.addEventListener("input", () => {
+    const k = el.dataset.e; if (k === "hook") bEdit.hook = el.value; else if (k === "cta") bEdit.cta = el.value; else bEdit.pts[+k.slice(1)] = el.value;
+    copy.dataset.copy = editText(c, v, r, bEdit);
+  }));
 }
 function ruleCard(){
   return `<div class="card rulec"><h3>${esc(ct("rule_t"))}</h3><ul class="checks yes">${ct("rule").map(s => `<li>${esc(s)}</li>`).join("")}</ul><p class="note" style="margin-top:10px">${esc(ct("src"))} ${esc(ct("src2"))}</p></div>`;
 }
 
+document.addEventListener("click", e => {
+  const d = e.target.closest("[data-dl]"); if (d) { if (d.dataset.dl === "ig" && IG) download("instagram.json", IG); if (d.dataset.dl === "board") download("board.json", {status: (BOARD && BOARD.status) || {}, updatedAt: (BOARD && BOARD.updatedAt) || new Date().toISOString()}); return; }
+  const g = e.target.closest("[data-goscript]"); if (g) { curScript = g.dataset.goscript; store.set("lab-script", curScript); sMode = "ready"; store.set("lab-smode", sMode); renderScripts(); show("roteiros"); window.scrollTo({top: 0}); }
+});
+
 /* ---------- ideias ---------- */
 const usoMatch = (u, f) => !f || u === f || (u === "both" && f !== "both");
 let iview = store.get("lab-iview", "grid"); if (!["grid","kanban"].includes(iview)) iview = "grid";
 const STK = ["nova","roteirizar","gravado","no-ar"];
+/* ideias que já viraram roteiro: o status passa a ser o do roteiro */
+const IDEA2R = {i01:"r1", i03:"r2", i13:"r3", i07:"r4", i21:"r5", i19:"r6", i12:"r7", i22:"r8", i23:"r9"};
+const R2IDEA = Object.fromEntries(Object.entries(IDEA2R).map(([i, r]) => [r, i]));
+const sid = i => IDEA2R[i.id] || i.id;
+let iscope = store.get("lab-iscope", "free"); if (!["free","done"].includes(iscope)) iscope = "free";
+const inScope = i => iscope === "done" ? !!IDEA2R[i.id] : !IDEA2R[i.id];
+/* itens do quadro: ideias sem roteiro + roteiros */
+function boardItems(){
+  const ideas = IDEIAS.filter(i => !IDEA2R[i.id]).map(i => ({id: i.id, kind: "idea", p: i.p, f: i.f, u: i.u, pri: i.pri, t: L(i.t), h: i.h, hay: [L(i.t), i.h, i.ht.pt, i.ht.en, L(i.b)].join(" ")}));
+  const scripts = ROTEIROS.map(r => { const src = IDEIAS.find(i => i.id === R2IDEA[r.id]); return {id: r.id, kind: "script", p: r.p, f: r.f, u: src ? src.u : "both", pri: r.top, t: L(r.t), h: (r.shots[0] || {}).s || "", hay: [L(r.t), r.sub.pt || "", r.sub.en || "", ...r.shots.map(s => s.s)].join(" ")}; });
+  return [...scripts, ...ideas];
+}
+function itemPass(o, skip){
+  if (skip !== "p" && F.p && o.p !== F.p) return false;
+  if (F.f && o.f !== F.f) return false;
+  if (!usoMatch(o.u, F.u)) return false;
+  if (F.q && !(o.hay + " " + L(PILAR[o.p])).toLowerCase().includes(F.q.toLowerCase())) return false;
+  return true;
+}
 const stSelect = (id, st) => `<select class="status" id="st-${id}" data-id="${id}" aria-label="Status"${canEditBoard() ? "" : ` disabled title="${esc(xt("ro"))}"`}>${STK.map(k => `<option value="${k}"${k === st ? " selected" : ""}>${esc(t("st")[k])}</option>`).join("")}</select>`;
 function ideaPass(i, skip){
-  const st = stOf(i.id);
+  const st = stOf(sid(i));
+  if (!inScope(i)) return false;
   if (skip !== "p" && F.p && i.p !== F.p) return false;
   if (F.f && i.f !== F.f) return false;
   if (!usoMatch(i.u, F.u)) return false;
@@ -2411,6 +2490,10 @@ function renderIdeasShell(){
   const fmts = [...new Set(IDEIAS.map(i => i.f))];
   $("#ibody").innerHTML = `
   <p class="note" style="font-size:.95rem;max-width:72ch">${esc(LOCALDB ? xt("i_s_local") : t("i_s"))}</p>
+  <div class="seg scope" role="group" aria-label="${esc(ct("scope_free"))} / ${esc(ct("scope_done"))}">
+    <button type="button" data-sc="free" aria-pressed="${iscope === "free"}">${esc(ct("scope_free"))}<span class="n">${IDEIAS.filter(i => !IDEA2R[i.id]).length}</span></button>
+    <button type="button" data-sc="done" aria-pressed="${iscope === "done"}">${esc(ct("scope_done"))}<span class="n">${Object.keys(IDEA2R).length}</span></button>
+  </div>
   <div class="stsum" id="stsum"></div>
   <div class="toolbar">
     <div class="pillrow" id="prow"></div>
@@ -2424,6 +2507,7 @@ function renderIdeasShell(){
     </div>
   </div>
   <div class="ideas" id="ideas"></div>`;
+  $("#ibody .scope").addEventListener("click", e => { const b = e.target.closest("[data-sc]"); if (!b) return; iscope = b.dataset.sc; store.set("lab-iscope", iscope); F.st = ""; $("#ibody .scope").querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x === b)); renderIdeas(); });
   $("#f-fmt").addEventListener("change", e => { F.f = e.target.value; renderIdeas(); });
   $("#f-uso").addEventListener("change", e => { F.u = e.target.value; renderIdeas(); });
   $("#f-q").addEventListener("input", e => { F.q = e.target.value.trim(); renderIdeas(); });
@@ -2441,39 +2525,39 @@ function renderIdeasShell(){
 }
 function renderIdeas(){
   const stc = {nova:0, roteirizar:0, gravado:0, "no-ar":0};
-  IDEIAS.filter(i => ideaPass(i, "st")).forEach(i => stc[stOf(i.id)]++);
-  $("#stsum").hidden = iview === "kanban";
+  IDEIAS.filter(i => ideaPass(i, "st")).forEach(i => stc[stOf(sid(i))]++);
+  $("#stsum").hidden = iview === "kanban"; $("#ibody .scope").hidden = iview === "kanban";
   const dots = {nova:"var(--faint)", roteirizar:"var(--amber)", gravado:"var(--acc)", "no-ar":"var(--green)"};
   $("#stsum").innerHTML = Object.keys(stc).map(k => `<button type="button" data-st="${k}" aria-pressed="${F.st === k}"><b>${stc[k]}</b><span><i style="background:${dots[k]}"></i>${esc(t("st")[k])}</span></button>`).join("");
-  const pc = {}; IDEIAS.filter(i => ideaPass(i, "p")).forEach(i => pc[i.p] = (pc[i.p] || 0) + 1);
+  const pc = {}; (iview === "kanban" ? boardItems().filter(o => itemPass(o, "p")) : IDEIAS.filter(i => ideaPass(i, "p"))).forEach(i => pc[i.p] = (pc[i.p] || 0) + 1);
   const totalP = Object.values(pc).reduce((a, b) => a + b, 0);
   $("#prow").innerHTML = `<button class="pill" type="button" data-p="" aria-pressed="${!F.p}">${esc(t("todos"))}<span class="c">${totalP}</span></button>` +
     Object.keys(PILAR).map(p => `<button class="pill" type="button" data-p="${p}" aria-pressed="${F.p === p}">${esc(L(PILAR[p]))}<span class="c">${pc[p] || 0}</span></button>`).join("");
   const box = $("#ideas");
   if (iview === "kanban") {
-    const kl = IDEIAS.filter(i => ideaPass(i, "st")).sort((a, b) => b.pri - a.pri);
-    $("#f-count").textContent = `${kl.length} ${t("of")} ${IDEIAS.length}`;
+    const all = boardItems(), kl = all.filter(o => itemPass(o)).sort((a, b) => (b.kind === "script") - (a.kind === "script") || b.pri - a.pri);
+    $("#f-count").textContent = `${kl.length} ${t("of")} ${all.length}`;
     box.className = "kb";
-    box.innerHTML = `<p class="note kbn">${esc(canEditBoard() ? xt("drag") : xt("ro_note"))}</p>` + STK.map(k => { const cs = kl.filter(i => stOf(i.id) === k);
-      return `<section class="kcol" data-st="${k}" aria-label="${esc(t("st")[k])}"><div class="kh"><i style="background:${dots[k]}"></i>${esc(t("st")[k])}<b>${cs.length}</b></div><div class="kl">${cs.map(i => {
-        return `<article class="kcard${i.pri ? " alta" : ""}" data-id="${i.id}" data-st="${k}" draggable="${canEditBoard()}"><div class="chips"><span class="chip p">${esc(L(PILAR[i.p]))}</span><span class="chip">${esc(L(FMT[i.f]))}</span></div><div class="kt">${esc(L(i.t))}</div><div class="kk">${esc(i.h)}</div><div class="kf">${stSelect(i.id, k)}</div></article>`; }).join("") || `<div class="kempty">—</div>`}</div></section>`; }).join("");
+    box.innerHTML = `<p class="note kbn">${esc(ct("kb_note"))} ${esc(ct("dl_board_h"))} <button type="button" class="cbtn" data-dl="board">${esc(ct("dl_board"))}</button></p>` + STK.map(k => { const cs = kl.filter(o => stOf(o.id) === k);
+      return `<section class="kcol" data-st="${k}" aria-label="${esc(t("st")[k])}"><div class="kh"><i style="background:${dots[k]}"></i>${esc(t("st")[k])}<b>${cs.length}</b></div><div class="kl">${cs.map(o =>
+        `<article class="kcard${o.pri ? " alta" : ""}${o.kind === "script" ? " ks" : ""}" data-id="${o.id}" data-st="${k}" draggable="${canEditBoard()}"><div class="chips">${o.kind === "script" ? `<span class="chip ok">${esc(ct("chip_script"))}</span>` : ""}<span class="chip p">${esc(L(PILAR[o.p]))}</span><span class="chip">${esc(L(FMT[o.f]))}</span></div><div class="kt">${esc(o.t)}</div><div class="kk">${esc(o.h)}</div><div class="kf">${stSelect(o.id, k)}${o.kind === "script" ? `<button type="button" class="cbtn" data-goscript="${o.id}">${esc(ct("open_script"))}</button>` : ""}</div></article>`).join("") || `<div class="kempty">—</div>`}</div></section>`; }).join("");
     return;
   }
   box.className = "ideas";
   const list = IDEIAS.filter(i => ideaPass(i)).sort((a, b) => b.pri - a.pri);
-  $("#f-count").textContent = `${list.length} ${t("of")} ${IDEIAS.length}`;
+  $("#f-count").textContent = `${list.length} ${t("of")} ${IDEIAS.filter(inScope).length}`;
   box.innerHTML = list.length ? list.map(i => {
-    const st = stOf(i.id);
+    const st = stOf(sid(i)), rid = IDEA2R[i.id];
     return `<article class="idea${i.pri ? " alta" : ""}" data-st="${st}">
-      <div class="chips"><span class="chip p">${esc(L(PILAR[i.p]))}</span><span class="chip">${esc(L(FMT[i.f]))}</span><span class="chip">${esc(L(USO[i.u]))}</span>${i.pri ? `<span class="chip hot">${esc(t("prio"))}</span>` : ""}</div>
+      <div class="chips">${IDEA2R[i.id] ? `<span class="chip ok">${esc(ct("chip_ready"))}</span>` : ""}<span class="chip p">${esc(L(PILAR[i.p]))}</span><span class="chip">${esc(L(FMT[i.f]))}</span><span class="chip">${esc(L(USO[i.u]))}</span>${i.pri ? `<span class="chip hot">${esc(t("prio"))}</span>` : ""}</div>
       <div class="t">${esc(L(i.t))}</div>
       <div><div class="hook">${esc(i.h)}</div>${lang !== "es" ? `<div class="tr" style="margin-top:4px">${esc(i.ht[lang])}</div>` : ""}</div>
       <details class="more"><summary>${esc(ct("more"))}</summary>
       <ol>${(i.s[lang] || i.s.pt).map(x => `<li>${esc(x)}</li>`).join("")}</ol>
       <div class="why"><b>${esc(t("porque"))}:</b> ${esc(L(i.b))}</div></details>
       <div class="foot">
-        ${stSelect(i.id, st)}
-        ${cbtn(i.h)}
+        ${stSelect(sid(i), st)}
+        ${rid ? `<button type="button" class="cbtn" data-goscript="${rid}">${esc(ct("open_script"))}</button>` : cbtn(i.h)}
       </div>
     </article>`;
   }).join("") : `<div class="empty">${esc(t("vazio"))}</div>`;
@@ -2560,7 +2644,7 @@ function renderScripts(){
       <div class="eyebrow">${esc(t("r_list"))}</div>
       ${ROTEIROS.map((x, n) => `<button class="sitem" type="button" data-id="${x.id}" aria-current="${x.id === curScript}">
         <span class="no">${String(n + 1).padStart(2, "0")}</span><span class="tt">${esc(L(x.t))}</span>
-        <span class="mm">${x.top ? `<span class="first">${esc(t("first"))}</span> · ` : ""}${esc(x.dur)} · ${esc(L(FMT[x.f]))}</span>
+        <span class="mm"><i class="sdot ${stOf(x.id)}"></i>${x.top ? `<span class="first">${esc(t("first"))}</span> · ` : ""}${esc(x.dur)} · ${esc(L(FMT[x.f]))}</span>
       </button>`).join("")}
     </nav>
     <article class="sdetail">
@@ -2568,7 +2652,7 @@ function renderScripts(){
         <div class="chips"><span class="chip p">${esc(L(PILAR[r.p]))}</span><span class="chip">${esc(L(FMT[r.f]))}</span><span class="chip mono">${esc(r.dur)}</span><span class="chip">${esc(L(r.quem))}</span><span class="chip ok">${esc(L(r.uso))}</span></div>
         <h2>${esc(L(r.t))}</h2>
         ${lang !== "es" && r.sub[lang] ? `<p class="tr" style="font-size:1rem">${esc(r.sub[lang])}</p>` : ""}
-        <div class="sact"><button type="button" class="pillbtn primary" data-tpopen>${svg("tp")}${esc(xt("tp_open"))}</button></div>
+        <div class="sact" data-st="${stOf(r.id)}">${stSelect(r.id, stOf(r.id))}<button type="button" class="pillbtn primary" data-tpopen>${svg("tp")}${esc(xt("tp_open"))}</button></div>
       </div>
       <div class="chwrap"><div class="head" style="margin-bottom:10px"><h3 style="margin:0">${esc(ct("chain"))}</h3></div>${chainHTML(r.id)}<p class="chwhy"><b>${esc(t("r_why"))}:</b> ${esc(L(r.why))}</p></div>
       <div class="board">
@@ -2592,6 +2676,7 @@ function renderScripts(){
     </article>
   </div>`;
   $("#v-roteiros [data-tpopen]").addEventListener("click", () => openTP(r));
+  $("#v-roteiros .sact .status").addEventListener("change", e => setStatus(r.id, e.target.value));
   $("#v-roteiros .slist").addEventListener("click", e => {
     const b = e.target.closest(".sitem"); if (!b) return;
     curScript = b.dataset.id; store.set("lab-script", curScript); renderScripts();
